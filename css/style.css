@@ -749,6 +749,9 @@ border: 0 !important;
 .project-details .details-list li {
 	color:#e5e5e5;
 	margin-bottom: 4px;
+	text-align: justify;
+	list-style-position:inside;
+	list-style-type:circle;
 }
 
 .project-details .details-list li i {
