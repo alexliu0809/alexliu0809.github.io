@@ -9,12 +9,12 @@ baseurl: "" # the subpath of your site, e.g. /blog
 urls:
     - text: About Me
       url: /about/
-    - text: Publications
-      url: /publications/
-    - text: Research
-      url: /research/
-    - text: Blog
-      url: /blog/
+    #- text: Publications
+      #url: /publications/
+    #- text: Research
+      #url: /research/
+    #- text: Blog
+      #url: /blog/
 #    - text: Shop
 #      url : /shop/
 #    - text: Contact Me
@@ -49,7 +49,7 @@ author_work_experiences:
 author_education_details:
               - college_logo: ucsd.png
                 college_name: University of California San Diego
-                college_url: http://mit.org
+                college_url: http://www.ucsd.edu
                 college_degree: PhD in Computer Science
                 description: 2019.06 - Present
                 visibility: true
@@ -98,7 +98,7 @@ twitter_username: alexliu1
 #flickr_username: johndoe
 
 #for comments using disqus
-disqus_shortname: sujay-kundu  
+#disqus_shortname: sujay-kundu  
 
 # wakatime username (coding activity)
 wakatime_username: alexliu0809
@@ -115,7 +115,7 @@ permalink: pretty
 google_analytics: UA-46783401-10 
 
 # Choose what to show ( can be true or false)
-show_author_work_experiences: true
+show_author_work_experiences: false
 show_author_education_details: true
 show_author_publications_details: true
 
