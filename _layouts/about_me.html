@@ -51,7 +51,7 @@ layout: default
                             <h4 class="experience-title" align="stretch"> {{ project.project_title }}</h4>
                             <h6 class="experience-info"> {{ project.project_info}}</h6>
                             <p class="experience-desc"> {{ project.project_description }} </p>
-                            <p><a href="{{exp.company_url}}">{{ project.project_url}}</a></p> 
+                            <p><a href="{{project.project_url}}">{{ project.project_url}}</a></p> 
                         </div>
                 </div>
                 {% endif %}
@@ -117,7 +117,6 @@ layout: default
                
             </div>
             
-            <!--
             {% if site.wakatime_username %}
             <div class="card">
                 <h1> Coding Activity </h1>
@@ -126,7 +125,6 @@ layout: default
     
             </div>
             {% endif %}
-            -->
     
         </div>
         </div>
