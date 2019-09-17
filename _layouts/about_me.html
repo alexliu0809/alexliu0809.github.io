@@ -37,11 +37,11 @@ layout: default
             {% endif %}
 
 
-            {% if site.show_author_publications_details == true %}
+            {% if site.show_author_projects_details == true %}
             <div class="card">
                 <h1 class="card-title">Projects</h1>
                 <br />
-                {% for project in site.author_publications_details %}
+                {% for project in site.author_projects_details %}
                 {% if project.visibility == true %}
                 <div class="row">
                         <div class="col-md-2">

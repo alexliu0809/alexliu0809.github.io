@@ -9,8 +9,8 @@ baseurl: "" # the subpath of your site, e.g. /blog
 urls:
     - text: About Me
       url: /#/
-    #- text: Publications
-      #url: /publications/
+    - text: Publications
+      url: /publications/
     #- text: Research
       #url: /research/
     #- text: Blog
@@ -27,7 +27,7 @@ urls:
 
 author_logo: profile.png
 author: Enze "Alex" Liu
-author_bio: Hi, my name is Enze (pronounced like the italian name Enzo) Liu. You can also call me "Alex". I am currently a first-year PhD student in Computer Science at UC San Diego advised by Stefan Savage and Geoffrey Voelker. I am broadly interested in computer security and privacy. My current research focuses on using large-scale empirical analyses to help improve cybersecurity. Previously, I did some research on passwords with Blase Ur and David Cash at the University of Chicago.
+author_bio: Hi, my name is Enze (pronounced like the italian name Enzo) Liu. You can also call me "Alex". Right now I am a first-year PhD student in Computer Science at UC San Diego advised by Stefan Savage and Geoffrey Voelker. I am broadly interested in computer security and privacy. My current research focuses on using large-scale empirical analyses to help improve cybersecurity. Previously, I did some research on passwords with Blase Ur and David Cash at the University of Chicago.
 author_email: "e7liu@eng.ucsd.edu"
 author_location: La Jolla, CA
 author_website_url: "https://alexliu0809.github.io"
@@ -72,7 +72,7 @@ author_education_details:
                 description: 2012.09 - 2016.06
                 visibility: true
 
-author_publications_details:
+author_projects_details:
               - project_thumbnail: hc.jpeg
                 project_title: Reasoning Analytically About Password-Cracking Software
                 project_description: A software to reason analytically and efficiently about transformation-based password cracking in software tools like John the Ripper (JtR) and Hashcat (HC).
@@ -84,6 +84,25 @@ author_publications_details:
               #   project_description: A Platform to easily find and read programming books
               #   project_url: https://programmingebooks.com
               #   visibility: false
+
+author_pubs_details:
+              - title: Reasoning Analytically About Password-Cracking Software
+                author_list: Enze Liu, Amanda Nakanishi, Maximilian Golla, David Cash, Blase Ur
+                venue: The 40th IEEE Symposium on Security and Privacy (S&P)
+                venue_short: IEEE S&P
+                year: 2019
+                links:
+                  - type: PDF
+                    url: https://www.blaseur.com/papers/sp19-pwcracking.pdf
+                  - type: Code
+                    url: https://github.com/UChicagoSUPERgroup/analytic-password-cracking/
+                  - type: Slides
+                    url: https://www.ieee-security.org/TC/SP2019/SP19-Slides-pdfs/Enze_Alex_Liu_-_06-Reasoning_Analytically_About_Password-Cracking_Software.pdf
+                  - type: Video
+                    url: https://youtu.be/kSfmTV0GTIM
+
+
+
 
 # social links
 github_username:  alexliu0809
@@ -117,7 +136,7 @@ google_analytics: UA-46783401-10
 # Choose what to show ( can be true or false)
 show_author_work_experiences: false
 show_author_education_details: true
-show_author_publications_details: true
+show_author_projects_details: true
 
 # dont touch this unless required
 plugins:

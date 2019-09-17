@@ -1,0 +1,75 @@
+---
+layout: default
+---
+<style>
+div.pubbody{
+	text-align: left;
+	font-size: 11pt;
+	color: #000000;
+	font-weight: normal;	
+	margin-bottom: 29px;
+	
+}
+.venue_short {
+  font-family: "Lato",sans-serif;
+  color: #0080FF;
+  font-weight: bold;
+  font-size: 1rem;
+}
+.papername {
+  color: #0080FF;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.authorlist {
+  color: #3C3C3C;
+  font-size: 1.25rem;
+}
+.venuename {
+  color: #999999;
+  font-size: 1.1rem;  
+}
+.paperlink {
+  color: #BF9B30;
+  font-size: 1rem;  
+}
+</style>
+
+
+<div class="card">
+    <h1 class="card-title">Pulications</h1>
+    <br />
+
+    <!-- Pub list begins -->
+    {% for pub in site.author_pubs_details %}
+    <div class = "pubbody">
+		<table width="100%">
+			<tr>
+				<td width = "14%" valign="center" align="center"><span class=venue_short>{{pub.venue_short}}<br />{{pub.year}}
+				</span>
+				</td>
+				<td width= "4%"></td>
+				
+				<td width = "78%">
+				<span class="papername">{{pub.title}}</span>
+				<br />
+				<span class="authorlist">{{pub.author_list}}</span>
+				<br />
+				<span class="venuename">Proceedings of <i>{{pub.venue}}</i></span>
+				<br />
+				{% for link in pub.links %}
+				[<a href="{{link.url}}"><span class="paperlink">{{link.type}}</span></a>]
+				{% endfor %}
+
+				</td>
+				
+				<td width= "4%">
+				</td>
+			</tr>
+		</table>
+	</div>
+    {% endfor %}
+	
+	
+
+</div>
