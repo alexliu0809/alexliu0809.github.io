@@ -3,12 +3,12 @@ subtitle: Computer Security and Privacy Researcher
 description: >- # this means to ignore newlines until "baseurl:"
   devlopr-jekyll is a Jekyll Theme Built For Developers
 
-url: "https://devlopr.netlify.com" # the base hostname & protocol for your site, e.g. https://example.github.io
+url: "https://alexliu0809.github.io" # the base hostname & protocol for your site, e.g. https://example.github.io
 baseurl: "" # the subpath of your site, e.g. /blog
 
 urls:
     - text: About Me
-      url: /about/
+      url: /#/
     #- text: Publications
       #url: /publications/
     #- text: Research
