@@ -8,7 +8,7 @@ layout: default
             {% if site.author_bio %}
             <div class="card">
                 <h1 class="card-title">About</h1>
-                <p> {{ site.author_bio }}</p>
+                <p style="text-align: justify;"> {{ site.author_bio }}</p>
                 <!-- <p> {{ site.author_bio_cont }}</p> -->
             </div>
             {% endif %}
@@ -114,9 +114,11 @@ layout: default
                 <h1> RECENT NEWS </h1>
                 {% for news in site.recent_news limit:5 %}
                 <li> <!-- style="text-align: justify;" -->
-                    <strong>[{{news.date}}]</strong> {{news.content}}
+                    <strong>[{{news.date}}]</strong>&nbsp;{{news.content}}
                 </li>
                 {% endfor %}
+                <br/>
+                <h6><a href="/news/">View More</a></h6>
                 <!-- View More -->
             </div>
 
@@ -129,7 +131,7 @@ layout: default
             </div>
 
             
-            
+
             {% if site.wakatime_username %}
             <div class="card">
                 <h1> Coding Activity </h1>
