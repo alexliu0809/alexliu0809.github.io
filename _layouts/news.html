@@ -1,51 +1,28 @@
 ---
 layout: default
 ---
-<style>
-div.pubbody{
-    text-align: left;
-    font-size: 11pt;
-    color: #000000;
-    font-weight: normal;    
-    margin-bottom: 29px;
-    
+<style type="text/css">
+tbody tr {
+    margin-left: 20px;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 1.25rem;
 }
-.venue_short {
-  font-family: "Lato",sans-serif;
-  color: #0080FF;
-  font-weight: bold;
-  font-size: 1rem;
-}
-.papername {
-  color: #0080FF;
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-.authorlist {
-  color: #3C3C3C;
-  font-size: 1.25rem;
-}
-.venuename {
-  color: #999999;
-  font-size: 1.1rem;  
-}
-.paperlink {
-  color: #BF9B30;
-  font-size: 1rem;  
+tbody tr > * {
+    display: inline-block;
 }
 </style>
-
 
 <div class="card">
     <h1 class="card-title">Recent News</h1>
     <br />
+
+
     {% for news in site.recent_news %}
-    <li> <!-- style="text-align: justify;" -->
-        <strong>[{{news.date}}]</strong>&nbsp;{{news.content}}
-    </li>
+    <table class="news_table">
+      <tbody class="news_table_body">
+        <tr><td>[{{news.date}}] {{news.content}}</td></tr>
+      </tbody>
+    </table>
     {% endfor %}
     <!-- View More -->
-    
-    
-
 </div>
