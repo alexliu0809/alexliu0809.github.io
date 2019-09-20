@@ -113,9 +113,7 @@ layout: default
             <div class="card">
                 <h1> RECENT NEWS </h1>
                 {% for news in site.recent_news limit:5 %}
-                <li> <!-- style="text-align: justify;" -->
-                    <strong>[{{news.date}}]</strong>&nbsp;{{news.content}}
-                </li>
+                <li><strong>[{{news.date}}]</strong>&nbsp;{{news.content}}</li>
                 {% endfor %}
                 <br />
                 <h6><a href="/news/">View More</a></h6>
