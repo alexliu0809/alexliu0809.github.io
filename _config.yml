@@ -21,7 +21,20 @@ urls:
 #      url : /contact/
 #    - text: Styleguide
 #      url: /styleguide/
-    
+
+recent_news:
+  - date: 2019-09-23
+    content: Joining UCSD as a first-year PhD student! I am affiliated with Sysnet, CryptoSec, and CNS research groups.
+  - date: 2019-09-08
+    content: Arrived in San Diego! Love the sunshine here.
+  - date: 2019-05-20
+    content: Presenting our paper "Reasoning Analytically About Password-Cracking Software" at IEEE S&P 2019 (Oakland).
+  - date: 2019-02-01
+    content: After two years of work, our work on reasoning analytically about password-cracking software is finally accepted at IEEE S&P 2019 ("Oakland").
+  - date: 2019-03-21
+    content: Received my master's degree from UChicago! Many thanks to my family and friends who have always been supportive.
+  - date: 2016-09-20
+    content: Starting my master's study at The University of Chicago.
 
 # Edit these details 
 

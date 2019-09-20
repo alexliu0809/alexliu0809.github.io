@@ -109,6 +109,17 @@ layout: default
                 {% endif %}
     
             </div>
+
+            <div class="card">
+                <h1> RECENT NEWS </h1>
+                {% for news in site.recent_news limit:5 %}
+                <li> <!-- style="text-align: justify;" -->
+                    <strong>[{{news.date}}]</strong> {{news.content}}
+                </li>
+                {% endfor %}
+                <!-- View More -->
+            </div>
+
     
             <div class="card">
                 <h1> Skills </h1>
@@ -116,6 +127,8 @@ layout: default
                 {%- include author_skills.html -%}
                
             </div>
+
+            
             
             {% if site.wakatime_username %}
             <div class="card">
@@ -125,6 +138,7 @@ layout: default
     
             </div>
             {% endif %}
+
     
         </div>
         </div>
