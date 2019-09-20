@@ -111,7 +111,7 @@ layout: default
             </div>
 
             <div class="card">
-                <h1> RECENT NEWS </h1>
+                <h1> Recent News </h1>
                 {% for news in site.recent_news limit:5 %}
                 <li><strong>[{{news.date}}]</strong>&nbsp;{{news.content}}</li>
                 {% endfor %}
