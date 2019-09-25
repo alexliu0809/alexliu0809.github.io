@@ -28,6 +28,9 @@
 <loc>http://localhost:4000/contact</loc>
 </url>
 <url>
+<loc>http://localhost:4000/googlef2edd43dcbb14762.html/</loc>
+</url>
+<url>
 <loc>http://localhost:4000/blog/categories/guides</loc>
 </url>
 <url>
@@ -56,8 +59,5 @@
 </url>
 <url>
 <loc>http://localhost:4000/styleguide</loc>
-</url>
-<url>
-<loc>http://localhost:4000/googlef2edd43dcbb14762.html/</loc>
 </url>
 </urlset>
