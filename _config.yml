@@ -15,8 +15,8 @@ urls:
       url: /news/
     #- text: Research
       #url: /research/
-    #- text: Blog
-      #url: /blog/
+    - text: Blog
+      url: /blog/
 #    - text: Shop
 #      url : /shop/
 #    - text: Contact Me

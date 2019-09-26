@@ -25,10 +25,10 @@
 <loc>http://localhost:4000/blog/tags/</loc>
 </url>
 <url>
-<loc>http://localhost:4000/contact</loc>
+<loc>http://localhost:4000/blog/</loc>
 </url>
 <url>
-<loc>http://localhost:4000/googlef2edd43dcbb14762.html/</loc>
+<loc>http://localhost:4000/contact</loc>
 </url>
 <url>
 <loc>http://localhost:4000/blog/categories/guides</loc>
