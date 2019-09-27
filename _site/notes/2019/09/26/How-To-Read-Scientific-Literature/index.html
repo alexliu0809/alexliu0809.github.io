@@ -148,77 +148,112 @@
 
 </header><div class="col-lg-12">
           
-            <!-- Blog Post Breadcrumbs --><nav aria-label="breadcrumb" role="navigation">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item">
-                <a href="/blog">Blog</a>
-            </li>
-            <li class="breadcrumb-item">
-                <a href="/blog/categories">Categories</a>
-            </li>
-            <li class="breadcrumb-item active" aria-current="page">Using Siteleaf CMS with devlopr-jekyll Blog</li>
-        </ol>
-    </nav>
-<div class="row">
-
-        <div class="col-lg-8"><article class="card" itemscope itemtype="http://schema.org/BlogPosting">
+            <div class="row"><article class="card" itemscope itemtype="http://schema.org/BlogPosting">
+    <!-- 
     <div class="card-header">
-        <!-- <h1 class="post-title" itemprop="name headline">Using Siteleaf CMS with devlopr-jekyll Blog</h1> -->
-        <h4 class="post-meta">Use Siteleaf CMS for your devlopr jekyll blog</h4>
-        <p class="post-summary">Posted by : 
-            <img src="/assets/img/profile.png" class="author-profile-img">
-            <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-                <span itemprop="name">Sujay Kundu</span>
-            </span> at
-            <time datetime="2019-05-22 02:05:23 -0700" itemprop="datePublished">May 22, 2019</time>
-        </p>
-        <span class="disqus-comment-count" data-disqus-identifier="/guides/2019/05/22/using-siteleaf/"></span>     
+        <h1 class="post-title" itemprop="name headline">How To Read Scientific Literature</h1>         <h4 class="post-meta"></h4>
+        <span class="disqus-comment-count" data-disqus-identifier="/notes/2019/09/26/How-To-Read-Scientific-Literature/"></span>
         <div class="post-categories">
             
             Category : 
-            <a href="/blog/categories/guides">guides</a>
+            <a href="/blog/categories/notes">notes</a>
              
         </div>
+        
     </div>
+    -->
 
     <div class="card-body" itemprop="articleBody">
-        <img class="card-img-top" src="/assets/img/posts/siteleaf.jpg" alt=""> 
+        <img class="card-img-top" src="/assets/img/posts/" alt=""> 
         <br/> <br/>
-        <p>Hey There, Today we will see on how to unlock the superpowers of our devlopr-jekyll blog. We will be using Siteleaf CMS to modify content of our blog.</p>
+        <h1 id="how-read-scientific-literature">How Read Scientific Literature</h1>
+<p>References:</p>
+<ul>
+  <li><a href="https://web.stanford.edu/class/ee384m/Handouts/HowtoReadPaper.pdf">How to Read a Paper</a></li>
+  <li><a href="https://www.cs.columbia.edu/~hgs/netbib/efficientReading.pdf">Efficient Reading of Papers in Science and Technology</a></li>
+  <li><a href="https://people.cs.pitt.edu/~litman/courses/cs2710/papers/howtoreadacspaper.pdf">How to Read a Computer Science Research Paper</a></li>
+  <li><a href="https://www.cs.jhu.edu/~jason/advice/how-to-read-a-paper.html">How to Read a Technical Paper</a></li>
+</ul>
 
-<p>Note : If you have not created your blog yet. Create Your Blog , then comeback later</p>
+<h2 id="why-paper-reading">Why Paper Reading?</h2>
+<p>Researchers must read papers for several reasons: to review them for a conference or a class, to keep current in their field, or for a literature survey of a new field.</p>
 
-<p>Login to <a href="https://www.siteleaf.com/">Siteleaf</a></p>
+<h2 id="three-pass-approach">Three-Pass Approach</h2>
+<p>You should read the paper multiple passes, instead of starting at the beginning and plowing all the way to the end.</p>
 
-<p><img src="/assets/img/posts/siteleaf/1.png" alt="Using Siteleaf " class="img-fluid" /></p>
+<h3 id="first-pass">First Pass</h3>
+<p>The purpose of first pass is to have a general idea about the paper. More specifically, you should:</p>
+<ul>
+  <li><strong>Carefully</strong> read the title, abstract, and introduction</li>
+  <li>Read the section and sub-section headings, but ignore everything else</li>
+  <li>Read the conclusions
+At the end of the first pass, you should be able to answer the following questions:</li>
+  <li>Category: What type of paper is this? Theoratical (describes a theory or algorithm or provides a mathematical proof)? Engineering (an implementation &amp;&amp; evauluation of an algorithm, or part or all of a computer system or application)? Empirical paper (experiment designed to test some hypothesis)?</li>
+  <li>Topic: What problems does this paper address? Are they important and why?</li>
+  <li>Context: Which other papers is it related to? Which theoretical bases were used to analyze the problem?</li>
+  <li>Contributions: What are the paper’s main contributions?</li>
+  <li>Correctness: Do the assumptions appear to be valid?
+Depending on this information, you might choose not to keep reading. This could because it is not interesting, the assumptions are not valid, or you don’t have enough background knowledge.</li>
+</ul>
 
-<p>Select Connect with Github, connect existing repository:</p>
+<h3 id="second-pass">Second Pass</h3>
+<p>Grasp the paper’s content, but not the detail. In the second pass, read the paper with greater care, but ignore details such as proofs. It helps to jot down the key points, or to make comments in the margins, as you read.</p>
+<ul>
+  <li>Read the introductions carefully.
+    <ul>
+      <li>What assumptions do they rely on?</li>
+      <li>Do the authors present evidence that they know why they are doing this piece of research?</li>
+      <li>Do they have an idea of the larger picture?</li>
+    </ul>
+  </li>
+  <li>Read the definitions and theroms carefully.</li>
+  <li>Read the methods section carefully</li>
+  <li>Pay special attention to graphs. Are the axes properly labeled? Are results shown with error bars, so that conclusions are statistically significant?</li>
+  <li>Mark relevant unread references for further reading. 
+After the second pass, you should be able to summarize the main thrust of the paper, with supporting evidence, to someone else.</li>
+</ul>
 
-<p><img src="/assets/img/posts/siteleaf/2.png" alt="Using Siteleaf " class="img-fluid" /></p>
+<h3 id="third-pass">Third Pass</h3>
+<p>The key to the third pass is to attempt to virtually re-implement the paper: that is, making the same assumptions as the authors, re-create the work. You should identify and challenge every assumption in every statement.</p>
 
-<p>Select the repository of your devlopr-jekyll blog:</p>
+<h2 id="doing-literature-survey">Doing Literature Survey</h2>
+<ul>
+  <li>Use Google Scholar to find three to five <strong>recent papers</strong> in the area. Do one pass on each paper to get a sense of the work, then read their related work
+sections. You will find a thumbnail summary of the recent work, and perhaps, if you are lucky, a pointer to a recent survey paper.</li>
+  <li>Otherwise, in the second step, find shared citations and repeated author names in the bibliography. These are the key papers and researchers in that area. Download the key papers and set them aside.</li>
+  <li>The third step is to go to the website for these top conferences and look through their recent proceedings.</li>
+</ul>
 
-<p><img src="/assets/img/posts/siteleaf/3.png" alt="Using Siteleaf " class="img-fluid" /></p>
+<h3 id="indicators-of-a-good-research-paper">Indicators of A Good Research Paper</h3>
+<ul>
+  <li>The problem the paper addresses is clearly stated, both in the abstract and early on in the paper itself. The technical importance and broader impacts of the paper are described.</li>
+  <li>The paper includes a clear description of the experiment, system or theory the
+problem addresses. This is usually the second section of the paper.</li>
+  <li>The paper describes and analyzes the results of the work described.</li>
+  <li>The authors have some sound, non-trivial ideas for future work.</li>
+</ul>
 
-<p>Connect and Create Site:</p>
+<h2 id="questions-to-ask-when-reading-a-paper">Questions To Ask When Reading A Paper</h2>
+<h3 id="assumptions">Assumptions</h3>
+<ul>
+  <li>Do their results rely on any assumptions about trends or environments?</li>
+  <li>Are the author’s claims reasonable and realistic?</li>
+</ul>
 
-<p><img src="/assets/img/posts/siteleaf/4.png" alt="Using Siteleaf " class="img-fluid" /></p>
+<h3 id="methods">Methods</h3>
+<ul>
+  <li>Is the approach clearly described? Can you outline the steps or summarize the approach?</li>
+  <li>Did they address the problem stated earlier in the paper/measure what they claim?</li>
+  <li>Can they explain what they observed?</li>
+  <li>Did they have adequate controls/require unreasonable amounts of human guidance?</li>
+  <li>Were tests carried out in a standard/objective way?</li>
+</ul>
 
-<p>After successful import, You will be redirected to manage dashboard :</p>
-
-<p><img src="/assets/img/posts/siteleaf/5.png" alt="Using Siteleaf " class="img-fluid" /></p>
-
-<p>But before making any changes to our blog, we need to change our current Siteleaf membership plan to Free Plan (For Developers)</p>
-
-<p><img src="/assets/img/posts/siteleaf/6.png" alt="Using Siteleaf " class="img-fluid" /></p>
-
-<p>Select Free Plan :</p>
-
-<p><img src="/assets/img/posts/siteleaf/8.png" alt="Using Siteleaf " class="img-fluid" /></p>
-
-<p>Congrats ! Your New Admin Panel for your devlopr-jekyll blog is ready to make any changes to your blog :D</p>
-
-<p><img src="/assets/img/posts/siteleaf/9.png" alt="Using Siteleaf " class="img-fluid" /></p>
+<h3 id="conclusions">Conclusions</h3>
+<ul>
+  <li>Do the conclusions follow logically from the observations?</li>
+  <li>What other conclusions or correlations are there in the data that they did not point out?</li>
+</ul>
 
  
     </div>
@@ -226,48 +261,7 @@
     <div id="disqus_thread"></div>
 
 </article>
-<script>
-    var disqus_config = function () {
-        this.page.url = "http://localhost:4000/guides/2019/05/22/using-siteleaf/"; /* Replace PAGE_URL with your page's canonical URL variable */
-        this.page.identifier = "/guides/2019/05/22/using-siteleaf"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
-    };
-
-
-    (function () { /* DON'T EDIT BELOW THIS LINE */
-        var d = document,
-            s = d.createElement('script');
-        s.src = 'https://.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the
-    <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-</noscript></div>
-<div class="col-lg-4">
-    <div class="card">
-        <div class="card-header"> About </div>
-        <div class="card-body text-dark">
-            <!-- Your Bio -->
-            <p> Hi, my name is Enze (pronounced like the italian name Enzo) Liu. You can also call me "Alex". Right now I am a first-year PhD student in Computer Science at UC San Diego advised by Stefan Savage and Geoffrey Voelker. I am broadly interested in computer security and privacy. My current research focuses on improving cybersecurity with large-scale empirical analyses. Previously, I did some research on passwords with Blase Ur and David Cash at the University of Chicago.</p>
-
-            <!--<!-- Place this tag where you want the button to render. -->
-<a class="github-button" href="https://github.com/sujaykundu777/devlopr-jekyll" data-size="large" data-show-count="true" aria-label="Star sujaykundu777/devlopr-jekyll on GitHub">Star</a>-->
-        </div>
-    </div>
-    <div class="card">
-        <div class="card-header">Categories </div>
-        <div class="card-body text-dark">
-             
-            <div id="#guides"></div>
-            <li class="tag-head">
-                <a href="/blog/categories/guides">guides</a>
-            </li>
-            <a name="guides"></a>
-
-            </div>
-    </div>
-</div></div> <!-- End of row-->
+</div> <!-- End of row-->
     
 
     
