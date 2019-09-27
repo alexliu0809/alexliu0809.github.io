@@ -1,4 +1,4 @@
-# How Read Scientific Literature
+# How To Read Scientific Literature
 References:
 * [How to Read a Paper](https://web.stanford.edu/class/ee384m/Handouts/HowtoReadPaper.pdf)
 * [Efficient Reading of Papers in Science and Technology](https://www.cs.columbia.edu/~hgs/netbib/efficientReading.pdf)
