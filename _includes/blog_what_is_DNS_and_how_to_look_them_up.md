@@ -122,9 +122,12 @@ DNS records (aka zone files) are instructions that live in authoritative DNS ser
 The ‘A’ stands for ‘address’ and this is the most fundamental type of DNS record, it indicates the IP address of a given domain. For example if you pull the DNS records of google.com, the ‘A’ record currently returns an IP address of: 172.217.5.78. ‘A’ records only hold Ipv4 addresses, if the site has a Ipv6 address, it will instead use an ‘AAAA’ record
 
 Example of an A record:
-| example.com | record type | value        |  TTL |
-| ------------- |:-------------:| -----:| -----:|
-| @           |	A	        |12.34.56.78   | 14400|
+
+|-----------------+-------------+-----------------+----------------|
+| example.com     | record type | value           |  TTL           |
+|-----------------|:------------|:---------------:|---------------:|
+| @               |	A	        |12.34.56.78      | 14400          |
+|-----------------+-------------+-----------------+----------------|
 
 The ‘@’ here indicates that this is a record for the root domain, and the ‘14400’ value is the TTL (Time To Live), listed in seconds. The default TTL for A records is 14400 seconds. This means that if an A record gets updated, it takes 240 minutes (14400 seconds) to take effect (because after 14400 secs you will refetch).
 
@@ -142,9 +145,12 @@ A frequent misconception is that a CNAME record must always resolve to the same 
 
 
 Example of a CNAME record:
-| example.com | record type | value                        |  TTL |
-| ------------- |:-------------:| -----:| -----:|
-| @           |	CNAME	    |is an alias of example.com	   | 32600|
+
+|-----------------+-------------+----------------------------+----------------|
+| example.com     | record type | value                      |  TTL           |
+|-----------------|:------------|:--------------------------:|---------------:|
+| @               |	CNAME	    |is an alias of example.com	 | 32600          |
+|-----------------+-------------+----------------------------+----------------|
 
 
 In this example you can see that blog.example.com points to example.com, and assuming it's based on our example A record we know that it will eventually resolve to the IP address 12.34.56.78.
@@ -153,9 +159,14 @@ In this example you can see that blog.example.com points to example.com, and ass
 This is the 'mail exchange' record, and it directs email to a mail server. The MX record indicates how email messages should be routed in accordance with Simple Mail Transfer Protocol (SMTP, the standard protocol for all email.) Like CNAME records, an MX record must always point to another domain.
 
 Example of an MX record:
-| example.com | record type | value                        |  TTL |
-| ------------- |:-------------:| -----:| -----:|
+
+|-----------------+-------------+-----------------+----------------|
+| example.com     | record type | value           |  TTL           |
+|-----------------|:------------|:---------------:|---------------:|
 | @           |	MX	    |10 mailhost.example.com		   | 45000|
 | @           |	MX	    |20 mailhost2.example.com	       | 45000|
+|-----------------+-------------+-----------------+----------------|
+
+
 
 The numbers before the domains in the value entries for these MX records indicate preference; the server will always try mailhost1 first because 10 is lower than 20, in the result of a message send failure, the server will default to mailhost2.
