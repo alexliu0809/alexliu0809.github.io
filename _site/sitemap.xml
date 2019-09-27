@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-<loc>http://localhost:4000/notes/2019/09/26/How-To-Read-Scientific-Literature/</loc>
+<loc>http://localhost:4000/notes/2019/09/26/how_to_read_scientific_literature/</loc>
 <lastmod>2019-09-26T02:05:23-07:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/notes/2019/09/27/what_is_DNS_and_how_to_look_them_up/</loc>
+<lastmod>2019-09-27T04:05:23-07:00</lastmod>
 </url>
 <url>
 <loc>http://localhost:4000/404/</loc>
