@@ -1,6 +1,10 @@
 # What Is DNS and How to Look Them Up
 Reference:
 * [What Is DNS?](https://www.cloudflare.com/learning/dns/what-is-dns/)
+* [Using DIG to check DNS](https://workrobot.com/sysadmin/security/using_DIG.html)
+* [How to Use Dig Command to Query DNS in Linux](https://linuxize.com/post/how-to-use-dig-command-to-query-dns-in-linux/)
+* [DECODING DIG OUTPUT](https://ns1.com/blog/decoding-dig-output)
+* [What's In A DNS Response](https://blog.dnsimple.com/2015/03/whats-in-a-dns-response/)
 
 ## About DNS
 ### What's DNS
@@ -170,3 +174,211 @@ Example of an MX record:
 
 
 The numbers before the domains in the value entries for these MX records indicate preference; the server will always try mailhost1 first because 10 is lower than 20, in the result of a message send failure, the server will default to mailhost2.
+
+
+## DIG Command
+Domain information groper (DIG) is a flexible tool for interrogating DNS name servers. It performs DNS lookups and displays the answers that are returned from the name server(s) that were queried. 
+
+
+With the dig command, you can query information about various DNS records including host addresses, mail exchanges, and name servers. It is the most commonly used tool among system administrators for troubleshooting DNS problems because of its flexibility and ease of use.
+
+
+### Dig Command Format
+```shell
+$ dig name @server type
+```
+**dig** invokes the utility
+
+
+**name** is the host you are looking for information about (eg. example.com)
+
+**@server** allows you to query the name from a different location (eg. 8.8.8.8 for Google's resolver or dns1.p01.nsone.net to test a zone before you delegate)
+
+**type** is an optional field that allows you to have DIG locate a specific record type (eg. A, AAAA, CNAME, MX, TXT, etc.)
+
+### Understanding the Dig Output
+```shell
+$dig linux.org
+```
+
+The output should look something like this:
+
+![DIG Output](/assets/img/dig_sample.jpg)
+
+* The first line of the output prints the **installed dig version**, and **the query that was invoked**. The second line shows the **global options** (by default only cmd).
+	```
+	; <<>> DiG 9.13.3 <<>> linux.org
+	;; global options: +cmd
+	```
+	If you don’t want those lines to be included in the output use the **+nocmd** option. This options must be the very first argument after the dig command.
+
+* This section includes technical details about the answer received from the requested authority (DNS server). The second line of this section is the header, including the **opcode (the action performed by dig)** and the **status of the action**. In this case the status is **NOERROR which means that the requested authority served the query without any issue**. Next line starts out with **flags - these are options that can be set to determine which sections of the answer get printed, or determine the timeout and retry strategies**. The subsequent fields [Query, Answer, Authority and Additional](https://tools.ietf.org/html/rfc6895) express the number of records in each section for all opcodes.
+	```
+	;; Got answer:
+	;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 37159
+	;; flags: qr rd ra; QUERY: 1, ANSWER: 2, AUTHORITY: 2, ADDITIONAL: 5
+	```
+	The meaning of each flag:
+	```
+	qr = specifies whether this message is a query (0), or a response (1)
+	aa = Authoritative Answer
+	tc = Truncation
+	rd = Recursion Desired (set in a query and copied into the response if recursion is supported)
+	ra = Recursion Available (if set, denotes recursive query support is available)
+	ad = Authenticated Data (for DNSSEC only; indicates that the data was authenticated)
+	cd = Checking Disabled (DNSSEC only; disables checking at the receiving server)
+	```
+* This section is shown by default only on the newer versions if the dig utility. This is related to the [Extension mechanisms for DNS (EDNS)](https://en.wikipedia.org/wiki/Extension_mechanisms_for_DNS).
+	```
+	;; OPT PSEUDOSECTION:
+	; EDNS: version: 0, flags:; udp: 4096
+	```
+* The question section reaffirms what you went looking for. By default, dig will request the A record. In this case, DIG went looking for an IPv4 address (A Record) at linux.org.
+	```
+	;; QUESTION SECTION:
+	;linux.org.			IN	A
+	```
+* The answer section provides us with an answer to our question. The answer we're looking at here has five parts: the NAME, TTL, CLASS, TYPE and RDATA.
+	```
+	linux.org.		300	IN	A	104.27.167.219
+	linux.org.		300	IN	A	104.27.166.219
+	```
+	* **NAME**: The NAME resource field states the domain name to which the resource record refers.
+	* **TTL**: The TTL resource field is an abreviation for the phrase "time to live". This field gives the amount of time, in seconds, for which the record should be considered valid.
+	* **CLASS**: The CLASS resource field is generally rarely used. The **IN** in this example, and most examples you're likely to see, indicates that this record is of the **"Internet" CLASS** of DNS record. There are also CH (for Chaosnet) and HS (for Hesiod) classes, as well as QCLASS options for use only in queries.
+	* **TYPE**: The TYPE resource field is where the format of the record is defined. There are many TYPEs of resource records, the most common being A (which gives an IPv4 address for a NAME), AAAA (which gives an IPv6 address), MX (which sets the location of a mail server), CNAME (or canonical name, which maps one NAME to another), and TXT (which can include any arbitrary text). This field really defines what sort of RDATA is to be expected for the record.
+	* **RDATA**:The RDATA resource field is, in many ways, the heart of a DNS answer. Without it, there's nothing for the record to do. In this particular case, since we're looking at an A record, the RDATA is an IPv4 address which indicates where the NAME linux.org should resolve to. Other record TYPEs will have different RDATA content.
+
+* The Authority section tells us what server(s) are the authority for answering DNS queries about the queried domain.
+	```
+	;; AUTHORITY SECTION:
+	linux.org.		86379	IN	NS	lia.ns.cloudflare.com.
+	linux.org.		86379	IN	NS	mark.ns.cloudflare.com.
+	```
+* The additional section gives us information about the IP addresses of the authoritative DNS servers shown in the authority section.
+	```
+	;; ADDITIONAL SECTION:
+	lia.ns.cloudflare.com.	84354	IN	A	173.245.58.185
+	lia.ns.cloudflare.com.	170762	IN	AAAA	2400:cb00:2049:1::adf5:3ab9
+	mark.ns.cloudflare.com.	170734	IN	A	173.245.59.130
+	mark.ns.cloudflare.com.	170734	IN	AAAA	2400:cb00:2049:1::adf5:3b82
+	```
+* This is the last section of the dig output which includes statistics about the query.
+	```
+	;; Query time: 58 msec
+	;; SERVER: 192.168.1.1#53(192.168.1.1)
+	;; WHEN: Fri Oct 12 11:46:46 CEST 2018
+	;; MSG SIZE  rcvd: 212
+	```
+
+### Query a Short Answer
+```shell
+$ dig linux.org +short
+```
+Output:
+```
+104.18.59.123
+104.18.58.123
+```
+
+### Query a Detailed Answer
+For more detailed answer turn off all the results using the **+noall options and then turn on only the answer section with the +answer option**.
+```shell
+$ dig linux.org +noall +answer
+```
+Output:
+```
+; <<>> DiG 9.13.3 <<>> linux.org +noall +answer
+;; global options: +cmd
+linux.org.		67	IN	A	104.18.58.123
+linux.org.		67	IN	A	104.18.59.123
+```
+
+### Query Specific Name Server
+By default if no name server is specified, dig will use the servers listed in **/etc/resolv.conf** file.
+
+
+To specify a name server against which the query will be executed use the @ (at) symbol followed by the name server IP address or hostname.
+```shell
+$ dig linux.org @8.8.8.8
+```
+Output:
+```
+; <<>> DiG 9.13.3 <<>> linux.org @8.8.8.8
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 39110
+;; flags: qr rd ra; QUERY: 1, ANSWER: 2, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 512
+;; QUESTION SECTION:
+;linux.org.			IN	A
+
+;; ANSWER SECTION:
+linux.org.		299	IN	A	104.18.58.123
+linux.org.		299	IN	A	104.18.59.123
+
+;; Query time: 54 msec
+;; SERVER: 8.8.8.8#53(8.8.8.8)
+;; WHEN: Fri Oct 12 14:28:01 CEST 2018
+;; MSG SIZE  rcvd: 70
+```
+
+### Query A Record Type
+To get a list of all the address(es) for a domain name use the **a** option:
+```shell
+$ dig +nocmd google.com a +noall +answer
+```
+output:
+```
+google.com.		128	IN	A	216.58.206.206
+```
+
+### Query CNAME Records
+```shell
+$ dig +nocmd mail.google.com cname +noall +answer
+```
+output:
+```
+mail.google.com.	553482	IN	CNAME	googlemail.l.google.com.
+```
+
+### Reverse DNS Lookups
+To query the hostname associated with a specific IP address use the **-x** option.
+```shell
+$ dig -x 208.118.235.148 +noall +answer
+```
+As you can see from the output below the IP address 208.118.235.148 is associated with the hostname wildebeest.gnu.org
+```
+; <<>> DiG 9.13.3 <<>> -x 208.118.235.148 +noall +answer
+;; global options: +cmd
+148.235.118.208.in-addr.arpa. 245 IN	PTR	wildebeest.gnu.org.
+```
+
+### Bulk Queries
+If you want to query a large number of domains, you can add them in a file (one domain per line) and use the -**-f** option followed by the file name.
+
+
+In the following example, we are querying the domains listed in the **domains.txt** file.
+```
+lxer.com
+linuxtoday.com
+tuxmachines.org
+```
+Run:
+```shell
+dig -f domains.txt +short
+```
+Output:
+```
+108.166.170.171
+70.42.23.121
+204.68.122.43
+```
+
+### Checking to see if a DNS server has a particular RR in its cache
+"RR" stands for resource record, which is DNS-speak for any kind of record (A, CNAME, SOA, NS, PTR, etc.). If you want to infer whether anyone using a particular DNS server has visited a host recently, you can specify a non-recursive query. Most DNS servers will obey this request, although this is not required. For security reasons some better DNS server software can be configured to intentionally ignore requests not to recurse.
+```shell
+$ dig @8.8.8.8 uploads.spy2mobile.com +norecurse
+```

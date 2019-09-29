@@ -453,6 +453,10 @@
 <p>Reference:</p>
 <ul>
   <li><a href="https://www.cloudflare.com/learning/dns/what-is-dns/">What Is DNS?</a></li>
+  <li><a href="https://workrobot.com/sysadmin/security/using_DIG.html">Using DIG to check DNS</a></li>
+  <li><a href="https://linuxize.com/post/how-to-use-dig-command-to-query-dns-in-linux/">How to Use Dig Command to Query DNS in Linux</a></li>
+  <li><a href="https://ns1.com/blog/decoding-dig-output">DECODING DIG OUTPUT</a></li>
+  <li><a href="https://blog.dnsimple.com/2015/03/whats-in-a-dns-response/">What’s In A DNS Response</a></li>
 </ul>
 
 <h2 id="about-dns">About DNS</h2>
@@ -660,6 +664,191 @@
 </table>
 
 <p>The numbers before the domains in the value entries for these MX records indicate preference; the server will always try mailhost1 first because 10 is lower than 20, in the result of a message send failure, the server will default to mailhost2.</p>
+
+<h2 id="dig-command">DIG Command</h2>
+<p>Domain information groper (DIG) is a flexible tool for interrogating DNS name servers. It performs DNS lookups and displays the answers that are returned from the name server(s) that were queried.</p>
+
+<p>With the dig command, you can query information about various DNS records including host addresses, mail exchanges, and name servers. It is the most commonly used tool among system administrators for troubleshooting DNS problems because of its flexibility and ease of use.</p>
+
+<h3 id="dig-command-format">Dig Command Format</h3>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>dig name @server <span class="nb">type</span>
+</code></pre></div></div>
+<p><strong>dig</strong> invokes the utility</p>
+
+<p><strong>name</strong> is the host you are looking for information about (eg. example.com)</p>
+
+<p><strong>@server</strong> allows you to query the name from a different location (eg. 8.8.8.8 for Google’s resolver or dns1.p01.nsone.net to test a zone before you delegate)</p>
+
+<p><strong>type</strong> is an optional field that allows you to have DIG locate a specific record type (eg. A, AAAA, CNAME, MX, TXT, etc.)</p>
+
+<h3 id="understanding-the-dig-output">Understanding the Dig Output</h3>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$dig</span> linux.org
+</code></pre></div></div>
+
+<p>The output should look something like this:</p>
+
+<p><img src="/assets/img/dig_sample.jpg" alt="DIG Output" /></p>
+
+<ul>
+  <li>The first line of the output prints the <strong>installed dig version</strong>, and <strong>the query that was invoked</strong>. The second line shows the <strong>global options</strong> (by default only cmd).
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  ; &lt;&lt;&gt;&gt; DiG 9.13.3 &lt;&lt;&gt;&gt; linux.org
+  ;; global options: +cmd
+</code></pre></div>    </div>
+    <p>If you don’t want those lines to be included in the output use the <strong>+nocmd</strong> option. This options must be the very first argument after the dig command.</p>
+  </li>
+  <li>This section includes technical details about the answer received from the requested authority (DNS server). The second line of this section is the header, including the <strong>opcode (the action performed by dig)</strong> and the <strong>status of the action</strong>. In this case the status is <strong>NOERROR which means that the requested authority served the query without any issue</strong>. Next line starts out with <strong>flags - these are options that can be set to determine which sections of the answer get printed, or determine the timeout and retry strategies</strong>. The subsequent fields <a href="https://tools.ietf.org/html/rfc6895">Query, Answer, Authority and Additional</a> express the number of records in each section for all opcodes.
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  ;; Got answer:
+  ;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY, status: NOERROR, id: 37159
+  ;; flags: qr rd ra; QUERY: 1, ANSWER: 2, AUTHORITY: 2, ADDITIONAL: 5
+</code></pre></div>    </div>
+    <p>The meaning of each flag:</p>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  qr = specifies whether this message is a query (0), or a response (1)
+  aa = Authoritative Answer
+  tc = Truncation
+  rd = Recursion Desired (set in a query and copied into the response if recursion is supported)
+  ra = Recursion Available (if set, denotes recursive query support is available)
+  ad = Authenticated Data (for DNSSEC only; indicates that the data was authenticated)
+  cd = Checking Disabled (DNSSEC only; disables checking at the receiving server)
+</code></pre></div>    </div>
+  </li>
+  <li>This section is shown by default only on the newer versions if the dig utility. This is related to the <a href="https://en.wikipedia.org/wiki/Extension_mechanisms_for_DNS">Extension mechanisms for DNS (EDNS)</a>.
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  ;; OPT PSEUDOSECTION:
+  ; EDNS: version: 0, flags:; udp: 4096
+</code></pre></div>    </div>
+  </li>
+  <li>The question section reaffirms what you went looking for. By default, dig will request the A record. In this case, DIG went looking for an IPv4 address (A Record) at linux.org.
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  ;; QUESTION SECTION:
+  ;linux.org.			IN	A
+</code></pre></div>    </div>
+  </li>
+  <li>The answer section provides us with an answer to our question. The answer we’re looking at here has five parts: the NAME, TTL, CLASS, TYPE and RDATA.
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  linux.org.		300	IN	A	104.27.167.219
+  linux.org.		300	IN	A	104.27.166.219
+</code></pre></div>    </div>
+    <ul>
+      <li><strong>NAME</strong>: The NAME resource field states the domain name to which the resource record refers.</li>
+      <li><strong>TTL</strong>: The TTL resource field is an abreviation for the phrase “time to live”. This field gives the amount of time, in seconds, for which the record should be considered valid.</li>
+      <li><strong>CLASS</strong>: The CLASS resource field is generally rarely used. The <strong>IN</strong> in this example, and most examples you’re likely to see, indicates that this record is of the <strong>“Internet” CLASS</strong> of DNS record. There are also CH (for Chaosnet) and HS (for Hesiod) classes, as well as QCLASS options for use only in queries.</li>
+      <li><strong>TYPE</strong>: The TYPE resource field is where the format of the record is defined. There are many TYPEs of resource records, the most common being A (which gives an IPv4 address for a NAME), AAAA (which gives an IPv6 address), MX (which sets the location of a mail server), CNAME (or canonical name, which maps one NAME to another), and TXT (which can include any arbitrary text). This field really defines what sort of RDATA is to be expected for the record.</li>
+      <li><strong>RDATA</strong>:The RDATA resource field is, in many ways, the heart of a DNS answer. Without it, there’s nothing for the record to do. In this particular case, since we’re looking at an A record, the RDATA is an IPv4 address which indicates where the NAME linux.org should resolve to. Other record TYPEs will have different RDATA content.</li>
+    </ul>
+  </li>
+  <li>The Authority section tells us what server(s) are the authority for answering DNS queries about the queried domain.
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  ;; AUTHORITY SECTION:
+  linux.org.		86379	IN	NS	lia.ns.cloudflare.com.
+  linux.org.		86379	IN	NS	mark.ns.cloudflare.com.
+</code></pre></div>    </div>
+  </li>
+  <li>The additional section gives us information about the IP addresses of the authoritative DNS servers shown in the authority section.
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  ;; ADDITIONAL SECTION:
+  lia.ns.cloudflare.com.	84354	IN	A	173.245.58.185
+  lia.ns.cloudflare.com.	170762	IN	AAAA	2400:cb00:2049:1::adf5:3ab9
+  mark.ns.cloudflare.com.	170734	IN	A	173.245.59.130
+  mark.ns.cloudflare.com.	170734	IN	AAAA	2400:cb00:2049:1::adf5:3b82
+</code></pre></div>    </div>
+  </li>
+  <li>This is the last section of the dig output which includes statistics about the query.
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  ;; Query time: 58 msec
+  ;; SERVER: 192.168.1.1#53(192.168.1.1)
+  ;; WHEN: Fri Oct 12 11:46:46 CEST 2018
+  ;; MSG SIZE  rcvd: 212
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="query-a-short-answer">Query a Short Answer</h3>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>dig linux.org +short
+</code></pre></div></div>
+<p>Output:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>104.18.59.123
+104.18.58.123
+</code></pre></div></div>
+
+<h3 id="query-a-detailed-answer">Query a Detailed Answer</h3>
+<p>For more detailed answer turn off all the results using the <strong>+noall options and then turn on only the answer section with the +answer option</strong>.</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>dig linux.org +noall +answer
+</code></pre></div></div>
+<p>Output:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>; &lt;&lt;&gt;&gt; DiG 9.13.3 &lt;&lt;&gt;&gt; linux.org +noall +answer
+;; global options: +cmd
+linux.org.		67	IN	A	104.18.58.123
+linux.org.		67	IN	A	104.18.59.123
+</code></pre></div></div>
+
+<h3 id="query-specific-name-server">Query Specific Name Server</h3>
+<p>By default if no name server is specified, dig will use the servers listed in <strong>/etc/resolv.conf</strong> file.</p>
+
+<p>To specify a name server against which the query will be executed use the @ (at) symbol followed by the name server IP address or hostname.</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>dig linux.org @8.8.8.8
+</code></pre></div></div>
+<p>Output:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>; &lt;&lt;&gt;&gt; DiG 9.13.3 &lt;&lt;&gt;&gt; linux.org @8.8.8.8
+;; global options: +cmd
+;; Got answer:
+;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY, status: NOERROR, id: 39110
+;; flags: qr rd ra; QUERY: 1, ANSWER: 2, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 512
+;; QUESTION SECTION:
+;linux.org.			IN	A
+
+;; ANSWER SECTION:
+linux.org.		299	IN	A	104.18.58.123
+linux.org.		299	IN	A	104.18.59.123
+
+;; Query time: 54 msec
+;; SERVER: 8.8.8.8#53(8.8.8.8)
+;; WHEN: Fri Oct 12 14:28:01 CEST 2018
+;; MSG SIZE  rcvd: 70
+</code></pre></div></div>
+
+<h3 id="query-a-record-type">Query A Record Type</h3>
+<p>To get a list of all the address(es) for a domain name use the <strong>a</strong> option:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>dig +nocmd google.com a +noall +answer
+</code></pre></div></div>
+<p>output:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>google.com.		128	IN	A	216.58.206.206
+</code></pre></div></div>
+
+<h3 id="query-cname-records">Query CNAME Records</h3>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>dig +nocmd mail.google.com cname +noall +answer
+</code></pre></div></div>
+<p>output:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mail.google.com.	553482	IN	CNAME	googlemail.l.google.com.
+</code></pre></div></div>
+
+<h3 id="reverse-dns-lookups">Reverse DNS Lookups</h3>
+<p>To query the hostname associated with a specific IP address use the <strong>-x</strong> option.</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>dig <span class="nt">-x</span> 208.118.235.148 +noall +answer
+</code></pre></div></div>
+<p>As you can see from the output below the IP address 208.118.235.148 is associated with the hostname wildebeest.gnu.org</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>; &lt;&lt;&gt;&gt; DiG 9.13.3 &lt;&lt;&gt;&gt; -x 208.118.235.148 +noall +answer
+;; global options: +cmd
+148.235.118.208.in-addr.arpa. 245 IN	PTR	wildebeest.gnu.org.
+</code></pre></div></div>
+
+<h3 id="bulk-queries">Bulk Queries</h3>
+<p>If you want to query a large number of domains, you can add them in a file (one domain per line) and use the -<strong>-f</strong> option followed by the file name.</p>
+
+<p>In the following example, we are querying the domains listed in the <strong>domains.txt</strong> file.</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lxer.com
+linuxtoday.com
+tuxmachines.org
+</code></pre></div></div>
+<p>Run:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dig <span class="nt">-f</span> domains.txt +short
+</code></pre></div></div>
+<p>Output:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>108.166.170.171
+70.42.23.121
+204.68.122.43
+</code></pre></div></div>
+
+<h3 id="checking-to-see-if-a-dns-server-has-a-particular-rr-in-its-cache">Checking to see if a DNS server has a particular RR in its cache</h3>
+<p>“RR” stands for resource record, which is DNS-speak for any kind of record (A, CNAME, SOA, NS, PTR, etc.). If you want to infer whether anyone using a particular DNS server has visited a host recently, you can specify a non-recursive query. Most DNS servers will obey this request, although this is not required. For security reasons some better DNS server software can be configured to intentionally ignore requests not to recurse.</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>dig @8.8.8.8 uploads.spy2mobile.com +norecurse
+</code></pre></div></div>
  
     </div>
 
