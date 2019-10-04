@@ -683,8 +683,7 @@ Unit cost for TCP: 20 credits/result</p>
 </ul>
 
 <h4 id="parsing-qbufabuf"><a href="https://atlas.ripe.net/docs/code/#decoding_dns_abuf">Parsing “qbuf”/”abuf”</a></h4>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">atlas</span><span class="nd">@ronin</span><span class="p">:</span><span class="o">~</span><span class="err">$</span> <span class="n">python</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">python</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">base64</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">base64</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">dns.message</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">dnsmsg</span> <span class="o">=</span> <span class="n">dns</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">from_wire</span><span class="p">(</span><span class="n">base64</span><span class="o">.</span><span class="n">b64decode</span><span class="p">(</span><span class="s">'f2+AgAABAAEAAAAAA3d3dwRyaXBlA25ldAAAAQABwAwAAQABAAA3+gAEwQAGiw=='</span><span class="p">))</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="k">print</span> <span class="n">dnsmsg</span>
@@ -705,7 +704,7 @@ Unit cost for TCP: 20 credits/result</p>
 
 <h3 id="a-basic-request">A Basic Request</h3>
 <h4 id="the-base-url">The Base URL</h4>
-<p>The base URL of all calls to the RIPE Atlas APIs for this particular version is <code class="highlighter-rouge">https://atlas.ripe.net/api/v2/</code>. You can append the name of the object type you want information from to form a URL. For example: <code class="highlighter-rouge">https://atlas.ripe.net/api/v2/measurements/</code></p>
+<p>The base URL of all calls to the RIPE Atlas APIs for this particular version is <em>https://atlas.ripe.net/api/v2/</em>. You can append the name of the object type you want information from to form a URL. For example: <em>https://atlas.ripe.net/api/v2/measurements/</em></p>
 
 <p>A URL that contains information about one object or a series of objects is called a <strong>Resource</strong>.</p>
 
@@ -720,18 +719,18 @@ Unit cost for TCP: 20 credits/result</p>
 <h3 id="two-types-of-resources">Two Types of Resources</h3>
 <p>A RIPE Atlas API can either return a list of objects or a single object in a response.</p>
 
-<p>We will refer to the first type as an Object List Resource. A URL that points to an Object List Resource generally has the form: <code class="highlighter-rouge">https://atlas.ripe.net/api/v2/&lt;OBJECTNAME_PLURAL&gt;/</code></p>
+<p>We will refer to the first type as an Object List Resource. A URL that points to an Object List Resource generally has the form: <em>https://atlas.ripe.net/api/v2/&lt; OBJECTNAME_PLURAL &gt;/</em></p>
 
-<p>An API resource that returns a single object will be called an Object Detail Resource. An Object Detail Resource URL usually has the form: <code class="highlighter-rouge">https://atlas.ripe.net/api/v2/&lt;OBJECTNAME_PLURAL&gt;/&lt;OBJECT_ID&gt;</code></p>
+<p>An API resource that returns a single object will be called an Object Detail Resource. An Object Detail Resource URL usually has the form: <em>https://atlas.ripe.net/api/v2/&lt; OBJECTNAME_PLURAL &gt;/&lt; OBJECT_ID &gt;</em></p>
 
 <h4 id="object-list-resources">Object List Resources</h4>
-<p>An Object List Resource will return one JSON object. This JSON object holds the fields count, next, previous and <code class="highlighter-rouge">results</code>. This latter field is an array of JSON objects. Its URL will end with the name of the object type. For example: <code class="highlighter-rouge">https://atlas.ripe.net/api/v2/measurements/</code></p>
+<p>An Object List Resource will return one JSON object. This JSON object holds the fields count, next, previous and <em>results</em>. This latter field is an array of JSON objects. Its URL will end with the name of the object type. For example: <em>https://atlas.ripe.net/api/v2/measurements/</em></p>
 
-<p>The <code class="highlighter-rouge">results</code> field will hold an array of objects. Each object contains a field <code class="highlighter-rouge">id </code>and a field <code class="highlighter-rouge">type</code> that, together, are unique identifiers across all the RIPE Atlas APIs.</p>
+<p>The <em>results</em> field will hold an array of objects. Each object contains a field <em>id *and a field *type</em> that, together, are unique identifiers across all the RIPE Atlas APIs.</p>
 
-<p>You can add query parameters to the URI to filter object properties. You can also use query parameters to add additional fields to the objects, or remove fields from the objects. An example of a filter query parameter is <code class="highlighter-rouge">is_oneoff=true</code>, while an example of a query parameter that would reduce the fields is <code class="highlighter-rouge">fields=id,country_code=gr</code>.</p>
+<p>You can add query parameters to the URI to filter object properties. You can also use query parameters to add additional fields to the objects, or remove fields from the objects. An example of a filter query parameter is <em>is_oneoff=true</em>, while an example of a query parameter that would reduce the fields is <em>fields=id,country_code=gr</em>.</p>
 
-<p>A Resource that holds a request list will always be paginated. This means that the response to a single request will be broken down into separate responses if the number of objects requested exceeds 500. The details of this pagination are all in the <code class="highlighter-rouge">count</code>, <code class="highlighter-rouge">next</code> and <code class="highlighter-rouge">previous</code> fields of the response. The response has a field count that lists the total number of objects found in RIPE Atlas. This <code class="highlighter-rouge">count</code> field will never have a value higher than <strong>20,000</strong>.</p>
+<p>A Resource that holds a request list will always be paginated. This means that the response to a single request will be broken down into separate responses if the number of objects requested exceeds 500. The details of this pagination are all in the <em>count</em>, <em>next</em> and <em>previous</em> fields of the response. The response has a field count that lists the total number of objects found in RIPE Atlas. This <em>count</em> field will never have a value higher than <strong>20,000</strong>.</p>
 
 <h4 id="example-1">Example</h4>
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>https://atlas.ripe.net/api/v2/probes/?page=10&amp;sort=id
@@ -753,23 +752,23 @@ Unit cost for TCP: 20 credits/result</p>
 <h4 id="unknown-query-parameters">Unknown Query Parameters</h4>
 <p>The RIPE Atlas APIs will silently ignore any unknown query parameters. This means that using an invalid query parameter name will return a “regular” response.</p>
 
-<h3 id="the-fields-and-optional_fields-query-parameters">The <code class="highlighter-rouge">fields</code> and <code class="highlighter-rouge">optional_fields</code> Query Parameters</h3>
-<p>Every request to the RIPE Atlas APIs will always return the fields that constitute the unique identifier for that particular object. Generally that will be <code class="highlighter-rouge">id</code> and <code class="highlighter-rouge">type</code>. Some optional fields can also be added to the request. Every other field can be explicitly removed.</p>
+<h3 id="the-fields-and-optional_fields-query-parameters">The <em>fields</em> and <em>optional_fields</em> Query Parameters</h3>
+<p>Every request to the RIPE Atlas APIs will always return the fields that constitute the unique identifier for that particular object. Generally that will be <em>id</em> and <em>type</em>. Some optional fields can also be added to the request. Every other field can be explicitly removed.</p>
 
-<p>The query parameters that allow this are the <code class="highlighter-rouge">fields</code> and the <code class="highlighter-rouge">optional_fields</code> parameters.</p>
+<p>The query parameters that allow this are the <em>fields</em> and the <em>optional_fields</em> parameters.</p>
 
 <h4 id="fields">fields</h4>
-<p>Let’s start with an example: <code class="highlighter-rouge">https://atlas.ripe.net/api/v2/probes/143/?fields=first_connected,status_since</code> will return only the fields first_connected and status_since of the probe with ID 143.</p>
+<p>Let’s start with an example: <em>https://atlas.ripe.net/api/v2/probes/143/?fields=first_connected,status_since</em> will return only the fields first_connected and status_since of the probe with ID 143.</p>
 
 <h4 id="optional_fields">optional_fields</h4>
-<p>Using the <code class="highlighter-rouge">optional_fields</code> query parameter with a comma-separated list of field names means these fields will be appended to every requested object, next to the fields that are already there by default.</p>
+<p>Using the <em>optional_fields</em> query parameter with a comma-separated list of field names means these fields will be appended to every requested object, next to the fields that are already there by default.</p>
 
-<p>For example, the request <code class="highlighter-rouge">https://atlas.ripe.net/api/v2/measurements/2000000/</code> will not, by default, return the fields <code class="highlighter-rouge">participation_requests</code> and <code class="highlighter-rouge">probes</code>, mainly because these fields require extra calls to the back-end database and contain information that is not obviously needed. If you add <code class="highlighter-rouge">optional_fields=participation_requests</code>,probes as a query parameter, however, you will see these two extra fields:</p>
+<p>For example, the request <em>https://atlas.ripe.net/api/v2/measurements/2000000/</em> will not, by default, return the fields <em>participation_requests</em> and <em>probes</em>, mainly because these fields require extra calls to the back-end database and contain information that is not obviously needed. If you add <em>optional_fields=participation_requests</em>,probes as a query parameter, however, you will see these two extra fields:</p>
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>https://atlas.ripe.net/api/v2/measurements/2000000/?optional_fields=participation_requests,probes
 </code></pre></div></div>
 
-<h3 id="the-page-and-page_size-query-parameters">The <code class="highlighter-rouge">page</code> and <code class="highlighter-rouge">page_size</code> Query Parameters</h3>
-<p>The <code class="highlighter-rouge">page</code> and <code class="highlighter-rouge">page_size</code> query parameters are used in conjunction most of the time on requests that return object lists. The query parameter <code class="highlighter-rouge">page_size</code> allows you to set the number of objects returned in one page, while page allows you to specify the page number you want to view, based on a specified number or the default <code class="highlighter-rouge">page_size</code> of 100.</p>
+<h3 id="the-page-and-page_size-query-parameters">The <em>page</em> and <em>page_size</em> Query Parameters</h3>
+<p>The <em>page</em> and <em>page_size</em> query parameters are used in conjunction most of the time on requests that return object lists. The query parameter <em>page_size</em> allows you to set the number of objects returned in one page, while page allows you to specify the page number you want to view, based on a specified number or the default <em>page_size</em> of 100.</p>
 
 <p>The APIs use these query parameters themselves to construct links to the next and previous page of any list of objects. For example, if you request the URL:</p>
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>https://atlas.ripe.net/api/v2/measurements/
@@ -786,10 +785,10 @@ Unit cost for TCP: 20 credits/result</p>
 
 <h3 id="more-query-parameters">More Query Parameters</h3>
 <h4 id="minetrue">mine=true</h4>
-<p>If you are logged in to RIPE Atlas, you can see objects that you own by passing the query parameter <code class="highlighter-rouge">mine=true</code> for measurement objects.</p>
+<p>If you are logged in to RIPE Atlas, you can see objects that you own by passing the query parameter <em>mine=true</em> for measurement objects.</p>
 
 <h4 id="sort">sort</h4>
-<p>This query parameter will order the results by the field name that is given as the value, e.g. <code class="highlighter-rouge">sort=-id</code>.</p>
+<p>This query parameter will order the results by the field name that is given as the value, e.g. <em>sort=-id</em>.</p>
 
 <h4 id="key">key</h4>
 <p>The key parameter allows you to authenticate and authorise yourself to the RIPE Atlas APIs. The actual key can be generated by you if you have a RIPE Atlas account, or if somebody gave you one.</p>
@@ -845,7 +844,7 @@ multiple API keys are presented using either multiple “key=” parameters, or 
 <p>More information on streaming can be found here</p>
 
 <h2 id="using-apis-for-measurement"><a href="https://atlas.ripe.net/docs/api/v2/manual/object_documentation.html">Using APIs For Measurement</a></h2>
-<p>A <code class="highlighter-rouge">Measurement</code> in the context of the RIPE Atlas APIs is an object holding information about one measurement (called a “one-off” measurement) or a series of measurements performed by one or more probes on the RIPE Atlas network. The response of a single measurement performed by a single probe is called a <code class="highlighter-rouge">measurement result</code>.</p>
+<p>A <em>Measurement</em> in the context of the RIPE Atlas APIs is an object holding information about one measurement (called a “one-off” measurement) or a series of measurements performed by one or more probes on the RIPE Atlas network. The response of a single measurement performed by a single probe is called a <em>measurement result</em>.</p>
 
 <p>If we look at the information returned in more detail we can discern:</p>
 <ul>
@@ -856,30 +855,30 @@ multiple API keys are presented using either multiple “key=” parameters, or 
 
 <h3 id="type-of-information">Type of Information</h3>
 <h4 id="metadata">Metadata</h4>
-<p>A <code class="highlighter-rouge">Measurement</code> object holds information about the measurement itself. First it holds the fields <code class="highlighter-rouge">id</code> and the <code class="highlighter-rouge">type</code> that, together, provide a unique identifier for the measurement object. Examples of measurement types are <code class="highlighter-rouge">HTTP</code> and Traceroute.</p>
+<p>A <em>Measurement</em> object holds information about the measurement itself. First it holds the fields <em>id</em> and the <em>type</em> that, together, provide a unique identifier for the measurement object. Examples of measurement types are <em>HTTP</em> and Traceroute.</p>
 
-<p>The <code class="highlighter-rouge">participation requests</code> array holds a list of <code class="highlighter-rouge">participation request</code> objects, which describe the probe selection criteria that were made for this measurement. You can read more about the particapation request object <a href="https://atlas.ripe.net/docs/api/v2/manual/participation_requests.html">here</a>.</p>
+<p>The <em>participation requests</em> array holds a list of <em>participation request</em> objects, which describe the probe selection criteria that were made for this measurement. You can read more about the particapation request object <a href="https://atlas.ripe.net/docs/api/v2/manual/participation_requests.html">here</a>.</p>
 
-<p>Please note that this is not the same as the actual probes that are appointed to a measurement by RIPE Atlas. The latter would be part of the status information of the measurement in a object called <code class="highlighter-rouge">probes</code>.</p>
+<p>Please note that this is not the same as the actual probes that are appointed to a measurement by RIPE Atlas. The latter would be part of the status information of the measurement in a object called <em>probes</em>.</p>
 
-<p>Finally, there are some fields that describe some of the measurement’s general properties. They are <code class="highlighter-rouge">is_public</code> and <code class="highlighter-rouge">result</code>, a URL that points to the result of the measurements as performed by the selected probes.</p>
+<p>Finally, there are some fields that describe some of the measurement’s general properties. They are <em>is_public</em> and <em>result</em>, a URL that points to the result of the measurements as performed by the selected probes.</p>
 
 <h4 id="the-measurement-specification">The Measurement Specification</h4>
-<p>The <code class="highlighter-rouge">Measurement</code> object holds the measurement’s settings, called the “measurement specification” in RIPE Atlas terminology. This specification is a mixture of base attributes, available for all types of measurements and type-specific attributes. Examples of such attributes are <code class="highlighter-rouge">packets</code>, <code class="highlighter-rouge">method</code> or <code class="highlighter-rouge">interval</code>.</p>
+<p>The <em>Measurement</em> object holds the measurement’s settings, called the “measurement specification” in RIPE Atlas terminology. This specification is a mixture of base attributes, available for all types of measurements and type-specific attributes. Examples of such attributes are <em>packets</em>, <em>method</em> or <em>interval</em>.</p>
 
 <p>The measurement specification is the object that is sent to a specific probe to perform its measurement.</p>
 
 <p>You can see an exhaustive list of all measurement specification attributes for all kinds of measurements <a href="https://atlas.ripe.net/docs/api/v2/reference/#!/measurements/Measurement_List_GET">here</a>.</p>
 
 <h4 id="status-information">Status Information</h4>
-<p>A <code class="highlighter-rouge">Measurement</code> object also holds the information about the time series of measurements to be performed by the probes, like the start and stop time of the measurements and the link to the streaming API resource that holds the result of the performed measurements.</p>
+<p>A <em>Measurement</em> object also holds the information about the time series of measurements to be performed by the probes, like the start and stop time of the measurements and the link to the streaming API resource that holds the result of the performed measurements.</p>
 
-<p>A <code class="highlighter-rouge">Measurement</code> object also holds information about the status of the measurement, e.g. if it is currently running, stopped, etc.</p>
+<p>A <em>Measurement</em> object also holds information about the status of the measurement, e.g. if it is currently running, stopped, etc.</p>
 
-<p>Finally, the <code class="highlighter-rouge">Measurement</code> object holds information about the actual probes used in the measurement. This information is in an object called <code class="highlighter-rouge">probes</code>. <strong>This is an optional field, which can be enabled by using the optional_fields=probes query parameter.</strong></p>
+<p>Finally, the <em>Measurement</em> object holds information about the actual probes used in the measurement. This information is in an object called <em>probes</em>. <strong>This is an optional field, which can be enabled by using the optional_fields=probes query parameter.</strong></p>
 
 <h3 id="measurement-query-parameters">Measurement Query Parameters</h3>
-<p>Most of the generic query parameters apply to requests for measurement objects. You can use <code class="highlighter-rouge">page</code> and <code class="highlighter-rouge">page_size</code> to manipulate the number of objects and the pagination; you can use <code class="highlighter-rouge">fields</code> and <code class="highlighter-rouge">optional_fields</code> to set the fields you want in the response, and so on.</p>
+<p>Most of the generic query parameters apply to requests for measurement objects. You can use <em>page</em> and <em>page_size</em> to manipulate the number of objects and the pagination; you can use <em>fields</em> and <em>optional_fields</em> to set the fields you want in the response, and so on.</p>
 
 <p>See <a href="https://atlas.ripe.net/docs/api/v2/manual/overview/generic_query_parameters.html">here</a> for more information on these.</p>
 
@@ -892,11 +891,11 @@ multiple API keys are presented using either multiple “key=” parameters, or 
 
 <p>These range filters have special syntax for their query parameters.</p>
 
-<p>The <strong>list range filter</strong> uses the syntax <code class="highlighter-rouge">?&lt;FIELDNAME&gt;__in=item1,item2</code>. An example is:</p>
+<p>The <strong>list range filter</strong> uses the syntax <em>?&lt; FIELDNAME &gt;__in=item1,item2</em>. An example is:</p>
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>https://atlas.ripe.net/api/v2/measurements/?id__in=2000000,2000001,2000002
 </code></pre></div></div>
 
-<p>The limit range filter uses the syntax appended with either <code class="highlighter-rouge">__gte</code>, <code class="highlighter-rouge">__gt</code>, <code class="highlighter-rouge">__lte</code> or <code class="highlighter-rouge">__lt</code>. As mentioned earlier on gt and gte refer to greater than and greater than or equal. You can combine multiple query parameters to set upper and lower limits:</p>
+<p>The limit range filter uses the syntax appended with either <em>__gte</em>, <em>__gt</em>, <em>__lte</em> or <em>__lt</em>. As mentioned earlier on gt and gte refer to greater than and greater than or equal. You can combine multiple query parameters to set upper and lower limits:</p>
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>https://atlas.ripe.net/api/v2/measurements/?id__gte=2000000&amp;id__lte=2000010
 </code></pre></div></div>
 
@@ -904,24 +903,24 @@ multiple API keys are presented using either multiple “key=” parameters, or 
 <p>A full list of all available fields and query parameters is available <a href="https://atlas.ripe.net/docs/api/v2/manual/measurements/queryparameters.html">here</a>.</p>
 
 <h3 id="creating-measurements">Creating Measurements</h3>
-<p>Measurement creation is managed based on the premise of having to submit as little information as possible while still obtaining something useful. With that said, even the simplest measurement requires a rather large amount of information to initiate things. You will need to compose a measurement definition that has at least the <code class="highlighter-rouge">type</code>, <code class="highlighter-rouge">af</code>, <code class="highlighter-rouge">description</code> and <code class="highlighter-rouge">target</code> fields, as well as a <code class="highlighter-rouge">probes</code> object telling us which probes you want to use for the measurement.</p>
+<p>Measurement creation is managed based on the premise of having to submit as little information as possible while still obtaining something useful. With that said, even the simplest measurement requires a rather large amount of information to initiate things. You will need to compose a measurement definition that has at least the <em>type</em>, <em>af</em>, <em>description</em> and <em>target</em> fields, as well as a <em>probes</em> object telling us which probes you want to use for the measurement.</p>
 
-<p>If you omit the <code class="highlighter-rouge">start_time</code>, we assume you want it started right away; if you don’t set the <code class="highlighter-rouge">is_oneoff</code> flag, we assume it must be a regular measurement, and so on.</p>
+<p>If you omit the <em>start_time</em>, we assume you want it started right away; if you don’t set the <em>is_oneoff</em> flag, we assume it must be a regular measurement, and so on.</p>
 
-<p>You will also have to use a valid <code class="highlighter-rouge">key</code> with the right permissions.</p>
+<p>You will also have to use a valid <em>key</em> with the right permissions.</p>
 
 <p>If you do want to create measurements, you must use <strong>a tool that is able to send POST requests</strong> with a payload to RIPE Atlas. Three such tools are postman (a plug-in for Chrome), HttpRequester (a plugin for Firefox) and cURL (a command-line tool).</p>
 
 <h4 id="structure">Structure</h4>
 <p>Our measurement REST API uses a JSON payload with a POST verb to create new measurements.</p>
 
-<p>You can fill in one or more measurement <code class="highlighter-rouge">definitions</code>, one or more <code class="highlighter-rouge">probes</code> objects, and some fields that are applicable to all measurements you want to create.</p>
+<p>You can fill in one or more measurement <em>definitions</em>, one or more <em>probes</em> objects, and some fields that are applicable to all measurements you want to create.</p>
 
 <h4 id="the-response">The Response</h4>
-<p>The response to any successful POST request will return an object that has one field called <code class="highlighter-rouge">measurements</code>. This field holds an array that contains the IDs of the created measurements. The array reflects the order in which they were specified in the <code class="highlighter-rouge">definitions</code> list of you request.</p>
+<p>The response to any successful POST request will return an object that has one field called <em>measurements</em>. This field holds an array that contains the IDs of the created measurements. The array reflects the order in which they were specified in the <em>definitions</em> list of you request.</p>
 
 <h3 id="simple-example">Simple Example</h3>
-<p>Let’s begin with an example. Assume we want to create a simple ping measurement from <code class="highlighter-rouge">1</code> probes anywhere in the world to <code class="highlighter-rouge">ripe.net</code>. We also want it to be <code class="highlighter-rouge">one_off</code>.</p>
+<p>Let’s begin with an example. Assume we want to create a simple ping measurement from <em>1</em> probes anywhere in the world to <em>ripe.net</em>. We also want it to be <em>one_off</em>.</p>
 
 <p>Here’s how to do this in python:</p>
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Reference: https://stackoverflow.com/questions/9746303/how-do-i-send-a-post-request-as-a-json/26876308#26876308</span>
@@ -931,7 +930,7 @@ multiple API keys are presented using either multiple “key=” parameters, or 
 <span class="kn">import</span> <span class="nn">json</span> 
 
 <span class="c"># api-endpoint </span>
-<span class="n">URL</span> <span class="o">=</span> <span class="s">"https://atlas.ripe.net/api/v2/measurements/?key=40294a56-4a3c-4326-849f-e2d2a2aa79fb"</span>
+<span class="n">URL</span> <span class="o">=</span> <span class="s">"https://atlas.ripe.net/api/v2/measurements/?key=&lt;your key&gt;"</span>
 
 <span class="c"># defining a params dict for the parameters to be sent to the API </span>
 <span class="n">body_in_json</span> <span class="o">=</span> <span class="p">{</span>
@@ -967,7 +966,7 @@ multiple API keys are presented using either multiple “key=” parameters, or 
 </code></pre></div></div>
 
 <p>If you have filled out everything correctly, you will get a response like this:</p>
-<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="err">'measurements'</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">23021613</span><span class="p">]}</span><span class="w">
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="s2">"measurements"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">23021613</span><span class="p">]}</span><span class="w">
 </span></code></pre></div></div>
 
 <p>If you didn’t use the right key, or no key at all, you will get an error:</p>
@@ -978,10 +977,10 @@ multiple API keys are presented using either multiple “key=” parameters, or 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="s2">"error"</span><span class="p">:{</span><span class="s2">"status"</span><span class="p">:</span><span class="mi">400</span><span class="p">,</span><span class="s2">"code"</span><span class="p">:</span><span class="mi">104</span><span class="p">,</span><span class="s2">"detail"</span><span class="p">:</span><span class="s2">"Invalid input. Please check the documentation."</span><span class="p">,</span><span class="s2">"title"</span><span class="p">:</span><span class="s2">"Bad Request"</span><span class="p">}}</span><span class="w">
 </span></code></pre></div></div>
 
-<h3 id="the-definition-array">The <code class="highlighter-rouge">definition</code> Array</h3>
-<p>The <code class="highlighter-rouge">definitions</code> array holds single objects, which we will refer to as measurement definitions.</p>
+<h3 id="the-definition-array">The <em>definition</em> Array</h3>
+<p>The <em>definitions</em> array holds single objects, which we will refer to as measurement definitions.</p>
 
-<p>A measurement definition has a similar structure to a <code class="highlighter-rouge">measurement specification</code>. The <code class="highlighter-rouge">measurement specification</code>, as you might recall, is the collection of measurement settings that a probe needs to perform a measurement. There are some base attributes and some type-specific attributes in the specification.</p>
+<p>A measurement definition has a similar structure to a <em>measurement specification</em>. The <em>measurement specification</em>, as you might recall, is the collection of measurement settings that a probe needs to perform a measurement. There are some base attributes and some type-specific attributes in the specification.</p>
 
 <p>A measurement definition is a sub-set of the measurement specification. There are some required fields, but most are optional. RIPE Atlas will fill out the missing fields with defaults for all non-required fields. Which fields are required differs per measurement type.</p>
 
@@ -992,13 +991,13 @@ multiple API keys are presented using either multiple “key=” parameters, or 
   <li>af: The address family. It must be either 4 or 6.</li>
 </ul>
 
-<p>The <code class="highlighter-rouge">target</code> field denotes the target of a measurement and is special because it is required for all measurement types except DNS measurements.</p>
+<p>The <em>target</em> field denotes the target of a measurement and is special because it is required for all measurement types except DNS measurements.</p>
 
 <h4 id="note">Note</h4>
-<p>You can use GUI to generate JSON files which could be used directly in replace of the <code class="highlighter-rouge">body_in_json</code> part.</p>
+<p>You can use GUI to generate JSON files which could be used directly in replace of the <em>body_in_json</em> part.</p>
 
 <h3 id="base-attributes">Base Attributes</h3>
-<p>A measurement definition contains a few base properties, and a myriad of type-specific options. For example, while all definitions have an <code class="highlighter-rouge">af</code> property, only traceroute measurements have a <code class="highlighter-rouge">paris</code> property.</p>
+<p>A measurement definition contains a few base properties, and a myriad of type-specific options. For example, while all definitions have an <em>af</em> property, only traceroute measurements have a <em>paris</em> property.</p>
 
 <p><img src="/assets/img/base_property.png" alt="Base Properties" /></p>
 
@@ -1070,31 +1069,51 @@ multiple API keys are presented using either multiple “key=” parameters, or 
 </span></code></pre></div></div>
 
 <h3 id="stop-measurement">Stop Measurement</h3>
-<p>Measurements can be stopped by sending a <code class="highlighter-rouge">DELETE</code> verb to the URL of the measurement you want to stop. For example, if you want to stop the measurement with <code class="highlighter-rouge">msm_id</code>2034345, you will have to send a DELETE verb to:</p>
-<pre><code class="language-https://atlas.ripe.net/api/v2/measurements/2034305```.">
-
-You can only stop measurements that you've created yourself or that you have an API key for (and which has permissions to stop measurements). In the first case, you will have to be logged in with a session-based cookie.
-
-### Latest Measurement Results API
-The latest measurement results API can be found here:
-</code></pre>
-<p>https://atlas.ripe.net/api/v2/measurements/2000000/latest/?probe_ids=10008</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-#### Output Format
-The output format is only slightly different from what you'd expect from the standard measurement result API call. Rather than simply dumping every result as a list, it returns a series of key/value pairs in the format:
+<p>Measurements can be stopped by sending a <em>DELETE</em> verb to the URL of the measurement you want to stop. For example, if you want to stop the measurement with <em>msm_id</em>2034345, you will have to send a DELETE verb to:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>https://atlas.ripe.net/api/v2/measurements/2034305
 </code></pre></div></div>
-<p>{
-  probe_id: [<result>],
-  probe_id: [<result>],
+
+<p>You can only stop measurements that you’ve created yourself or that you have an API key for (and which has permissions to stop measurements). In the first case, you will have to be logged in with a session-based cookie.</p>
+
+<h3 id="latest-measurement-results-api">Latest Measurement Results API</h3>
+<p>The latest measurement results API can be found here:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>https://atlas.ripe.net/api/v2/measurements/2000000/latest/?probe_ids=10008
+</code></pre></div></div>
+
+<p>An example code:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># importing the requests library </span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">json</span> 
+
+<span class="c"># api-endpoint </span>
+<span class="n">URL</span> <span class="o">=</span> <span class="s">"https://atlas.ripe.net/api/v2/measurements/23020975/latest/?key=&lt;YOUR KEY&gt;"</span>
+
+<span class="c"># Define headers</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s">'Content-type'</span><span class="p">:</span> <span class="s">'application/json'</span><span class="p">,</span> <span class="s">'Accept'</span><span class="p">:</span> <span class="s">'application/json'</span><span class="p">}</span>
+
+<span class="c"># sending get request and saving the response as response object </span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">URL</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+
+<span class="c"># extracting data in json format </span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h4 id="output-format">Output Format</h4>
+<p>The output format is only slightly different from what you’d expect from the standard measurement result API call. Rather than simply dumping every result as a list, it returns a series of key/value pairs in the format:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+  probe_id: [&lt;result&gt;],
+  probe_id: [&lt;result&gt;],
   ...
-}</result></result></p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>This allows you to easily fetch the latest result from probe `123`, for example, by using:
+}
 </code></pre></div></div>
-<p>my_data[“123”][0]
-```</p>
+<p>This allows you to easily fetch the latest result from probe <em>123</em>, for example, by using:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>my_data["123"][0]
+</code></pre></div></div>
 
 <h4 id="filtering">Filtering</h4>
-<p>You can also do basic filtration by probe id simply by using <code class="highlighter-rouge">probe_ids=probe_id,probe_id</code> as query parameters.</p>
+<p>You can also do basic filtration by probe id simply by using <em>probe_ids=probe_id,probe_id</em> as query parameters.</p>
 
 <p>Note, however, that if you specify a probe ID that is not part of the measurement, you’ll simply get back an empty set.</p>
 
@@ -1110,14 +1129,35 @@ The output format is only slightly different from what you'd expect from the sta
       <li>Note the newly-created measurement ID</li>
     </ul>
   </li>
-  <li>
-    <p>Go to: <code class="highlighter-rouge">https://atlas.ripe.net/api/v2/measurements/&lt;measurement-id&gt;/status-check</code> where <code class="highlighter-rouge">&lt;measurement-id&gt;</code> is the ID from your newly created measurement. If the measurement in question is not public, you’ll need to include an API <code class="highlighter-rouge">?key= argument</code>.</p>
+  <li>Go to: <em>https://atlas.ripe.net/api/v2/measurements/&lt; measurement-id &gt;</em> where <em>&lt; measurement-id &gt;</em> is the ID from your newly created measurement. If the measurement in question is not public, you’ll need to include an API <em>?key=argument</em>.
+    <ul>
+      <li>A new version is available using the link: <em>https://atlas.ripe.net/api/v2/measurements/&lt; measurement-id &gt;/status-check</em></li>
+    </ul>
   </li>
   <li>
     <p>Go to the URL again later to check whether anything has changed.</p>
   </li>
   <li>Define your alerts accordingly.</li>
 </ol>
+
+<p>An exmaple code:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">json</span> 
+
+<span class="c"># api-endpoint </span>
+<span class="n">URL</span> <span class="o">=</span> <span class="s">"https://atlas.ripe.net/api/v2/measurements/23020975/"</span>
+
+<span class="c"># Define headers</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s">'Content-type'</span><span class="p">:</span> <span class="s">'application/json'</span><span class="p">,</span> <span class="s">'Accept'</span><span class="p">:</span> <span class="s">'application/json'</span><span class="p">}</span>
+
+<span class="c"># sending get request and saving the response as response object </span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">URL</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+
+<span class="c"># extracting data in json format </span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</code></pre></div></div>
 
  
     </div>

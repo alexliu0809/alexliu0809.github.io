@@ -218,7 +218,6 @@ An example result of a DNS Lookup:
 
 #### [Parsing "qbuf"/"abuf"](https://atlas.ripe.net/docs/code/#decoding_dns_abuf)
 ```python
-atlas@ronin:~$ python/bin/python
 >>> import base64
 >>> import dns.message
 >>> dnsmsg = dns.message.from_wire(base64.b64decode('f2+AgAABAAEAAAAAA3d3dwRyaXBlA25ldAAAAQABwAwAAQABAAA3+gAEwQAGiw=='))
@@ -240,7 +239,7 @@ Before doing anything, [signing up for an API key](https://atlas.ripe.net/keys/#
 
 ### A Basic Request
 #### The Base URL
-The base URL of all calls to the RIPE Atlas APIs for this particular version is `https://atlas.ripe.net/api/v2/`. You can append the name of the object type you want information from to form a URL. For example: `https://atlas.ripe.net/api/v2/measurements/`
+The base URL of all calls to the RIPE Atlas APIs for this particular version is *https://atlas.ripe.net/api/v2/*. You can append the name of the object type you want information from to form a URL. For example: *https://atlas.ripe.net/api/v2/measurements/*
 
 A URL that contains information about one object or a series of objects is called a **Resource**.
 
@@ -258,18 +257,18 @@ https://atlas.ripe.net/api/v2/measurements/?page_size=3
 ### Two Types of Resources
 A RIPE Atlas API can either return a list of objects or a single object in a response.
 
-We will refer to the first type as an Object List Resource. A URL that points to an Object List Resource generally has the form: `https://atlas.ripe.net/api/v2/<OBJECTNAME_PLURAL>/`
+We will refer to the first type as an Object List Resource. A URL that points to an Object List Resource generally has the form: *https://atlas.ripe.net/api/v2/< OBJECTNAME_PLURAL >/*
 
-An API resource that returns a single object will be called an Object Detail Resource. An Object Detail Resource URL usually has the form: `https://atlas.ripe.net/api/v2/<OBJECTNAME_PLURAL>/<OBJECT_ID>`
+An API resource that returns a single object will be called an Object Detail Resource. An Object Detail Resource URL usually has the form: *https://atlas.ripe.net/api/v2/< OBJECTNAME_PLURAL >/< OBJECT_ID >*
 
 #### Object List Resources
-An Object List Resource will return one JSON object. This JSON object holds the fields count, next, previous and `results`. This latter field is an array of JSON objects. Its URL will end with the name of the object type. For example: `https://atlas.ripe.net/api/v2/measurements/`
+An Object List Resource will return one JSON object. This JSON object holds the fields count, next, previous and *results*. This latter field is an array of JSON objects. Its URL will end with the name of the object type. For example: *https://atlas.ripe.net/api/v2/measurements/*
 
-The `results` field will hold an array of objects. Each object contains a field `id `and a field `type` that, together, are unique identifiers across all the RIPE Atlas APIs.
+The *results* field will hold an array of objects. Each object contains a field *id *and a field *type* that, together, are unique identifiers across all the RIPE Atlas APIs.
 
-You can add query parameters to the URI to filter object properties. You can also use query parameters to add additional fields to the objects, or remove fields from the objects. An example of a filter query parameter is `is_oneoff=true`, while an example of a query parameter that would reduce the fields is `fields=id,country_code=gr`.
+You can add query parameters to the URI to filter object properties. You can also use query parameters to add additional fields to the objects, or remove fields from the objects. An example of a filter query parameter is *is_oneoff=true*, while an example of a query parameter that would reduce the fields is *fields=id,country_code=gr*.
 
-A Resource that holds a request list will always be paginated. This means that the response to a single request will be broken down into separate responses if the number of objects requested exceeds 500. The details of this pagination are all in the `count`, `next` and `previous` fields of the response. The response has a field count that lists the total number of objects found in RIPE Atlas. This `count` field will never have a value higher than **20,000**.
+A Resource that holds a request list will always be paginated. This means that the response to a single request will be broken down into separate responses if the number of objects requested exceeds 500. The details of this pagination are all in the *count*, *next* and *previous* fields of the response. The response has a field count that lists the total number of objects found in RIPE Atlas. This *count* field will never have a value higher than **20,000**.
 
 #### Example
 ```
@@ -295,25 +294,25 @@ https://atlas.ripe.net/api/v2/measurements/?status_name=Connected
 #### Unknown Query Parameters
 The RIPE Atlas APIs will silently ignore any unknown query parameters. This means that using an invalid query parameter name will return a "regular" response.
 
-### The `fields` and `optional_fields` Query Parameters
-Every request to the RIPE Atlas APIs will always return the fields that constitute the unique identifier for that particular object. Generally that will be `id` and `type`. Some optional fields can also be added to the request. Every other field can be explicitly removed.
+### The *fields* and *optional_fields* Query Parameters
+Every request to the RIPE Atlas APIs will always return the fields that constitute the unique identifier for that particular object. Generally that will be *id* and *type*. Some optional fields can also be added to the request. Every other field can be explicitly removed.
 
-The query parameters that allow this are the `fields` and the `optional_fields` parameters.
+The query parameters that allow this are the *fields* and the *optional_fields* parameters.
 
 #### fields
-Let's start with an example: `https://atlas.ripe.net/api/v2/probes/143/?fields=first_connected,status_since` will return only the fields first_connected and status_since of the probe with ID 143.
+Let's start with an example: *https://atlas.ripe.net/api/v2/probes/143/?fields=first_connected,status_since* will return only the fields first_connected and status_since of the probe with ID 143.
 
 #### optional_fields
-Using the `optional_fields` query parameter with a comma-separated list of field names means these fields will be appended to every requested object, next to the fields that are already there by default.
+Using the *optional_fields* query parameter with a comma-separated list of field names means these fields will be appended to every requested object, next to the fields that are already there by default.
 
-For example, the request `https://atlas.ripe.net/api/v2/measurements/2000000/` will not, by default, return the fields `participation_requests` and `probes`, mainly because these fields require extra calls to the back-end database and contain information that is not obviously needed. If you add `optional_fields=participation_requests`,probes as a query parameter, however, you will see these two extra fields:
+For example, the request *https://atlas.ripe.net/api/v2/measurements/2000000/* will not, by default, return the fields *participation_requests* and *probes*, mainly because these fields require extra calls to the back-end database and contain information that is not obviously needed. If you add *optional_fields=participation_requests*,probes as a query parameter, however, you will see these two extra fields:
 ```
 https://atlas.ripe.net/api/v2/measurements/2000000/?optional_fields=participation_requests,probes
 ```
 
 
-### The `page` and `page_size` Query Parameters
-The `page` and `page_size` query parameters are used in conjunction most of the time on requests that return object lists. The query parameter `page_size` allows you to set the number of objects returned in one page, while page allows you to specify the page number you want to view, based on a specified number or the default `page_size` of 100.
+### The *page* and *page_size* Query Parameters
+The *page* and *page_size* query parameters are used in conjunction most of the time on requests that return object lists. The query parameter *page_size* allows you to set the number of objects returned in one page, while page allows you to specify the page number you want to view, based on a specified number or the default *page_size* of 100.
 
 
 The APIs use these query parameters themselves to construct links to the next and previous page of any list of objects. For example, if you request the URL:
@@ -332,10 +331,10 @@ There are some important things to note when using these query parameters:
 
 ### More Query Parameters
 #### mine=true
-If you are logged in to RIPE Atlas, you can see objects that you own by passing the query parameter `mine=true` for measurement objects.
+If you are logged in to RIPE Atlas, you can see objects that you own by passing the query parameter *mine=true* for measurement objects.
 
 #### sort
-This query parameter will order the results by the field name that is given as the value, e.g. `sort=-id`.
+This query parameter will order the results by the field name that is given as the value, e.g. *sort=-id*.
 
 #### key
 The key parameter allows you to authenticate and authorise yourself to the RIPE Atlas APIs. The actual key can be generated by you if you have a RIPE Atlas account, or if somebody gave you one.
@@ -391,7 +390,7 @@ The streaming data service allows you to tap into the real-time data flow of all
 More information on streaming can be found here
 
 ## [Using APIs For Measurement](https://atlas.ripe.net/docs/api/v2/manual/object_documentation.html)
-A `Measurement` in the context of the RIPE Atlas APIs is an object holding information about one measurement (called a "one-off" measurement) or a series of measurements performed by one or more probes on the RIPE Atlas network. The response of a single measurement performed by a single probe is called a `measurement result`.
+A *Measurement* in the context of the RIPE Atlas APIs is an object holding information about one measurement (called a "one-off" measurement) or a series of measurements performed by one or more probes on the RIPE Atlas network. The response of a single measurement performed by a single probe is called a *measurement result*.
 
 
 If we look at the information returned in more detail we can discern:
@@ -401,16 +400,16 @@ If we look at the information returned in more detail we can discern:
 
 ### Type of Information
 #### Metadata
-A `Measurement` object holds information about the measurement itself. First it holds the fields `id` and the `type` that, together, provide a unique identifier for the measurement object. Examples of measurement types are `HTTP` and Traceroute.
+A *Measurement* object holds information about the measurement itself. First it holds the fields *id* and the *type* that, together, provide a unique identifier for the measurement object. Examples of measurement types are *HTTP* and Traceroute.
 
-The `participation requests` array holds a list of `participation request` objects, which describe the probe selection criteria that were made for this measurement. You can read more about the particapation request object [here](https://atlas.ripe.net/docs/api/v2/manual/participation_requests.html).
+The *participation requests* array holds a list of *participation request* objects, which describe the probe selection criteria that were made for this measurement. You can read more about the particapation request object [here](https://atlas.ripe.net/docs/api/v2/manual/participation_requests.html).
 
-Please note that this is not the same as the actual probes that are appointed to a measurement by RIPE Atlas. The latter would be part of the status information of the measurement in a object called `probes`.
+Please note that this is not the same as the actual probes that are appointed to a measurement by RIPE Atlas. The latter would be part of the status information of the measurement in a object called *probes*.
 
-Finally, there are some fields that describe some of the measurement's general properties. They are `is_public` and `result`, a URL that points to the result of the measurements as performed by the selected probes.
+Finally, there are some fields that describe some of the measurement's general properties. They are *is_public* and *result*, a URL that points to the result of the measurements as performed by the selected probes.
 
 #### The Measurement Specification
-The `Measurement` object holds the measurement's settings, called the "measurement specification" in RIPE Atlas terminology. This specification is a mixture of base attributes, available for all types of measurements and type-specific attributes. Examples of such attributes are `packets`, `method` or `interval`.
+The *Measurement* object holds the measurement's settings, called the "measurement specification" in RIPE Atlas terminology. This specification is a mixture of base attributes, available for all types of measurements and type-specific attributes. Examples of such attributes are *packets*, *method* or *interval*.
 
 
 The measurement specification is the object that is sent to a specific probe to perform its measurement.
@@ -419,17 +418,17 @@ The measurement specification is the object that is sent to a specific probe to 
 You can see an exhaustive list of all measurement specification attributes for all kinds of measurements [here](https://atlas.ripe.net/docs/api/v2/reference/#!/measurements/Measurement_List_GET).
 
 #### Status Information
-A `Measurement` object also holds the information about the time series of measurements to be performed by the probes, like the start and stop time of the measurements and the link to the streaming API resource that holds the result of the performed measurements.
+A *Measurement* object also holds the information about the time series of measurements to be performed by the probes, like the start and stop time of the measurements and the link to the streaming API resource that holds the result of the performed measurements.
 
 
-A `Measurement` object also holds information about the status of the measurement, e.g. if it is currently running, stopped, etc.
+A *Measurement* object also holds information about the status of the measurement, e.g. if it is currently running, stopped, etc.
 
 
-Finally, the `Measurement` object holds information about the actual probes used in the measurement. This information is in an object called `probes`. **This is an optional field, which can be enabled by using the optional_fields=probes query parameter.**
+Finally, the *Measurement* object holds information about the actual probes used in the measurement. This information is in an object called *probes*. **This is an optional field, which can be enabled by using the optional_fields=probes query parameter.**
 
 
 ### Measurement Query Parameters
-Most of the generic query parameters apply to requests for measurement objects. You can use `page` and `page_size` to manipulate the number of objects and the pagination; you can use `fields` and `optional_fields` to set the fields you want in the response, and so on.
+Most of the generic query parameters apply to requests for measurement objects. You can use *page* and *page_size* to manipulate the number of objects and the pagination; you can use *fields* and *optional_fields* to set the fields you want in the response, and so on.
 
 
 See [here](https://atlas.ripe.net/docs/api/v2/manual/overview/generic_query_parameters.html) for more information on these.
@@ -447,13 +446,13 @@ For some fields, it is also possible to enter a range filter, i.e. a filter that
 These range filters have special syntax for their query parameters.
 
 
-The **list range filter** uses the syntax `?<FIELDNAME>__in=item1,item2`. An example is:
+The **list range filter** uses the syntax *?< FIELDNAME >__in=item1,item2*. An example is:
 ```
 https://atlas.ripe.net/api/v2/measurements/?id__in=2000000,2000001,2000002
 ```
 
 
-The limit range filter uses the syntax appended with either `__gte`, `__gt`, `__lte` or `__lt`. As mentioned earlier on gt and gte refer to greater than and greater than or equal. You can combine multiple query parameters to set upper and lower limits:
+The limit range filter uses the syntax appended with either *__gte*, *__gt*, *__lte* or *__lt*. As mentioned earlier on gt and gte refer to greater than and greater than or equal. You can combine multiple query parameters to set upper and lower limits:
 ```
 https://atlas.ripe.net/api/v2/measurements/?id__gte=2000000&id__lte=2000010
 ```
@@ -462,13 +461,13 @@ https://atlas.ripe.net/api/v2/measurements/?id__gte=2000000&id__lte=2000010
 A full list of all available fields and query parameters is available [here](https://atlas.ripe.net/docs/api/v2/manual/measurements/queryparameters.html).
 
 ### Creating Measurements
-Measurement creation is managed based on the premise of having to submit as little information as possible while still obtaining something useful. With that said, even the simplest measurement requires a rather large amount of information to initiate things. You will need to compose a measurement definition that has at least the `type`, `af`, `description` and `target` fields, as well as a `probes` object telling us which probes you want to use for the measurement.
+Measurement creation is managed based on the premise of having to submit as little information as possible while still obtaining something useful. With that said, even the simplest measurement requires a rather large amount of information to initiate things. You will need to compose a measurement definition that has at least the *type*, *af*, *description* and *target* fields, as well as a *probes* object telling us which probes you want to use for the measurement.
 
 
-If you omit the `start_time`, we assume you want it started right away; if you don't set the `is_oneoff` flag, we assume it must be a regular measurement, and so on.
+If you omit the *start_time*, we assume you want it started right away; if you don't set the *is_oneoff* flag, we assume it must be a regular measurement, and so on.
 
 
-You will also have to use a valid `key` with the right permissions.
+You will also have to use a valid *key* with the right permissions.
 
 
 If you do want to create measurements, you must use **a tool that is able to send POST requests** with a payload to RIPE Atlas. Three such tools are postman (a plug-in for Chrome), HttpRequester (a plugin for Firefox) and cURL (a command-line tool).
@@ -478,14 +477,14 @@ If you do want to create measurements, you must use **a tool that is able to sen
 Our measurement REST API uses a JSON payload with a POST verb to create new measurements.
 
 
-You can fill in one or more measurement `definitions`, one or more `probes` objects, and some fields that are applicable to all measurements you want to create.
+You can fill in one or more measurement *definitions*, one or more *probes* objects, and some fields that are applicable to all measurements you want to create.
 
 #### The Response
-The response to any successful POST request will return an object that has one field called `measurements`. This field holds an array that contains the IDs of the created measurements. The array reflects the order in which they were specified in the `definitions` list of you request.
+The response to any successful POST request will return an object that has one field called *measurements*. This field holds an array that contains the IDs of the created measurements. The array reflects the order in which they were specified in the *definitions* list of you request.
 
 
 ### Simple Example
-Let's begin with an example. Assume we want to create a simple ping measurement from `1` probes anywhere in the world to `ripe.net`. We also want it to be `one_off`.
+Let's begin with an example. Assume we want to create a simple ping measurement from *1* probes anywhere in the world to *ripe.net*. We also want it to be *one_off*.
 
 
 Here's how to do this in python:
@@ -497,7 +496,7 @@ import requests
 import json 
 
 # api-endpoint 
-URL = "https://atlas.ripe.net/api/v2/measurements/?key=40294a56-4a3c-4326-849f-e2d2a2aa79fb"
+URL = "https://atlas.ripe.net/api/v2/measurements/?key=<your key>"
 
 # defining a params dict for the parameters to be sent to the API 
 body_in_json = {
@@ -534,7 +533,7 @@ print(data)
 
 If you have filled out everything correctly, you will get a response like this:
 ```json
-{'measurements': [23021613]}
+{"measurements": [23021613]}
 ```
 
 If you didn't use the right key, or no key at all, you will get an error:
@@ -547,11 +546,11 @@ If you made a mistake in the entry of the payload, you will get the following er
 {"error":{"status":400,"code":104,"detail":"Invalid input. Please check the documentation.","title":"Bad Request"}}
 ```
 
-### The `definition` Array
-The `definitions` array holds single objects, which we will refer to as measurement definitions.
+### The *definition* Array
+The *definitions* array holds single objects, which we will refer to as measurement definitions.
 
 
-A measurement definition has a similar structure to a `measurement specification`. The `measurement specification`, as you might recall, is the collection of measurement settings that a probe needs to perform a measurement. There are some base attributes and some type-specific attributes in the specification.
+A measurement definition has a similar structure to a *measurement specification*. The *measurement specification*, as you might recall, is the collection of measurement settings that a probe needs to perform a measurement. There are some base attributes and some type-specific attributes in the specification.
 
 
 A measurement definition is a sub-set of the measurement specification. There are some required fields, but most are optional. RIPE Atlas will fill out the missing fields with defaults for all non-required fields. Which fields are required differs per measurement type.
@@ -562,13 +561,13 @@ These are the required fields for all measurement types:
 * type: One of ping,traceroute,dns, sslcert or ntp
 * af: The address family. It must be either 4 or 6.
 
-The `target` field denotes the target of a measurement and is special because it is required for all measurement types except DNS measurements.
+The *target* field denotes the target of a measurement and is special because it is required for all measurement types except DNS measurements.
 
 #### Note
-You can use GUI to generate JSON files which could be used directly in replace of the `body_in_json` part.
+You can use GUI to generate JSON files which could be used directly in replace of the *body_in_json* part.
 
 ### Base Attributes
-A measurement definition contains a few base properties, and a myriad of type-specific options. For example, while all definitions have an `af` property, only traceroute measurements have a `paris` property.
+A measurement definition contains a few base properties, and a myriad of type-specific options. For example, while all definitions have an *af* property, only traceroute measurements have a *paris* property.
 
 ![Base Properties](/assets/img/base_property.png)
 
@@ -642,9 +641,10 @@ We are mentioning only the required fields for every type. An exhaustive referen
 ```
 
 ### Stop Measurement
-Measurements can be stopped by sending a `DELETE` verb to the URL of the measurement you want to stop. For example, if you want to stop the measurement with `msm_id`2034345, you will have to send a DELETE verb to: 
-```https://atlas.ripe.net/api/v2/measurements/2034305```.
-
+Measurements can be stopped by sending a *DELETE* verb to the URL of the measurement you want to stop. For example, if you want to stop the measurement with *msm_id*2034345, you will have to send a DELETE verb to: 
+```
+https://atlas.ripe.net/api/v2/measurements/2034305
+```
 
 You can only stop measurements that you've created yourself or that you have an API key for (and which has permissions to stop measurements). In the first case, you will have to be logged in with a session-based cookie.
 
@@ -652,6 +652,27 @@ You can only stop measurements that you've created yourself or that you have an 
 The latest measurement results API can be found here:
 ```
 https://atlas.ripe.net/api/v2/measurements/2000000/latest/?probe_ids=10008
+```
+
+An example code:
+```python
+# importing the requests library 
+import requests
+import json 
+
+# api-endpoint 
+URL = "https://atlas.ripe.net/api/v2/measurements/23020975/latest/?key=<YOUR KEY>"
+
+# Define headers
+headers = {'Content-type': 'application/json', 'Accept': 'application/json'}
+
+# sending get request and saving the response as response object 
+r = requests.get(URL, headers=headers)
+
+# extracting data in json format 
+data = r.json()
+
+print(data)
 ```
 
 #### Output Format
@@ -663,13 +684,13 @@ The output format is only slightly different from what you'd expect from the sta
   ...
 }
 ```
-This allows you to easily fetch the latest result from probe `123`, for example, by using:
+This allows you to easily fetch the latest result from probe *123*, for example, by using:
 ```
 my_data["123"][0]
 ```
 
 #### Filtering
-You can also do basic filtration by probe id simply by using `probe_ids=probe_id,probe_id` as query parameters.
+You can also do basic filtration by probe id simply by using *probe_ids=probe_id,probe_id* as query parameters.
 
 Note, however, that if you specify a probe ID that is not part of the measurement, you'll simply get back an empty set.
 
@@ -679,10 +700,31 @@ If you just want to get started using status checks, you simply need to do the f
 1. Create a RIPE Atlas ping measurement using either the website or the API.
 * You may use up to 1,024 probes.
 	* Note the newly-created measurement ID
-2. Go to: `https://atlas.ripe.net/api/v2/measurements/<measurement-id>/status-check` where `<measurement-id>` is the ID from your newly created measurement. If the measurement in question is not public, you'll need to include an API `?key= argument`.
+2. Go to: *https://atlas.ripe.net/api/v2/measurements/< measurement-id >* where *< measurement-id >* is the ID from your newly created measurement. If the measurement in question is not public, you'll need to include an API *?key=argument*.
+	* A new version is available using the link: *https://atlas.ripe.net/api/v2/measurements/< measurement-id >/status-check*
 
 3. Go to the URL again later to check whether anything has changed.
 
 4. Define your alerts accordingly.
+
+An exmaple code:
+```python
+import requests
+import json 
+
+# api-endpoint 
+URL = "https://atlas.ripe.net/api/v2/measurements/23020975/"
+
+# Define headers
+headers = {'Content-type': 'application/json', 'Accept': 'application/json'}
+
+# sending get request and saving the response as response object 
+r = requests.get(URL, headers=headers)
+
+# extracting data in json format 
+data = r.json()
+
+print(data)
+```
 
 
