@@ -1,9 +1,14 @@
 # What Is DNS and How to Look Them Up
 Reference:
+
 * [What Is DNS?](https://www.cloudflare.com/learning/dns/what-is-dns/)
+
 * [Using DIG to check DNS](https://workrobot.com/sysadmin/security/using_DIG.html)
+
 * [How to Use Dig Command to Query DNS in Linux](https://linuxize.com/post/how-to-use-dig-command-to-query-dns-in-linux/)
+
 * [DECODING DIG OUTPUT](https://ns1.com/blog/decoding-dig-output)
+
 * [What's In A DNS Response](https://blog.dnsimple.com/2015/03/whats-in-a-dns-response/)
 
 ## About DNS
