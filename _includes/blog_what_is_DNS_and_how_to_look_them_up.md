@@ -387,3 +387,43 @@ Output:
 ```shell
 $ dig @8.8.8.8 uploads.spy2mobile.com +norecurse
 ```
+
+### Show the version of BIND
+Today the [CH](https://miek.nl/2009/july/31/dns-classes/) class is misused by BIND, for the following neat tricks:
+```shell
+$ dig -t txt -c chaos version.bind @9.9.9.9
+;; ANSWER SECTION:
+version.bind.		86400	CH	TXT	"Q9-P-6.0"
+
+$ dig CHAOS TXT id.server @1.1.1.1
+;; ANSWER SECTION:
+id.server.		0	CH	TXT	"LAX"
+```
+
+Other DNS servers, for example, OpenDNS, does not support it, but they have their own custom domain for debugging:
+```shell
+$ dig -t TXT debug.opendns.com @208.67.222.123
+;; ANSWER SECTION:
+debug.opendns.com.	0	IN	TXT	"server m51.lax"
+debug.opendns.com.	0	IN	TXT	"flags 40020 0 70 180000000000000000003950800780000000000"
+debug.opendns.com.	0	IN	TXT	"originid 0"
+debug.opendns.com.	0	IN	TXT	"actype 0"
+debug.opendns.com.	0	IN	TXT	"source 137.110.56.85:50582"
+```
+Related reading:
+[HOW TO FIND YOUR CLOSEST ANYCAST DNS SERVER WITH DIG](https://logs.paulooi.com/how-to-find-your-closest-anycast-dns-server-with-dig.php)
+
+[Troubleshooting DNS](https://cleanbrowsing.org/articles/troubleshooting-dns-commands)
+
+### Figuring out which Google DNS Cluster you are using
+```shell
+$ dig o-o.myaddr.l.google.com -t txt +short @8.8.8.8
+"173.194.94.135"                    <<<<<<DNS Server IP, reference the list above to get the cluster, Council Bluffs, IA
+"edns0-client-subnet 207.xxx.xxx.0/24"                                  <<<< Your Source IP Block
+```
+
+Relevant readings:
+
+[Google DNS --- Figuring out which DNS Cluster you are using](https://lists.gt.net/nanog/users/195370)
+
+[Google Public DNS Server Locations List](https://blog.archit.in/2012/02/google-public-dns-server-locations-list/)
