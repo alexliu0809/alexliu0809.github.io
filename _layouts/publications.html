@@ -53,7 +53,26 @@ div.pubbody{
                 <td width = "78%">
                 <span class="papername">{{pub.title}}</span>
                 <br />
-                <span class="authorlist">{{pub.author_list}}</span>
+                <span class="authorlist">
+                {% for author_name in pub.author_list %}
+                {% if forloop.last == false %}
+                  {% if author_name == "Enze Liu" %}
+                  <b>{{author_name}}, </b>
+                  {% endif %}
+                  {% if author_name != "Enze Liu" %}
+                  {{author_name}}
+                  {% endif %}
+                {% endif %}
+                {% if forloop.last != false %}
+                  {% if author_name == "Enze Liu" %}
+                  <b>{{author_name}}</b>
+                  {% endif %}
+                  {% if author_name != "Enze Liu" %}
+                  {{author_name}}
+                  {% endif %}
+                {% endif %}
+                {% endfor %}
+                </span>
                 <br />
                 <span class="venuename">Proceedings of <i>{{pub.venue}}</i></span>
                 <br />
