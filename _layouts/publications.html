@@ -14,7 +14,7 @@ div.pubbody{
   font-family: "Lato",sans-serif;
   color: #0080FF;
   font-weight: bold;
-  font-size: 1rem;
+  font-size: 1.3rem;
 }
 .papername {
   color: #0080FF;
@@ -55,29 +55,34 @@ div.pubbody{
                 <br />
                 <span class="authorlist">
                 {% for author_name in pub.author_list %}
-                {% if forloop.last == false %}
-                  {% if author_name == "Enze Liu" %}
-                  <b>{{ author_name }}, </b>
+                  {% if forloop.last == false %}
+                    {% if author_name.name == "Enze Liu" %}
+                    <u>{{ author_name.name }}</u>, 
+                    {% endif %}
+                    {% if author_name.name != "Enze Liu" %}
+                    {{ author_name.name }}, 
+                    {% endif %}
                   {% endif %}
-                  {% if author_name != "Enze Liu" %}
-                  {{ author_name }}
+                  {% if forloop.last != false %}
+                    {% if author_name.name == "Enze Liu" %}
+                    <u>{{ author_name.name }}</u>
+                    {% endif %}
+                    {% if author_name.name != "Enze Liu" %}
+                    {{ author_name.name }}
+                    {% endif %}
                   {% endif %}
-                {% endif %}
-                {% if forloop.last != false %}
-                  {% if author_name == "Enze Liu" %}
-                  <b>{{ author_name }}</b>
-                  {% endif %}
-                  {% if author_name != "Enze Liu" %}
-                  {{ author_name }}
-                  {% endif %}
-                {% endif %}
                 {% endfor %}
                 </span>
                 <br />
                 <span class="venuename">Proceedings of <i>{{pub.venue}}</i></span>
                 <br />
                 {% for link in pub.links %}
+                {% if link.url %}
                 [<a href="{{link.url}}"><span class="paperlink">{{link.type}}</span></a>]
+                {% else %}
+                [<span class="paperlink">{{link.type}}</span></a>]
+                {% endif %}
+                
                 {% endfor %}
 
                 </td>

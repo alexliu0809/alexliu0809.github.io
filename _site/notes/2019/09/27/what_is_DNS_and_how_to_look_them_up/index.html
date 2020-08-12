@@ -860,6 +860,43 @@ tuxmachines.org
 <p>“RR” stands for resource record, which is DNS-speak for any kind of record (A, CNAME, SOA, NS, PTR, etc.). If you want to infer whether anyone using a particular DNS server has visited a host recently, you can specify a non-recursive query. Most DNS servers will obey this request, although this is not required. For security reasons some better DNS server software can be configured to intentionally ignore requests not to recurse.</p>
 <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>dig @8.8.8.8 uploads.spy2mobile.com +norecurse
 </code></pre></div></div>
+
+<h3 id="show-the-version-of-bind">Show the version of BIND</h3>
+<p>Today the <a href="https://miek.nl/2009/july/31/dns-classes/">CH</a> class is misused by BIND, for the following neat tricks:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>dig <span class="nt">-t</span> txt <span class="nt">-c</span> chaos version.bind @9.9.9.9
+<span class="p">;;</span> ANSWER SECTION:
+version.bind.		86400	CH	TXT	<span class="s2">"Q9-P-6.0"</span>
+
+<span class="nv">$ </span>dig CHAOS TXT id.server @1.1.1.1
+<span class="p">;;</span> ANSWER SECTION:
+id.server.		0	CH	TXT	<span class="s2">"LAX"</span>
+</code></pre></div></div>
+
+<p>Other DNS servers, for example, OpenDNS, does not support it, but they have their own custom domain for debugging:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>dig <span class="nt">-t</span> TXT debug.opendns.com @208.67.222.123
+<span class="p">;;</span> ANSWER SECTION:
+debug.opendns.com.	0	IN	TXT	<span class="s2">"server m51.lax"</span>
+debug.opendns.com.	0	IN	TXT	<span class="s2">"flags 40020 0 70 180000000000000000003950800780000000000"</span>
+debug.opendns.com.	0	IN	TXT	<span class="s2">"originid 0"</span>
+debug.opendns.com.	0	IN	TXT	<span class="s2">"actype 0"</span>
+debug.opendns.com.	0	IN	TXT	<span class="s2">"source 137.110.56.85:50582"</span>
+</code></pre></div></div>
+<p>Related reading:
+<a href="https://logs.paulooi.com/how-to-find-your-closest-anycast-dns-server-with-dig.php">HOW TO FIND YOUR CLOSEST ANYCAST DNS SERVER WITH DIG</a></p>
+
+<p><a href="https://cleanbrowsing.org/articles/troubleshooting-dns-commands">Troubleshooting DNS</a></p>
+
+<h3 id="figuring-out-which-google-dns-cluster-you-are-using">Figuring out which Google DNS Cluster you are using</h3>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>dig o-o.myaddr.l.google.com <span class="nt">-t</span> txt +short @8.8.8.8
+<span class="s2">"173.194.94.135"</span>                    <span class="o">&lt;&lt;&lt;&lt;&lt;&lt;</span>DNS Server IP, reference the list above to get the cluster, Council Bluffs, IA
+<span class="s2">"edns0-client-subnet 207.xxx.xxx.0/24"</span>                                  <span class="o">&lt;&lt;&lt;</span>&lt; Your Source IP Block
+</code></pre></div></div>
+
+<p>Relevant readings:</p>
+
+<p><a href="https://lists.gt.net/nanog/users/195370">Google DNS — Figuring out which DNS Cluster you are using</a></p>
+
+<p><a href="https://blog.archit.in/2012/02/google-public-dns-server-locations-list/">Google Public DNS Server Locations List</a></p>
  
     </div>
 

@@ -25,6 +25,8 @@ urls:
 #      url: /styleguide/
 
 recent_news:
+  - date: 2020-08-11
+    content: Trufflehunter is accepted to IMC 2020! Big congrats to our lead author Audrey.
   - date: 2019-09-23
     content: Joining UCSD as a first-year PhD student! I am affiliated with Sysnet and CryptoSec research groups.
   - date: 2019-09-08
@@ -101,6 +103,21 @@ author_projects_details:
               #   visibility: false
 
 author_pubs_details:
+              - title: "Trufflehunter: Cache Sniffing Rare Domains at Large Public DNS Resolvers"
+                author_list:
+                  - name: Audrey Randall
+                  - name: Enze Liu
+                  - name: Gautam Akiwate
+                  - name: Ramakrishna Padmanabhan
+                  - name: Stefan Savage
+                  - name: Geoffrey M. Voelker
+                  - name: Aaron Schulman
+                venue: the ACM Internet Measurement Conference 2020 (IMC)
+                venue_short: ACM IMC
+                year: 2020
+                links:
+                  - type: PDF (forthcoming)
+
               - title: Reasoning Analytically About Password-Cracking Software
                 author_list:
                   - name: Enze Liu
@@ -120,7 +137,6 @@ author_pubs_details:
                     url: https://www.ieee-security.org/TC/SP2019/SP19-Slides-pdfs/Enze_Alex_Liu_-_06-Reasoning_Analytically_About_Password-Cracking_Software.pdf
                   - type: Talk
                     url: https://youtu.be/kSfmTV0GTIM
-
 
 
 
