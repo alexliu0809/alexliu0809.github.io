@@ -57,18 +57,18 @@ div.pubbody{
                 {% for author_name in pub.author_list %}
                 {% if forloop.last == false %}
                   {% if author_name == "Enze Liu" %}
-                  <b>{{author_name}}, </b>
+                  <b>{{ author_name }}, </b>
                   {% endif %}
                   {% if author_name != "Enze Liu" %}
-                  {{author_name}}
+                  {{ author_name }}
                   {% endif %}
                 {% endif %}
                 {% if forloop.last != false %}
                   {% if author_name == "Enze Liu" %}
-                  <b>{{author_name}}</b>
+                  <b>{{ author_name }}</b>
                   {% endif %}
                   {% if author_name != "Enze Liu" %}
-                  {{author_name}}
+                  {{ author_name }}
                   {% endif %}
                 {% endif %}
                 {% endfor %}
