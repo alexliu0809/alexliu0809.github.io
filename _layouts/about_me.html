@@ -111,32 +111,25 @@ layout: default
             </div>
 
             <div class="card">
-                <h1> Recent News </h1>
-                {% for news in site.recent_news limit:5 %}
-                <li><strong>[{{news.date}}]</strong>&nbsp;{{news.content}}</li>
-                {% endfor %}
-                <li><a href="/news/">View More</a></li>
-                <!-- View More -->
+                {%- include news.html -%}
             </div>
 
     
             <div class="card">
                 <h1> Skills </h1>
-
                 {%- include author_skills.html -%}
-               
             </div>
 
             
 
-            {% if site.wakatime_username %}
+            <!-- {% if site.wakatime_username %}
             <div class="card">
                 <h1> Coding Activity </h1>
                 
                 {%- include coding_activity.html -%}
     
             </div>
-            {% endif %}
+            {% endif %} -->
 
     
         </div>

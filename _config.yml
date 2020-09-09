@@ -9,12 +9,14 @@ baseurl: "" # the subpath of your site, e.g. /blog
 urls:
     - text: About Me
       url: /#/
-    - text: Publications
+    - text: Research
       url: /publications/
     - text: Recent News
       url: /news/
     #- text: Research
       #url: /research/
+    - text: Useful links
+      url: /useful_links/
     - text: Blog
       url: /blog/
 #    - text: Shop
@@ -156,7 +158,7 @@ twitter_username: alexliu1
 #disqus_shortname: sujay-kundu  
 
 # wakatime username (coding activity)
-wakatime_username: alexliu0809
+# wakatime_username: alexliu0809
 
 # formspree (contact form)
 formspree_email: johndoe@gmail.com

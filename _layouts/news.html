@@ -16,13 +16,12 @@ tbody tr > * {
     <h1 class="card-title">Recent News</h1>
     <br />
 
-
-    {% for news in site.recent_news %}
     <table class="news_table">
       <tbody class="news_table_body">
+        {% for news in site.recent_news %}
         <tr><td>[{{news.date}}] {{news.content}}</td></tr>
+        {% endfor %}
       </tbody>
     </table>
-    {% endfor %}
     <!-- View More -->
 </div>
