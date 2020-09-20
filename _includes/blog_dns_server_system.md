@@ -11,6 +11,7 @@ Reference:
 
 [BIND_Guide](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/5/html/deployment_guide/ch-bind)
 
+
 ## DNS Terminology
 ### Domain name
 A domain name consists of one or more parts, technically called labels, that are conventionally concatenated, and delimited by dots, such as example.com. Any name registered in the DNS is a domain name. Domain names are organized in subordinate levels (subdomains) of the DNS root domain, which is nameless. The first-level set of domain names are the top-level domains (TLDs), such as com and org. Below these top-level domains in the DNS hierarchy are the second-level and third-level domain names that are typically open for reservation by end-users who wish to connect local area networks to the Internet.
