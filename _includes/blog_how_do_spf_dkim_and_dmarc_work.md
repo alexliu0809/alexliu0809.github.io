@@ -56,7 +56,7 @@ As mentioned earlier, the key technical detail with SPF is that it works by look
 
 Receiving servers verify SPF by checking a specific TXT DNS entry in your domain, which includes a list of approved IP addresses. This is one of the key aspects of SPF. By using DNS, it’s able to build on something that every website or application already has. That DNS entry includes several parts that each provide different information to the server.
 
-![SPF](/assets/img/posts/SPF.png)
+![SPF](/assets/img/posts/spf.png)
 
 ## How does the SPF record syntax work?
 Let’s look at a breakdown of the key elements (also called “mechanisms”) in an example SPF record entry of **v=spf1 a mx include:spf.mtasv.net include:_spf.createsend.com ~all**
