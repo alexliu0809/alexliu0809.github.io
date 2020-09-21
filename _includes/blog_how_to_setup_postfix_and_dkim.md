@@ -223,6 +223,7 @@ echo "test email" | sendmail your-account@gmail.com
     sudo apt install opendkim
     sudo apt install opendkim-tools
     ```
+    
 2. We then need to generate keys for signing. Manually create your keys with the following command. Replace `example.com` with the `system mail name` you defined.
     ```
     mkdir /etc/opendkim/keys/example.com
@@ -232,84 +233,88 @@ echo "test email" | sendmail your-account@gmail.com
     sudo chmod 644 /etc/opendkim/keys/example.com/default.txt
     sudo chmod -R ug+x /etc/opendkim
     ```
+
 3. You’re getting really close now. You need to create and/or edit four files:
    1. `/etc/opendkim.conf` – OpenDKIM’s main configuration file
    2. `/etc/opendkim/KeyTable` – a list of keys available for signing
    3. `/etc/opendkim/SigningTable` – a list of domains and accounts allowed to sign
    4. `/etc/opendkim/TrustedHosts` – a list of servers to “trust” when signing or verifying
+   
 4. Use your favorite text editor to open `/etc/opendkim.conf` and make it look like this:
-```
-## CONFIGURATION OPTIONS
+    ```
+    ## CONFIGURATION OPTIONS
 
-# Specifies the path to the process ID file.
-PidFile /var/run/opendkim/opendkim.pid
+    # Specifies the path to the process ID file.
+    PidFile /var/run/opendkim/opendkim.pid
 
-# Selects operating modes. Valid modes are s (signer) and v (verifier). Default is v.
-Mode    sv
+    # Selects operating modes. Valid modes are s (signer) and v (verifier). Default is v.
+    Mode    sv
 
-# Log activity to the system log.
-Syslog  yes
+    # Log activity to the system log.
+    Syslog  yes
 
-# Log additional entries indicating successful signing or verification of messages.
-SyslogSuccess yes
+    # Log additional entries indicating successful signing or verification of messages.
+    SyslogSuccess yes
 
-# If logging is enabled, include detailed logging about why or why not a message was
-# signed or verified. This causes a large increase in the amount of log data generated
-# for each message, so it should be limited to debugging use only.
-#LogWhy yes
+    # If logging is enabled, include detailed logging about why or why not a message was
+    # signed or verified. This causes a large increase in the amount of log data generated
+    # for each message, so it should be limited to debugging use only.
+    #LogWhy yes
 
-# Attempt to become the specified user before starting operations.
-UserID  opendkim:opendkim
+    # Attempt to become the specified user before starting operations.
+    UserID  opendkim:opendkim
 
-# Create a socket through which your MTA can communicate.
-Socket  inet:8891@127.0.0.1
+    # Create a socket through which your MTA can communicate.
+    Socket  inet:8891@127.0.0.1
 
-# Required to use local socket with MTAs that access the socket as a non-
-# privileged user (e.g. Postfix)
-Umask   002
+    # Required to use local socket with MTAs that access the socket as a non-
+    # privileged user (e.g. Postfix)
+    Umask   002
 
-# This specifies a file in which to store DKIM transaction statistics.
-#Statistics              /var/spool/opendkim/stats.dat
+    # This specifies a file in which to store DKIM transaction statistics.
+    #Statistics              /var/spool/opendkim/stats.dat
 
-## SIGNING OPTIONS
+    ## SIGNING OPTIONS
 
-# Selects the canonicalization method(s) to be used when signing messages.
-Canonicalization        relaxed/simple
+    # Selects the canonicalization method(s) to be used when signing messages.
+    Canonicalization        relaxed/simple
 
-# Domain(s) whose mail should be signed by this filter. Mail from other domains will
-# be verified rather than being signed. Uncomment and use your domain name.
-# This parameter is not required if a SigningTable is in use.
-Domain                  example.com
+    # Domain(s) whose mail should be signed by this filter. Mail from other domains will
+    # be verified rather than being signed. Uncomment and use your domain name.
+    # This parameter is not required if a SigningTable is in use.
+    Domain                  example.com
 
-# Defines the name of the selector to be used when signing messages.
-Selector                default
+    # Defines the name of the selector to be used when signing messages.
+    Selector                default
 
-# Gives the location of a private key to be used for signing ALL messages.
-#KeyFile                 /etc/opendkim/keys/default.private
+    # Gives the location of a private key to be used for signing ALL messages.
+    #KeyFile                 /etc/opendkim/keys/default.private
 
-# Gives the location of a file mapping key names to signing keys. In simple terms,
-# this tells OpenDKIM where to find your keys. If present, overrides any KeyFile
-# setting in the configuration file.
-KeyTable                 refile:/etc/opendkim/KeyTable
+    # Gives the location of a file mapping key names to signing keys. In simple terms,
+    # this tells OpenDKIM where to find your keys. If present, overrides any KeyFile
+    # setting in the configuration file.
+    KeyTable                 refile:/etc/opendkim/KeyTable
 
-# Defines a table used to select one or more signatures to apply to a message based
-# on the address found in the From: header field. In simple terms, this tells
-# OpenDKIM how to use your keys.
-SigningTable                 refile:/etc/opendkim/SigningTable
+    # Defines a table used to select one or more signatures to apply to a message based
+    # on the address found in the From: header field. In simple terms, this tells
+    # OpenDKIM how to use your keys.
+    SigningTable                 refile:/etc/opendkim/SigningTable
 
-# Identifies a set of "external" hosts that may send mail through the server as one
-# of the signing domains without credentials as such.
-ExternalIgnoreList      refile:/etc/opendkim/TrustedHosts
+    # Identifies a set of "external" hosts that may send mail through the server as one
+    # of the signing domains without credentials as such.
+    ExternalIgnoreList      refile:/etc/opendkim/TrustedHosts
 
-# Identifies a set internal hosts whose mail should be signed rather than verified.
-InternalHosts           refile:/etc/opendkim/TrustedHosts
-```
+    # Identifies a set internal hosts whose mail should be signed rather than verified.
+    InternalHosts           refile:/etc/opendkim/TrustedHosts
+    ```
+
 5. create an `/etc/opendkim/KeyTable` file that looks like this:
     ```
     default._domainkey.example.com example.com:default:/etc/opendkim/keys/example.com/default.private
     ```
     What this line means is that for key entry `default._domainkey.example.com`, use the key at `/etc/opendkim/keys/example.com/default.private` with signing domain `example.com` and selector `default`
- 6. you need to create or edit the /etc/opendkim/SigningTable file.
+
+ 1. you need to create or edit the /etc/opendkim/SigningTable file.
     ```
     *@example.com default._domainkey.example.com
     ```
@@ -319,7 +324,8 @@ InternalHosts           refile:/etc/opendkim/TrustedHosts
     bob@example2.com default._dkim.example2.com
     doug@example2.com default._dkim.example2.com
     ```
-7. Next, create an /etc/opendkim/TrustedHosts file that looks like this:
+
+6. Next, create an /etc/opendkim/TrustedHosts file that looks like this:
     ```
     127.0.0.1
     hostname1.example1.com
@@ -330,7 +336,8 @@ InternalHosts           refile:/etc/opendkim/TrustedHosts
     example2.com
     ```
     The TrustedHosts file tells OpenDKIM who to let use your keys. IMPORTANT: Make sure you list the IP address for localhost (127.0.0.1) in the TrustedHosts file or OpenDKIM won’t sign mail sent from this server. If you have multiple servers on the same network that relay mail through this server and you want to sign their mail as well, they must be listed in the TrustedHosts file.
-8. Edit `/lib/systemd/system/opendkim.service` file, change the line that starts with `ExecStart=/usr/sbin/opendkim -P` to the following:
+
+7. Edit `/lib/systemd/system/opendkim.service` file, change the line that starts with `ExecStart=/usr/sbin/opendkim -P` to the following:
     ```
     ExecStart=/usr/sbin/opendkim -P /var/run/opendkim/opendkim.pid -p inet:8891@127.0.0.1
     ```
@@ -349,15 +356,18 @@ Restart opendkim and postfix
 sudo systemctl start opendkim
 sudo systemctl restart postfix
 ```
+
 Check that opendkim is running
 ```
 sudo systemctl status opendkim
 ```
+
 ## Adding DNS Records
 Now that your mail server is signing outgoing mail and verifying incoming mail, you’ll need to put some information in your DNS records to tell other mail servers how your keys are set up, and provide the public key for them to check that your mail is properly signed. Do:
 ```
 sudo cat /etc/opendkim/keys/example.com/default.txt
 ```
+
 The output should look something like this:
 ```
 default._dkim IN TXT ( "v=DKIM1; k=rsa; "
@@ -371,10 +381,12 @@ Send a test email
 ```
 echo "test email" | sendmail your-account@gmail.com
 ```
+
 The best way to see that everything is working on the server side is to keep an eye on your `/var/log/maillog` file. Do a:
 ```
 sudo tail /var/log/maillog
 ```
+
 When OpenDKIM starts (or restarts), you should see lines like:
 ```
 opendkim[4397]: OpenDKIM Filter: mi_stop=1
@@ -382,6 +394,7 @@ opendkim[4397]: OpenDKIM Filter v2.10.1 terminating with status 0, errno = 0
 opendkim[27444]: OpenDKIM Filter v2.10.1 starting (args: -x /etc/opendkim.conf)
 ```
 When you send a mail that gets successfully signed, you should see:
+
 ```
 opendkim[22254]: 53D0314803B: DKIM-Signature header added
 ```
