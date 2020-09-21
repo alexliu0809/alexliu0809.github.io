@@ -6,6 +6,8 @@ References:
 3. [How to secure Postfix using Let’s Encrypt](https://upcloud.com/community/tutorials/secure-postfix-using-lets-encrypt/)
 4. [https://serverfault.com/questions/750902/how-to-use-lets-encrypt-dns-challenge-validation](https://serverfault.com/questions/750902/how-to-use-lets-encrypt-dns-challenge-validation)
 5. [Installing OpenDKIM RPM via Yum with Postfix](https://www.stevejenkins.com/blog/2011/08/installing-opendkim-rpm-via-yum-with-postfix-or-sendmail-for-rhel-centos-fedora/)
+6. [connect to Milter service inet:127.0.0.1:8891: Connection refused](https://tinycp.com/community/show/solved-warning-connect-to-milter-service-inet-127-0-0-1-8891-connection-refused,134.html#sidebar)
+7. [can't load key in OpenDKIM Permission denied](https://stackoverflow.com/questions/55311951/cant-load-key-in-opendkim-permission-denied)
 
 # Install Postfix
 [(Main Reference)](https://www.linuxbabe.com/mail-server/setup-basic-postfix-mail-sever-ubuntu)
@@ -16,29 +18,30 @@ sudo apt-get update
 
 sudo apt-get install postfix -y
 ```
-You will be asked to select a type for mail configuration. Choose `Internet Site`.
+You will be asked to select a type for mail configuration. Choose **Internet Site**.
 
 ![internet_site](/assets/img/posts/internet_site.png)
-* `No configuration` means the installation process will not configure any parameters.
-* `Internet Site` means using Postfix for sending emails to other MTAs and receiving email from other MTAs.
-* `Internet with smarthost` means using postfix to receive email from other MTAs, but using another smart host to relay emails to the recipient.
-* `Satellite system` means using smart host for sending and receiving email.
-* `Local only` means emails are transmitted only between local user accounts.
+* **No configuration** means the installation process will not configure any parameters.
+* **Internet Site** means using Postfix for sending emails to other MTAs and receiving email from other MTAs.
+* **Internet with smarthost** means using postfix to receive email from other MTAs, but using another smart host to relay emails to the recipient.
+* **Satellite system** means using smart host for sending and receiving email.
+* **Local only** means emails are transmitted only between local user accounts.
 
-Next, enter the domain name for the **system mail name**, i.e. the domain name you want to display after the `@` symbol. For example, I want my email to be `alex@mydomain.com`, so I should put `mydomain.com` here. This domain name will be appended to addresses that doesn’t have a domain name specified.
+Next, enter the domain name for the **system mail name**, i.e. the domain name you want to display after the **@** symbol. For example, I want my email to be **alex@mydomain.com**, so I should put **mydomain.com** here. This domain name will be appended to addresses that doesn’t have a domain name specified.
+
 ![system_mail_name](/assets/img/posts/system_mail_name.png)
 
-Once installed, Postfix will be automatically started and a `/etc/postfix/main.cf` file will be generated. Now we can check Postfix version with this command:
+Once installed, Postfix will be automatically started and a **/etc/postfix/main.cf** file will be generated. Now we can check Postfix version with this command:
 ```bash
 postconf mail_version
 ```
-The `netstat` utility tells us that the Postfix master process is listening on TCP port 25.
+The **netstat** utility tells us that the Postfix master process is listening on TCP port 25.
 ```bash
 sudo netstat -lnpt
 ```
 ![netstat](/assets/img/posts/netstat.png)
 
-Postfix ships with many binaries under the `/usr/sbin/` directory, as can be seen with the following command.
+Postfix ships with many binaries under the **/usr/sbin/** directory, as can be seen with the following command.
 ```bash
 dpkg -L postfix | grep /usr/sbin/
 ```
@@ -78,7 +81,7 @@ Install nmap
 ```
 sudo apt install nmap
 ```
-Then use `nmap` to scan open ports on our server. Run the following command. Replace your-server-ip with actual IP.
+Then use **nmap** to scan open ports on our server. Run the following command. Replace your-server-ip with actual IP.
 ```
 sudo nmap 207.246.110.31
 ```
@@ -106,10 +109,10 @@ sudo dpkg-reconfigure postfix
 
     ![internet_site](/assets/img/posts/internet_site.png)
 
-2. enter a system mail name. If you want your email to look like `user@mydomain.com`, then put `mydomain.com` there. If you want it to be `user@mail.mydomain.com`, then put `mail.mydomain.com` there.
+2. enter a system mail name. If you want your email to look like **user@mydomain.com**, then put **mydomain.com** there. If you want it to be **user@mail.mydomain.com**, then put **mail.mydomain.com** there.
     ![system_mail_name](/assets/img/posts/system_mail_name.png)
 
-3. put your linux username (replace "username" with your actual linux username) here. Mail for system accounts, like `postmaster` and `root` will be redirected to the mailbox of this username.
+3. put your linux username (replace "username" with your actual linux username) here. Mail for system accounts, like **postmaster** and **root** will be redirected to the mailbox of this username.
 
     ![username](/assets/img/posts/username.png)
 
@@ -141,19 +144,19 @@ sudo dpkg-reconfigure postfix
     ```
     all
     ```
-The configuration is saved to `/etc/postfix/main.cf`. To manually configure postfix, use the command `sudo vim /etc/postfix/main.cf`. You could also use `postconf` to configure postfix. For example:
+The configuration is saved to **/etc/postfix/main.cf**. To manually configure postfix, use the command **sudo vim /etc/postfix/main.cf**. You could also use **postconf** to configure postfix. For example:
 
 To configure the mailbox format for Maildir:
 ```
 sudo postconf -e 'home_mailbox = Maildir/'
 ```
-This will place new mail in `/home/username/Maildir`.
+This will place new mail in **/home/username/Maildir**.
 ## Sending Test Email
 Run the following command:
 ```bash
 echo "test email" | sendmail your-account@gmail.com
 ```
-If you fail to send the email, you should check the log file at `/var/log/mail.log` to see what went wrong.
+If you fail to send the email, you should check the log file at **/var/log/mail.log** to see what went wrong.
 
 # Setup TLS with Postfix
 ## Creating DNS records
@@ -176,7 +179,7 @@ Enabling the TLS will require you to obtain certificates. Let’s Encrypt is a f
     ```
     sudo apt install certbot
     ```
-2. Run the command below to request a certificate. Replace `example.com` with the `system mail name` you defined in previous section.
+2. Run the command below to request a certificate. Replace **example.com** with the **system mail name** you defined in previous section.
     ```
     sudo certbot -d example.com --manual --preferred-challenges dns certonly
     ```
@@ -188,11 +191,11 @@ Enabling the TLS will require you to obtain certificates. Let’s Encrypt is a f
 
     value
     ```
-5. Put this value as a TXT record into your zone file and hit continue. Replace `value` with the actual token you get.
+5. Put this value as a TXT record into your zone file and hit continue. Replace **value** with the actual token you get.
     ```
     _acme-challenge.example.com    300     IN      TXT     "value"
     ```
-Once you have finished the process, the certificates will be stored under `/etc/letsencrypt/live/<your.domain>/`. . You can add your new certificates to the Postfix configuration using the two commands below. Replace the `<your.domain>` with your `system mail name` defined in previous step.
+Once you have finished the process, the certificates will be stored under **/etc/letsencrypt/live/your.domain/**. . You can add your new certificates to the Postfix configuration using the two commands below. Replace the **your.domain** with your **system mail name** defined in previous step.
 ```
 sudo postconf -e 'smtpd_tls_cert_file = /etc/letsencrypt/live/<your.domain>/fullchain.pem'
 sudo postconf -e 'smtpd_tls_key_file = /etc/letsencrypt/live/<your.domain>/privkey.pem'
@@ -223,8 +226,8 @@ echo "test email" | sendmail your-account@gmail.com
     sudo apt install opendkim
     sudo apt install opendkim-tools
     ```
-    
-2. We then need to generate keys for signing. Manually create your keys with the following command. Replace `example.com` with the `system mail name` you defined.
+
+2. We then need to generate keys for signing. Manually create your keys with the following command. Replace **example.com** with the **system mail name** you defined.
     ```
     mkdir /etc/opendkim/keys/example.com
     sudo opendkim-genkey -D /etc/opendkim/keys/example.com/ -d example.com -s default
@@ -235,12 +238,12 @@ echo "test email" | sendmail your-account@gmail.com
     ```
 
 3. You’re getting really close now. You need to create and/or edit four files:
-   1. `/etc/opendkim.conf` – OpenDKIM’s main configuration file
-   2. `/etc/opendkim/KeyTable` – a list of keys available for signing
-   3. `/etc/opendkim/SigningTable` – a list of domains and accounts allowed to sign
-   4. `/etc/opendkim/TrustedHosts` – a list of servers to “trust” when signing or verifying
+   1. **/etc/opendkim.conf** – OpenDKIM’s main configuration file
+   2. **/etc/opendkim/KeyTable** – a list of keys available for signing
+   3. **/etc/opendkim/SigningTable** – a list of domains and accounts allowed to sign
+   4. **/etc/opendkim/TrustedHosts** – a list of servers to “trust” when signing or verifying
    
-4. Use your favorite text editor to open `/etc/opendkim.conf` and make it look like this:
+4. Use your favorite text editor to open **/etc/opendkim.conf** and make it look like this:
     ```
     ## CONFIGURATION OPTIONS
 
@@ -308,24 +311,24 @@ echo "test email" | sendmail your-account@gmail.com
     InternalHosts           refile:/etc/opendkim/TrustedHosts
     ```
 
-5. create an `/etc/opendkim/KeyTable` file that looks like this:
+5. create an **/etc/opendkim/KeyTable** file that looks like this:
     ```
     default._domainkey.example.com example.com:default:/etc/opendkim/keys/example.com/default.private
     ```
-    What this line means is that for key entry `default._domainkey.example.com`, use the key at `/etc/opendkim/keys/example.com/default.private` with signing domain `example.com` and selector `default`
+    What this line means is that for key entry **default._domainkey.example.com**, use the key at **/etc/opendkim/keys/example.com/default.private** with signing domain **example.com** and selector **default**
 
- 1. you need to create or edit the /etc/opendkim/SigningTable file.
+6. you need to create or edit the /etc/opendkim/SigningTable file.
     ```
     *@example.com default._domainkey.example.com
     ```
-    This specifies that we will sign any email from `example.com`, with the key `default._domainkey.example.com`. You could also have multiple lines here:
+    This specifies that we will sign any email from **example.com**, with the key **default._domainkey.example.com**. You could also have multiple lines here:
     ```
     *@example.com default._dkim.example.com
     bob@example2.com default._dkim.example2.com
     doug@example2.com default._dkim.example2.com
     ```
 
-6. Next, create an /etc/opendkim/TrustedHosts file that looks like this:
+7. Next, create an **/etc/opendkim/TrustedHosts** file that looks like this:
     ```
     127.0.0.1
     hostname1.example1.com
@@ -337,13 +340,13 @@ echo "test email" | sendmail your-account@gmail.com
     ```
     The TrustedHosts file tells OpenDKIM who to let use your keys. IMPORTANT: Make sure you list the IP address for localhost (127.0.0.1) in the TrustedHosts file or OpenDKIM won’t sign mail sent from this server. If you have multiple servers on the same network that relay mail through this server and you want to sign their mail as well, they must be listed in the TrustedHosts file.
 
-7. Edit `/lib/systemd/system/opendkim.service` file, change the line that starts with `ExecStart=/usr/sbin/opendkim -P` to the following:
+8. Edit **/lib/systemd/system/opendkim.service** file, change the line that starts with **ExecStart=/usr/sbin/opendkim -P** to the following:
     ```
     ExecStart=/usr/sbin/opendkim -P /var/run/opendkim/opendkim.pid -p inet:8891@127.0.0.1
     ```
 
 ## Edit Postfix Configuration
-Just add the following lines to your Postfix `/etc/postfix/main.cf` file:
+Just add the following lines to your Postfix **/etc/postfix/main.cf** file:
 ```
 smtpd_milters           = inet:127.0.0.1:8891
 non_smtpd_milters       = $smtpd_milters
@@ -382,7 +385,7 @@ Send a test email
 echo "test email" | sendmail your-account@gmail.com
 ```
 
-The best way to see that everything is working on the server side is to keep an eye on your `/var/log/maillog` file. Do a:
+The best way to see that everything is working on the server side is to keep an eye on your **/var/log/maillog** file. Do a:
 ```
 sudo tail /var/log/maillog
 ```
