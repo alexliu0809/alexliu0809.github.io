@@ -139,8 +139,7 @@ footer {
     overflow-x: auto;
 }
 
-pre,
-code {
+pre {
     overflow: auto;
     white-space: pre-wrap;
     word-wrap: break-word;
@@ -150,6 +149,17 @@ code {
     background-color: #F4F6F8;
     padding: 5px;
     display: block;
+}
+
+code {
+    overflow: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    word-break: break-all;
+    font-family: Courier, monospace;
+    font-size: 16px;
+    background-color: #F4F6F8;
+    padding: 5px;
 }
 
 #newsletter_footer{
