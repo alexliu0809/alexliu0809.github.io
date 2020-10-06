@@ -118,7 +118,9 @@ author_pubs_details:
                 venue_short: ACM IMC
                 year: 2020
                 links:
-                  - type: PDF (forthcoming)
+                  - type: Paper
+                    url: https://cseweb.ucsd.edu/~schulman/docs/imc20-trufflehunter.pdf
+                  - type: Code (forthcoming)
 
               - title: Reasoning Analytically About Password-Cracking Software
                 author_list:
@@ -131,7 +133,7 @@ author_pubs_details:
                 venue_short: IEEE S&P
                 year: 2019
                 links:
-                  - type: PDF
+                  - type: Paper
                     url: https://www.blaseur.com/papers/sp19-pwcracking.pdf
                   - type: Code
                     url: https://github.com/UChicagoSUPERgroup/analytic-password-cracking/
