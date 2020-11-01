@@ -27,6 +27,8 @@ urls:
 #      url: /styleguide/
 
 recent_news:
+  - date: 2020-10-26
+    content: We've released our code for Trufflehunter.
   - date: 2020-08-11
     content: Trufflehunter is accepted to IMC 2020! Big congrats to our lead author Audrey.
   - date: 2019-09-23
@@ -120,7 +122,8 @@ author_pubs_details:
                 links:
                   - type: Paper
                     url: https://cseweb.ucsd.edu/~schulman/docs/imc20-trufflehunter.pdf
-                  - type: Code (forthcoming)
+                  - type: Code
+                    url: https://github.com/ucsdsysnet/trufflehunter
 
               - title: Reasoning Analytically About Password-Cracking Software
                 author_list:
