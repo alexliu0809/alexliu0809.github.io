@@ -1,0 +1,98 @@
+--- 
+layout: default 
+---
+<style type="text/css">
+    .ul_class {
+    font-family: "Lato",sans-serif;
+    }
+
+    .much_bigger {
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+
+    .bigger {
+        font-size: 1.4rem;
+    }
+
+    .big {
+        font-size: 1.2rem;
+    }
+
+    .year{
+        font-size: 1.2rem;
+    }
+
+    .location{
+        font-size: 1.2rem;
+    }
+
+    .res_name{
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
+    
+</style>
+
+
+<div class="card">
+    <h1 class="card-title">Where To Eat Today?</a></h1>
+    <br/>
+
+    <h3>I enjoy sampling cuisines from different countries. Here are some restaurants that I recommend:
+    </h3>
+    <br/>
+    
+    <div>
+        <ul class="ul_class">
+        {% for location in site.restaurants %}
+            <li> 
+                <span class="much_bigger">{{ location.location }}</span>
+                {% for restaurant in location.restaurants %}
+                    <ul>
+                        <li class="bigger">
+                            {{ restaurant.name }}
+                            {% if restaurant.dishes %}
+                                <ul>
+                                {% for dish in restaurant.dishes %}
+                                    <li class="big">
+                                        {{ dish.dish}}        
+                                    </li>
+                                {% endfor %}
+                                </ul>
+                            {% endif %}
+                        </li>
+                    </ul>
+                {% endfor %}
+            </li>
+            <!-- {% if  == "Enze Liu" %}
+            <u>{{ author_name.name }}</u>
+            {% endif %} -->
+        {% endfor %}
+        </ul>
+        <!-- <p style="font-size: 120%">This work may be a <b>better fit at a hacker venue, rather than an academic research venue.</b></p>
+        <br />
+        
+        <p style="font-size: 120%">The framing behind the research <b>is not convincing.</b></p>
+        <br />
+        
+        <p style="font-size: 120%"><b>Writing is often confusing</b>. The paper message is not consistent across the paper.</p>
+        <br /> -->
+
+    </div>
+    <br/>
+    <h3>Since 2017, I have been a Michelin star collector. List of awesome places that I have been to:
+    </h3>
+    <br/>
+    <div>
+    
+    <ul class="ul_class">
+        {% for restaurant in site.fine_dining %}
+            <li>
+                <span class="year"> {{ restaurant.year }} </span>: <span class="res_name">{{ restaurant.name }}</span>. <span class="location">{{ restaurant.location }}</span>
+            </li>
+        {% endfor %}
+    </ul>
+
+    </div>
+</div>

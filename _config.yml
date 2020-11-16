@@ -48,7 +48,7 @@ recent_news:
 
 author_logo: profile.png
 author: Enze "Alex" Liu
-author_bio: Hi, my name is Enze (pronounced like the italian name Enzo) Liu. I also go by the English name "Alex". I am a second-year PhD student in Computer Science at UC San Diego proudly advised by Stefan Savage and Geoff Voelker. I am broadly interested in computer security and privacy. My current research focuses on improving cybersecurity with large-scale empirical analyses. Previously, I was fortunate to have done some research on passwords with David Cash and Blase Ur at the University of Chicago.
+# author_bio: 
 author_email: "e7liu@eng.ucsd.edu"
 author_location: La Jolla, CA
 author_website_url: "https://alexliu0809.github.io"
@@ -146,6 +146,63 @@ author_pubs_details:
                     url: https://youtu.be/kSfmTV0GTIM
 
 
+restaurants:
+    - location: San Diego
+      restaurants:
+          - name: Creme De La Crepe (French)
+            dishes:
+              - dish: Country paté plate
+          - name: Spitfire Tacos (Mexican)
+            dishes:
+              - dish: Tacos
+              - dish: Churros
+          - name: Menya Ultra (Japenese)
+            dishes:
+              - dish: Ramen
+          - name: Costa Brava (Spanish)
+            dishes:
+              - dish: Zarzuela de Marisco
+          - name: Caroline's Seaside Cafe (American)
+            dishes :
+              - dish: The sea view! (also discounts for UCSD students)
+          - name: Kaiserhof Restaurant (German)
+            dishes:
+              - dish: German sausage
+          - name: Taste of Denmark (Denish)
+            dishes:
+              - dish: Open sandwich!
+          - name: Paradise Biryani
+            dishes:
+              - dish: Biryani
+          - name: Pomegranate (Georgian)
+          - name: Romeo & Julieta Wine Cafe (Polish)
+    - location: Chicago
+      restaurants:
+          - name: Laschet's Inn (German)
+            dishes:
+              - dish: Beers!
+          - name: Kizuki Ramen & Izakaya (Japenese)
+            dishes:
+              - dish: Ramen
+          - name: Margeaux Brasserie (French)
+            dishes:
+              - dish: Duck wings À L’ORANGE
+    - location: San Francisco
+      restaurants:
+        - name: Surisan (Korean)
+          dishes:
+            - dish: Brunch
+fine_dining:
+    - year: 2017
+      name: GreenRiver
+      location: Chicago, IL, USA.
+    - year: 2019
+      name: Alinea
+      location: Chicago, IL, USA. Huge thanks to Peter Chen!
+    - year: 2020
+      name: Addison
+      location: San Diego, CA, USA.
+
 
 # social links
 github_username:  alexliu0809
@@ -223,6 +280,8 @@ compress_html:
 
 collections:
  - products
+
+
 
 # Exclude from processing.
 # The following items will not be processed, by default.

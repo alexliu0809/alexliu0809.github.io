@@ -5,13 +5,17 @@ layout: default
     <div class="row">
         <div class="col-lg-8">
         
-            {% if site.author_bio %}
             <div class="card">
                 <h1 class="card-title">About</h1>
-                <p style="text-align: justify;"> {{ site.author_bio }}</p>
+                <p style="text-align: justify;"> 
+                Hi, my name is Enze (pronounced like the italian name Enzo) Liu. I also go by the English name "Alex". I am a second-year PhD student in Computer Science at UC San Diego proudly advised by <a href="http://cseweb.ucsd.edu/~savage/">Stefan Savage</a> and <a href="http://cseweb.ucsd.edu/~voelker/">Geoff Voelker</a>. I am broadly interested in computer security and privacy. My current research focuses on improving cybersecurity with large-scale empirical analyses. Previously, I was fortunate to have done some research on passwords with <a href="https://people.cs.uchicago.edu/~davidcash/">David Cash</a> and <a href="https://www.blaseur.com/">Blase Ur</a> at the University of Chicago.
+                </p>
+
+                <p>
+                    When not squashing bugs or hacking a server, I enjoy swimming, walking around the city (ideally, with friends), playing tennis/table tennis and <a class="noshow" href="/food/">hunting for great food</a>.
+                </p>
                 <!-- <p> {{ site.author_bio_cont }}</p> -->
             </div>
-            {% endif %}
 
             {% if site.show_author_education_details == true %}
             <div class="card">
