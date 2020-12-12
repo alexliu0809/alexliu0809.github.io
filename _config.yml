@@ -168,12 +168,20 @@ restaurants:
           - name: Kaiserhof Restaurant (German)
             dishes:
               - dish: German sausage
-          - name: Taste of Denmark (Denish)
+          - name: Taste of Denmark (Danish)
             dishes:
               - dish: Open sandwich!
-          - name: Paradise Biryani
+          - name: Paradise Biryani (Indian)
             dishes:
               - dish: Biryani
+          - name: Piacere Mio (Italian)
+            dishes:
+              - dish: TAGLIERINI NERI AI FRUTTI DI MARE (Squid ink pasta with seafood)
+              - dish: Choose your own pasta!
+          - name: Kroran Uyghur Cuisine (Uyghur)
+            dishes:
+              - dish: Hand Pulled noodle
+              - dish: Naan (a kind of roasted bread)
           - name: Pomegranate (Georgian)
           - name: Romeo & Julieta Wine Cafe (Polish)
     - location: Chicago
