@@ -182,6 +182,12 @@ restaurants:
             dishes:
               - dish: Hand Pulled noodle
               - dish: Naan (a kind of roasted bread)
+          - name: Havana Grill (Cuban)
+            dishes:
+              - dish: Fricasé de Pollo
+              - dish: Empanada
+              - dish: El Cubano
+              - dish: Rabo Encendido
           - name: Pomegranate (Georgian)
           - name: Romeo & Julieta Wine Cafe (Polish)
     - location: Chicago
