@@ -27,6 +27,8 @@ urls:
 #      url: /styleguide/
 
 recent_news:
+  - date: 2021-01-06
+    content: Trufflehunter is awarded IETF/IRTF Applied Networking Research Prize (ANRP)! Woohoo!
   - date: 2020-10-26
     content: We've released our code for Trufflehunter.
   - date: 2020-08-11
