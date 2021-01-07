@@ -36,6 +36,10 @@ div.pubbody{
 a.noshow{
   color: #000000;
 }
+.award {
+  color: #182B49;
+  font-size: 1.2rem;
+}
 </style>
 
 <style type="text/css">
@@ -92,6 +96,9 @@ p {
                 [<a href="{{link.url}}"><span class="paperlink">{{link.type}}</span></a>]
                 {% else %}
                 [<span class="paperlink">{{link.type}}</span></a>]
+                {% endif %}
+                {% if link.award %}
+                <span class="award">{{link.award}}</span>
                 {% endif %}
                 
                 {% endfor %}
