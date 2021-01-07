@@ -97,11 +97,11 @@ p {
                 {% else %}
                 [<span class="paperlink">{{link.type}}</span></a>]
                 {% endif %}
-                {% if link.award %}
-                <span class="award">{{link.award}}</span>
-                {% endif %}
-                
                 {% endfor %}
+
+                {% if pub.award %}
+                <span class="award">{{pub.award}}</span>
+                {% endif %}
 
                 </td>
                 
