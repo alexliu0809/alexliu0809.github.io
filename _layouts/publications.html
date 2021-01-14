@@ -1,6 +1,8 @@
 ---
 layout: default
 ---
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 <style>
 div.pubbody{
     text-align: left;
@@ -10,6 +12,9 @@ div.pubbody{
     margin-bottom: 29px;
     
 }
+
+
+
 .venue_short {
   font-family: "Lato",sans-serif;
   color: #0080FF;
@@ -27,19 +32,23 @@ div.pubbody{
 }
 .venuename {
   color: #999999;
-  font-size: 1.1rem;  
+  font-size: 1.2rem;  
+}
+.paperlink_span {
+  font-size: 1.2rem;
 }
 .paperlink {
   color: #BF9B30;
-  font-size: 1rem;  
 }
 a.noshow{
   color: #000000;
 }
 .award {
-  color: #FF0000;
+  font-family: "Lato",sans-serif;
+  color: #149414;
   font-weight: bold;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
+  padding-left: 10px;
 }
 </style>
 
@@ -94,14 +103,11 @@ p {
                 <br />
                 {% for link in pub.links %}
                 {% if link.url %}
-                [<a href="{{link.url}}"><span class="paperlink">{{link.type}}</span></a>]
-                {% else %}
-                [<span class="paperlink">{{link.type}}</span></a>]
+                <span class="paperlink_span">[<a href="{{link.url}}" class="paperlink">{{link.type}}</a>]</span>
                 {% endif %}
                 {% endfor %}
-                <br />
                 {% if pub.award %}
-                <span class="award">{{pub.award}}</span>
+                <span class="award"><i class="fa fa-trophy" style="font-size:1.1rem;color:#149414"></i> {{pub.award}}</span>
                 {% endif %}
 
                 </td>
