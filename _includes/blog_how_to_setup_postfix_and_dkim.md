@@ -344,11 +344,10 @@ echo "test email" | sendmail your-account@gmail.com
     ```
     ExecStart=/usr/sbin/opendkim -P /var/run/opendkim/opendkim.pid -p inet:8891@127.0.0.1
     ```
-
-You might also need to edit **/etc/default/opendkim** and change the line that starts with SOCKET to:
-    ```
-    SOCKET="inet:8891@localhost"
-    ```
+    You might also need to edit **/etc/default/opendkim** and change the line that starts with SOCKET to:
+        ```
+        SOCKET="inet:8891@127.0.0.1"
+        ```
 
 ## Edit Postfix Configuration
 Just add the following lines to your Postfix **/etc/postfix/main.cf** file:
