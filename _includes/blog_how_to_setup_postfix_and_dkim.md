@@ -357,6 +357,15 @@ non_smtpd_milters       = $smtpd_milters
 milter_default_action   = accept
 ```
 
+9. Optionally: change Postfix's queuing settings:
+    ```
+    # if you can't deliver it in a day - it can't be delivered!
+    maximal_queue_lifetime = 25h
+    maximal_backoff_time = 13h
+    minimal_backoff_time = 10h
+    queue_run_delay = 10m
+    ```
+
 ## Restart Service
 Restart opendkim and postfix
 ```
