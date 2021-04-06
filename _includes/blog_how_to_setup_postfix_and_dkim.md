@@ -323,9 +323,9 @@ echo "test email" | sendmail your-account@gmail.com
     ```
     This specifies that we will sign any email from **example.com**, with the key **default._domainkey.example.com**. You could also have multiple lines here:
     ```
-    *@example.com default._dkim.example.com
-    bob@example2.com default._dkim.example2.com
-    doug@example2.com default._dkim.example2.com
+    *@example.com default._domainkey.example.com
+    bob@example2.com default._domainkey.example2.com
+    doug@example2.com default._domainkey.example2.com
     ```
 
 7. Next, create an **/etc/opendkim/TrustedHosts** file that looks like this:
@@ -386,7 +386,7 @@ sudo cat /etc/opendkim/keys/example.com/default.txt
 
 The output should look something like this:
 ```
-default._dkim IN TXT ( "v=DKIM1; k=rsa; "
+default._domainkey IN TXT ( "v=DKIM1; k=rsa; "
           "p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDHY7Zl+n3SUldTYRUEU1BErHkKN0Ya52gazp1R7FA7vN5RddPxW/sO9JVRLiWg6iAE4hxBp42YKfxOwEnxPADbBuiELKZ2ddxo2aDFAb9U/lp47k45u5i2T1AlEBeurUbdKh7Nypq4lLMXC2FHhezK33BuYR+3L7jxVj7FATylhwIDAQAB" )  ;
           ----- DKIM default for example.com
 ```
