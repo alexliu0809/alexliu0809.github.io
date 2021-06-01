@@ -220,6 +220,9 @@ fine_dining:
     - year: 2019
       name: Alinea
       location: Chicago, IL, USA. Huge thanks to Peter Chen!
+    - year: 2019
+      name: Cafe China
+      location: New York City, NY, USA.
     - year: 2020
       name: Addison
       location: San Diego, CA, USA.
