@@ -474,7 +474,7 @@
 <p>A fully qualified domain name (FQDN) is a domain name that is completely specified with all labels in the hierarchy of the DNS, having no parts omitted. Labels in the Domain Name System are case-insensitive.</p>
 
 <h3 id="hostname">Hostname</h3>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bob.sales.example.com
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bob.sales.example.com
 </code></pre></div></div>
 <p>When looking at how an FQDN is resolved to find the IP address that relates to a particular system, read the name from right to left, with each level of the hierarchy divided by periods (.). In this example, <strong>com</strong> defines the <strong>top level</strong> domain for this FQDN. The name <strong>example</strong> is a <strong>sub-domain</strong> under <strong>com</strong>, while <strong>sales</strong> is a <strong>sub-domain</strong> under <strong>example</strong>. The name furthest to the left, <strong>bob</strong>, <strong>identifies a specific machine hostname</strong>.</p>
 
@@ -515,7 +515,7 @@
 <p>The <strong>named.conf</strong> file is a collection of statements using nested options surrounded by opening and closing ellipse characters, <strong>{ }</strong>. Administrators must be careful when editing <strong>named.conf</strong> to avoid syntax errors as many seemingly minor errors prevent the <strong>named</strong> service from starting.</p>
 
 <p>A typical named.conf file is organized similar to the following example:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;statement-1&gt; ["&lt;statement-1-name&gt;"] [&lt;statement-1-class&gt;] {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;statement-1&gt; ["&lt;statement-1-name&gt;"] [&lt;statement-1-class&gt;] {
 	&lt;option-1&gt;;
 	&lt;option-2&gt;;
 	&lt;option-N&gt;;
@@ -538,7 +538,7 @@
 <p>The <strong>acl</strong> statement (or access control statement) defines groups of hosts which can then be permitted or denied access to the nameserver.</p>
 
 <p>An <strong>acl</strong> statement takes the following form:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>acl &lt;acl-name&gt; {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>acl &lt;acl-name&gt; {
 	&lt;match-element&gt;;
 	[&lt;match-element&gt;; ...]
 };
@@ -556,7 +556,7 @@
 <p>When used in conjunction with other statements (such as the <strong>options</strong> statement), <strong>acl</strong> statements can be very useful in preventing the misuse of a BIND nameserver.</p>
 
 <p>The following example defines two access control lists and uses an options statement to define how they are treated by the nameserver:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>acl black-hats {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>acl black-hats {
 	10.0.2.0/24;
 	192.168.0.0/24;
 };
@@ -576,14 +576,14 @@ options {
 <p>The <strong>include</strong> statement allows files to be included in a <strong>named.conf</strong> file. In this way, sensitive configuration data (such as <strong>keys</strong>) can be placed in a separate file with restrictive permissions.</p>
 
 <p>An <strong>include</strong> statement takes the following form:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>include "&lt;file-name&gt;"
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>include "&lt;file-name&gt;"
 </code></pre></div></div>
 <p>In this statement, <strong>file-name</strong> is replaced with an absolute path to a file.</p>
 
 <h5 id="options-statement">options Statement</h5>
 <p>The <strong>options</strong> statement defines global server configuration options and sets defaults for other statements. It can be used to specify the location of the <strong>named</strong> working directory, the types of queries allowed, and much more.
 The <strong>options</strong> statement takes the following form:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>options {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>options {
 	&lt;option&gt;;
 	[&lt;option&gt;; ...]
 };
@@ -603,7 +603,7 @@ The following are commonly used options:</p>
     </ul>
   </li>
   <li>listen-on: Specifies the network interface on which named listens for queries. By default, all interfaces are used. Using this directive on a DNS server which also acts a gateway, BIND can be configured to only answer queries that originate from one of the networks.
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  options {
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  options {
       listen-on { 10.0.1.1; };
   };
 </code></pre></div>    </div>
@@ -615,7 +615,7 @@ The following are commonly used options:</p>
 <h4 id="zone-statement">zone Statement</h4>
 <p>A <strong>zone</strong> statement defines the characteristics of a zone, such as the location of its configuration file and zone-specific options. This statement can be used to override the global options statements.
 A <strong>zone</strong> statement takes the following form:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>zone &lt;zone-name&gt; &lt;zone-class&gt; {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>zone &lt;zone-name&gt; &lt;zone-class&gt; {
 	&lt;zone-options&gt;;
 	[&lt;zone-options&gt;; ...]
 };
@@ -661,7 +661,7 @@ A <strong>zone</strong> statement takes the following form:</p>
 <p>Most changes to the <strong>/etc/named.conf</strong> file of a master or slave nameserver involves adding, modifying, or deleting zone statements. While these zone statements can contain many options, most nameservers require only a small subset to function efficiently. The following zone statements are very basic examples illustrating a master-slave nameserver relationship.</p>
 
 <p>The following is an example of a zone statement for the primary nameserver hosting example.com (192.168.0.1):</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>zone "example.com" IN {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>zone "example.com" IN {
 	type master;
 	file "example.com.zone";
 	allow-update { none; };
@@ -673,7 +673,7 @@ A <strong>zone</strong> statement takes the following form:</p>
 <p>A slave server’s zone statement for example.com is slightly different from the previous example. For a slave server, the type is set to slave and in place of the allow-update line is a directive telling named the IP address of the master server.</p>
 
 <p>The following is an example slave server zone statement for example.com zone:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>zone "example.com" {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>zone "example.com" {
 	type slave;
 	file "example.com.zone";
 	masters { 192.168.0.1; };
@@ -718,7 +718,7 @@ The following are commonly used directives:</p>
     <p>$ORIGIN: Appends the domain name to unqualified records, such as those with the hostname and nothing more.</p>
 
     <p>For example, a zone file may contain the following line:</p>
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  $ORIGIN example.com.
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  $ORIGIN example.com.
 </code></pre></div>    </div>
     <p>Any names used in resource records that do not end in a trailing period (.) are appended with example.com.</p>
   </li>
@@ -736,12 +736,12 @@ The following are commonly used directives:</p>
 
 <ul>
   <li>A: This refers to the Address record, which specifies an IP address to assign to a name, as in this example:
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  &lt;host&gt; IN A &lt;IP-address&gt; 
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  &lt;host&gt; IN A &lt;IP-address&gt; 
 </code></pre></div>    </div>
     <p>If the <strong>host</strong> value is omitted, then an A record points to a default IP address for the top of the namespace. This system is the target for all non-FQDN requests.</p>
 
     <p>Consider the following A record examples for the example.com zone file:</p>
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  server1	IN	A	10.0.1.3
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  server1	IN	A	10.0.1.3
                   IN	A	10.0.1.5
 </code></pre></div>    </div>
     <p>Requests for domain.com are pointed to 10.0.1.3, while requests for server1.domain.com are pointed to 10.0.1.5.</p>
@@ -750,10 +750,10 @@ The following are commonly used directives:</p>
     <p>CNAME: This refers to the Canonical Name record, which maps one name to another. This type of record can also be referred to as an alias record.</p>
 
     <p>The next example tells named that any requests sent to the <strong>alias-name</strong> should point to the host, <strong>real-name</strong>. CNAME records are most commonly used to point to services that use a common naming scheme, such as www for Web servers.</p>
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  &lt;alias-name&gt; IN CNAME &lt;real-name&gt; 
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  &lt;alias-name&gt; IN CNAME &lt;real-name&gt; 
 </code></pre></div>    </div>
     <p>In the following example, an <strong>A</strong> record binds a hostname to an IP address, while a <strong>CNAME</strong> record points the commonly used www hostname to it.</p>
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  server1		IN	A	10.0.1.5
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  server1		IN	A	10.0.1.5
   www		IN	CNAME	server1
 </code></pre></div>    </div>
   </li>
@@ -761,13 +761,13 @@ The following are commonly used directives:</p>
     <p>NS: This refers to the NameServer record, which announces the authoritative nameservers for a particular zone.</p>
 
     <p>The following illustrates the layout of an <strong>NS</strong> record:</p>
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  IN NS &lt;nameserver-name&gt; 
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  IN NS &lt;nameserver-name&gt; 
 </code></pre></div>    </div>
 
     <p>Here, <strong>nameserver-name</strong> should be an FQDN.</p>
 
     <p>Next, two nameservers are listed as authoritative for the domain. It is not important whether these nameservers are slaves or if one is a master; they are both still considered authoritative.</p>
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  IN     NS     dns1.example.com.
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  IN     NS     dns1.example.com.
   IN     NS     dns2.example.com.
 </code></pre></div>    </div>
   </li>
@@ -777,7 +777,7 @@ The following are commonly used directives:</p>
     <p>Located after the directives, an SOA resource record is the first resource record in a zone file.</p>
 
     <p>The following shows the basic structure of an SOA resource record:</p>
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  @  IN	SOA  &lt;primary-name-server&gt;  &lt;hostmaster-email&gt; (
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  @  IN	SOA  &lt;primary-name-server&gt;  &lt;hostmaster-email&gt; (
   &lt;serial-number&gt;
   &lt;time-to-refresh&gt;
   &lt;time-to-retry&gt;
@@ -795,7 +795,7 @@ The following are commonly used directives:</p>
     <p>When configuring BIND, all times are specified in seconds.</p>
 
     <p>The following example illustrates the form an SOA resource record might take when it is populated with real values.</p>
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  @	IN	SOA	dns1.example.com.	hostmaster.example.com. (
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  @	IN	SOA	dns1.example.com.	hostmaster.example.com. (
       2001062501 ; serial
       21600      ; refresh after 6 hours
       3600       ; retry after 1 hour
@@ -809,7 +809,7 @@ The following are commonly used directives:</p>
 <p>Seen individually, directives and resource records can be difficult to grasp. However, when placed together in a single file, they become easier to understand.</p>
 
 <p>The following example shows a very basic zone file.</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ORIGIN example.com.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ORIGIN example.com.
 $TTL 86400
 @		IN	SOA	dns1.example.com.	hostmaster.example.com. (
 			2001062501 ; serial
@@ -854,7 +854,7 @@ www		IN	CNAME	services.example.com.
 <p>Services available at the standard names, such as www.example.com (WWW), are pointed at the appropriate servers using a CNAME record.</p>
 
 <p>This zone file would be called into service with a zone statement in the named.conf similar to the following:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>zone "example.com" IN {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>zone "example.com" IN {
 	type master;
 	file "example.com.zone";
 	allow-update { none; };

@@ -706,18 +706,18 @@
 
 <ul>
   <li>The first line of the output prints the <strong>installed dig version</strong>, and <strong>the query that was invoked</strong>. The second line shows the <strong>global options</strong> (by default only cmd).
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  ; &lt;&lt;&gt;&gt; DiG 9.13.3 &lt;&lt;&gt;&gt; linux.org
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  ; &lt;&lt;&gt;&gt; DiG 9.13.3 &lt;&lt;&gt;&gt; linux.org
   ;; global options: +cmd
 </code></pre></div>    </div>
     <p>If you don’t want those lines to be included in the output use the <strong>+nocmd</strong> option. This options must be the very first argument after the dig command.</p>
   </li>
   <li>This section includes technical details about the answer received from the requested authority (DNS server). The second line of this section is the header, including the <strong>opcode (the action performed by dig)</strong> and the <strong>status of the action</strong>. In this case the status is <strong>NOERROR which means that the requested authority served the query without any issue</strong>. Next line starts out with <strong>flags - these are options that can be set to determine which sections of the answer get printed, or determine the timeout and retry strategies</strong>. The subsequent fields <a href="https://tools.ietf.org/html/rfc6895">Query, Answer, Authority and Additional</a> express the number of records in each section for all opcodes.
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  ;; Got answer:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  ;; Got answer:
   ;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY, status: NOERROR, id: 37159
   ;; flags: qr rd ra; QUERY: 1, ANSWER: 2, AUTHORITY: 2, ADDITIONAL: 5
 </code></pre></div>    </div>
     <p>The meaning of each flag:</p>
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  qr = specifies whether this message is a query (0), or a response (1)
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  qr = specifies whether this message is a query (0), or a response (1)
   aa = Authoritative Answer
   tc = Truncation
   rd = Recursion Desired (set in a query and copied into the response if recursion is supported)
@@ -727,17 +727,17 @@
 </code></pre></div>    </div>
   </li>
   <li>This section is shown by default only on the newer versions if the dig utility. This is related to the <a href="https://en.wikipedia.org/wiki/Extension_mechanisms_for_DNS">Extension mechanisms for DNS (EDNS)</a>.
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  ;; OPT PSEUDOSECTION:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  ;; OPT PSEUDOSECTION:
   ; EDNS: version: 0, flags:; udp: 4096
 </code></pre></div>    </div>
   </li>
   <li>The question section reaffirms what you went looking for. By default, dig will request the A record. In this case, DIG went looking for an IPv4 address (A Record) at linux.org.
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  ;; QUESTION SECTION:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  ;; QUESTION SECTION:
   ;linux.org.			IN	A
 </code></pre></div>    </div>
   </li>
   <li>The answer section provides us with an answer to our question. The answer we’re looking at here has five parts: the NAME, TTL, CLASS, TYPE and RDATA.
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  linux.org.		300	IN	A	104.27.167.219
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  linux.org.		300	IN	A	104.27.167.219
   linux.org.		300	IN	A	104.27.166.219
 </code></pre></div>    </div>
     <ul>
@@ -749,13 +749,13 @@
     </ul>
   </li>
   <li>The Authority section tells us what server(s) are the authority for answering DNS queries about the queried domain.
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  ;; AUTHORITY SECTION:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  ;; AUTHORITY SECTION:
   linux.org.		86379	IN	NS	lia.ns.cloudflare.com.
   linux.org.		86379	IN	NS	mark.ns.cloudflare.com.
 </code></pre></div>    </div>
   </li>
   <li>The additional section gives us information about the IP addresses of the authoritative DNS servers shown in the authority section.
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  ;; ADDITIONAL SECTION:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  ;; ADDITIONAL SECTION:
   lia.ns.cloudflare.com.	84354	IN	A	173.245.58.185
   lia.ns.cloudflare.com.	170762	IN	AAAA	2400:cb00:2049:1::adf5:3ab9
   mark.ns.cloudflare.com.	170734	IN	A	173.245.59.130
@@ -763,7 +763,7 @@
 </code></pre></div>    </div>
   </li>
   <li>This is the last section of the dig output which includes statistics about the query.
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  ;; Query time: 58 msec
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  ;; Query time: 58 msec
   ;; SERVER: 192.168.1.1#53(192.168.1.1)
   ;; WHEN: Fri Oct 12 11:46:46 CEST 2018
   ;; MSG SIZE  rcvd: 212
@@ -775,7 +775,7 @@
 <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>dig linux.org +short
 </code></pre></div></div>
 <p>Output:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>104.18.59.123
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>104.18.59.123
 104.18.58.123
 </code></pre></div></div>
 
@@ -784,7 +784,7 @@
 <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>dig linux.org +noall +answer
 </code></pre></div></div>
 <p>Output:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>; &lt;&lt;&gt;&gt; DiG 9.13.3 &lt;&lt;&gt;&gt; linux.org +noall +answer
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>; &lt;&lt;&gt;&gt; DiG 9.13.3 &lt;&lt;&gt;&gt; linux.org +noall +answer
 ;; global options: +cmd
 linux.org.		67	IN	A	104.18.58.123
 linux.org.		67	IN	A	104.18.59.123
@@ -797,7 +797,7 @@ linux.org.		67	IN	A	104.18.59.123
 <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>dig linux.org @8.8.8.8
 </code></pre></div></div>
 <p>Output:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>; &lt;&lt;&gt;&gt; DiG 9.13.3 &lt;&lt;&gt;&gt; linux.org @8.8.8.8
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>; &lt;&lt;&gt;&gt; DiG 9.13.3 &lt;&lt;&gt;&gt; linux.org @8.8.8.8
 ;; global options: +cmd
 ;; Got answer:
 ;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY, status: NOERROR, id: 39110
@@ -823,14 +823,14 @@ linux.org.		299	IN	A	104.18.59.123
 <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>dig +nocmd google.com a +noall +answer
 </code></pre></div></div>
 <p>output:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>google.com.		128	IN	A	216.58.206.206
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>google.com.		128	IN	A	216.58.206.206
 </code></pre></div></div>
 
 <h3 id="query-cname-records">Query CNAME Records</h3>
 <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>dig +nocmd mail.google.com cname +noall +answer
 </code></pre></div></div>
 <p>output:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mail.google.com.	553482	IN	CNAME	googlemail.l.google.com.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mail.google.com.	553482	IN	CNAME	googlemail.l.google.com.
 </code></pre></div></div>
 
 <h3 id="reverse-dns-lookups">Reverse DNS Lookups</h3>
@@ -838,7 +838,7 @@ linux.org.		299	IN	A	104.18.59.123
 <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>dig <span class="nt">-x</span> 208.118.235.148 +noall +answer
 </code></pre></div></div>
 <p>As you can see from the output below the IP address 208.118.235.148 is associated with the hostname wildebeest.gnu.org</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>; &lt;&lt;&gt;&gt; DiG 9.13.3 &lt;&lt;&gt;&gt; -x 208.118.235.148 +noall +answer
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>; &lt;&lt;&gt;&gt; DiG 9.13.3 &lt;&lt;&gt;&gt; -x 208.118.235.148 +noall +answer
 ;; global options: +cmd
 148.235.118.208.in-addr.arpa. 245 IN	PTR	wildebeest.gnu.org.
 </code></pre></div></div>
@@ -847,7 +847,7 @@ linux.org.		299	IN	A	104.18.59.123
 <p>If you want to query a large number of domains, you can add them in a file (one domain per line) and use the -<strong>-f</strong> option followed by the file name.</p>
 
 <p>In the following example, we are querying the domains listed in the <strong>domains.txt</strong> file.</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lxer.com
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lxer.com
 linuxtoday.com
 tuxmachines.org
 </code></pre></div></div>
@@ -855,7 +855,7 @@ tuxmachines.org
 <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dig <span class="nt">-f</span> domains.txt +short
 </code></pre></div></div>
 <p>Output:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>108.166.170.171
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>108.166.170.171
 70.42.23.121
 204.68.122.43
 </code></pre></div></div>

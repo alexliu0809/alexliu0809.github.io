@@ -109,6 +109,33 @@ author_projects_details:
               #   visibility: false
 
 author_pubs_details:
+              - title: "Who's Got Your Mail? Characterizing Mail Service Provider Usage"
+                author_list:
+                  - name: Enze Liu
+                  - name: Gautam Akiwate
+                  - name: Mattijs Jonker
+                  - name: Mattijs Jonker
+                  - name: Ariana Mirian
+                  - name: Geoffrey M. Voelker
+                  - name: Stefan Savage
+                venue: the ACM Internet Measurement Conference 2021 (IMC)
+                venue_short: ACM IMC
+                year: 2021
+
+              - title: "Home is Where the Hijacking is: Understanding DNS Interception by Residential Routers"
+                author_list:
+                  - name: Audrey Randall
+                  - name: Enze Liu
+                  - name: Ramakrishna Padmanabhan
+                  - name: Gautam Akiwate
+                  - name: Geoffrey M. Voelker
+                  - name: Stefan Savage
+                  - name: Aaron Schulman
+                venue: the ACM Internet Measurement Conference 2021 (IMC)
+                venue_short: ACM IMC
+                year: 2021
+
+
               - title: "Trufflehunter: Cache Sniffing Rare Domains at Large Public DNS Resolvers"
                 author_list:
                   - name: Audrey Randall

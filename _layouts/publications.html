@@ -37,6 +37,10 @@ div.pubbody{
 .paperlink_span {
   font-size: 1.2rem;
 }
+.paperlink_forthcoming {
+  font-size: 1.2rem;
+  color: #808080;
+}
 .paperlink {
   color: #BF9B30;
 }
@@ -101,11 +105,18 @@ p {
                 <br />
                 <span class="venuename">Proceedings of <i>{{pub.venue}}</i></span>
                 <br />
+                
+                {% if pub.links %}
                 {% for link in pub.links %}
                 {% if link.url %}
                 <span class="paperlink_span">[<a href="{{link.url}}" class="paperlink">{{link.type}}</a>]</span>
                 {% endif %}
                 {% endfor %}
+                {% else %}
+                <span class="paperlink_forthcoming">[Paper (Forthcoming)]</span>
+                {% endif %}
+
+
                 {% if pub.award %}
                 <span class="award"><i class="fa fa-trophy" style="font-size:1.1rem;color:#149414"></i> {{pub.award}}</span>
                 {% endif %}
