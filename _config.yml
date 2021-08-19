@@ -154,7 +154,7 @@ author_pubs_details:
                     url: https://cseweb.ucsd.edu/~schulman/docs/imc20-trufflehunter.pdf
                   - type: Code
                     url: https://github.com/ucsdsysnet/trufflehunter
-                award: IETF/IRTF Applied Networking Research Prize
+                award: IRTF Applied Networking Research Prize
 
               - title: Reasoning Analytically About Password-Cracking Software
                 author_list:
