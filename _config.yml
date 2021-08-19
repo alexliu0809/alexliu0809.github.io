@@ -289,7 +289,7 @@ google_analytics: UA-46783401-10
 # Choose what to show ( can be true or false)
 show_author_work_experiences: false
 show_author_education_details: true
-show_author_projects_details: true
+show_author_projects_details: false
 
 # dont touch this unless required
 plugins:
