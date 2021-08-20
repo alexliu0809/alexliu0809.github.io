@@ -5,4 +5,6 @@ group :jekyll_plugins do
     gem 'github-pages'
     gem 'jekyll-algolia', '~> 1.0'
     gem "kramdown", ">= 2.3.2"
+    gem "nokogiri"
+    gem "open-uri"
   end

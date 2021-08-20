@@ -111,6 +111,10 @@ layout: default
                 {% if site.twitter_username %}
                   {%- include twitter_follow_button.html -%} 
                 {% endif %}
+
+                {% if site.data.scholar.id %}
+                  {%- include google_scholar_button.html -%} 
+                {% endif %}
     
             </div>
 
