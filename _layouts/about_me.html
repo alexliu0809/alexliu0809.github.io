@@ -103,6 +103,14 @@ layout: default
                 {% if site.author_website_url %}
                 <h6> <i class="fas fa-link"></i> {{ site.author_website_url }} </h6>
                 {% endif %}
+
+                {% if site.google_scholar_id %}
+                <h6> <i class="fas fa-link"></i> 
+                    <a href="https://scholar.google.com/citations?user={{ site.google_scholar_id }}">Google Scholar
+                    </a> 
+                </h6>
+                  
+                {% endif %}
                 
                 {% if site.github_username %}
                   {%- include github_follow_button.html -%} 
@@ -112,9 +120,7 @@ layout: default
                   {%- include twitter_follow_button.html -%} 
                 {% endif %}
 
-                {% if site.data.scholar.id %}
-                  {%- include google_scholar_button.html -%} 
-                {% endif %}
+                
     
             </div>
 
