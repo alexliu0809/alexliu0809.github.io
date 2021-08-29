@@ -255,6 +255,9 @@ fine_dining:
     - year: 2020
       name: Addison
       location: San Diego, CA, USA.
+    - year: 2021
+      name: Sepia
+      location: Chicago, IL, USA.
 
 
 # social links
