@@ -224,6 +224,10 @@ restaurants:
             dishes:
               - dish: Various soups
               - dish: Chinese doughnut stick 
+          - name: Alforon (Mediterranean)
+            dishes:
+              - dish: Phoenician Pie
+              - dish: Ouzi Lamb Special
           - name: Pomegranate (Georgian)
           - name: Romeo & Julieta Wine Cafe (Polish)
     - location: Chicago
