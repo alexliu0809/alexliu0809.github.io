@@ -119,10 +119,15 @@ author_pubs_details:
                   - name: Ariana Mirian
                   - name: Stefan Savage
                   - name: Geoffrey M. Voelker
-
                 venue: the ACM Internet Measurement Conference 2021 (IMC)
                 venue_short: ACM IMC
                 year: 2021
+                links:
+                  - type: Paper
+                    url: https://www.sysnet.ucsd.edu/~voelker/pubs/mx-imc21.pdf
+                  - type: Code
+                    url: https://github.com/ucsdsysnet/mx_inference
+
 
               - title: "Home is Where the Hijacking is: Understanding DNS Interception by Residential Routers"
                 author_list:
@@ -136,6 +141,10 @@ author_pubs_details:
                 venue: the ACM Internet Measurement Conference 2021 (IMC)
                 venue_short: ACM IMC
                 year: 2021
+                links:
+                  - type: Paper
+                    url: https://www.sysnet.ucsd.edu/~voelker/pubs/homejack-imc21.pdf
+
 
 
               - title: "Trufflehunter: Cache Sniffing Rare Domains at Large Public DNS Resolvers"
