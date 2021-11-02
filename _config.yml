@@ -127,6 +127,10 @@ author_pubs_details:
                     url: https://www.sysnet.ucsd.edu/~voelker/pubs/mx-imc21.pdf
                   - type: Code
                     url: https://github.com/ucsdsysnet/mx_inference
+                  - type: Slides
+                    url: https://github.com/alexliu0809/alexliu0809.github.io/blob/876c5a0f380db6d2d6d8bf519589a61e508c1889/assets/files/Paper57-Liu.pdf
+                  - type: Talk
+                    url: https://www.youtube.com/watch?v=EeujjO_OJdo&list=PL4iXY1PzLoNpXfQNpwuDDF155sZhGa4iX&index=45
 
 
               - title: "Home is Where the Hijacking is: Understanding DNS Interception by Residential Routers"
