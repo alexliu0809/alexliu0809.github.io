@@ -86,7 +86,7 @@ p {
                 {% for author_name in pub.author_list %}
                   {% if forloop.last == false %}
                     {% if author_name.name == "Enze Liu" %}
-                    <u>{{ author_name.name }}</u>, 
+                    <strong><u>{{ author_name.name }}</u></strong>, 
                     {% endif %}
                     {% if author_name.name != "Enze Liu" %}
                     {{ author_name.name }}, 
@@ -94,7 +94,7 @@ p {
                   {% endif %}
                   {% if forloop.last != false %}
                     {% if author_name.name == "Enze Liu" %}
-                    <u>{{ author_name.name }}</u>
+                    <strong><u>{{ author_name.name }}</u></strong>
                     {% endif %}
                     {% if author_name.name != "Enze Liu" %}
                     {{ author_name.name }}
