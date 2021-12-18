@@ -275,6 +275,9 @@ fine_dining:
     - year: 2021
       name: Sepia
       location: Chicago, IL, USA.
+    - year: 2021
+      name: Jeune et Jolie
+      location: Carlsbad, CA, USA.
 
 
 # social links
