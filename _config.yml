@@ -74,25 +74,25 @@ author_work_experiences:
 author_education_details:
               - college_logo: ucsd.png
                 college_name: University of California San Diego
-                college_url: www.ucsd.edu
+                college_url: https://www.ucsd.edu
                 college_degree: PhD in Computer Science
                 description: 2019.06 - Present
                 visibility: true
               - college_logo: uchicago.png
                 college_name: The University of Chicago
-                college_url: www.uchicago.edu
+                college_url: https://www.uchicago.edu
                 college_degree: MS in Computer Science
                 description: 2016.09 - 2018.03
                 visibility: true
               - college_logo: ucl.png
                 college_name: University College London
-                college_url: www.ucl.ac.uk
+                college_url: https://www.ucl.ac.uk
                 college_degree: Study Abroad
                 description: 2015.09 - 2016.06
                 visibility: true
               - college_logo: bit.png
                 college_name: Beijing Institute of Technology
-                college_url: www.bit.edu.cn
+                college_url: https://www.bit.edu.cn
                 college_degree: BS in Software Engineering
                 description: 2012.09 - 2016.06
                 visibility: true
