@@ -244,6 +244,12 @@ restaurants:
             dishes:
               - dish: Phoenician Pie
               - dish: Ouzi Lamb Special
+          - name: Mitch's Seafood
+            dishes:
+              - dish: Fish tacos
+          - name: Oscar's Mexican Seafood
+            dishes:
+              - dish: Seafood tacos
           - name: Pomegranate (Georgian)
           - name: Romeo & Julieta Wine Cafe (Polish)
     - location: Chicago
@@ -281,6 +287,9 @@ fine_dining:
     - year: 2021
       name: Jeune et Jolie
       location: Carlsbad, CA, USA.
+    - year: 2022
+      name: Sushi Tadokoro
+      location: San Diego, CA, USA.
 
 
 # social links
