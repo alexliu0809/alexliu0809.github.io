@@ -1,16 +1,11 @@
 References:
-[1](https://classes.cs.uchicago.edu/archive/2021/winter/23200-1/10.pdf)
 
-[2](https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.348.4534&rep=rep1&type=pdf)
-
-[3](https://computing.ece.vt.edu/~jkh/Understanding_SSL_TLS.pdf)
-
-[4](https://cs249i.stanford.edu/lectures/CS249i-WebPKI.pdf)
-
-[5](https://www.cs.columbia.edu/~suman/security_arch/ssl.pdf)
-
-[6](https://hpbn.co/transport-layer-security-tls/)
-
+[1](https://classes.cs.uchicago.edu/archive/2021/winter/23200-1/10.pdf),
+[2](https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.348.4534&rep=rep1&type=pdf),
+[3](https://computing.ece.vt.edu/~jkh/Understanding_SSL_TLS.pdf),
+[4](https://cs249i.stanford.edu/lectures/CS249i-WebPKI.pdf),
+[5](https://www.cs.columbia.edu/~suman/security_arch/ssl.pdf),
+[6](https://hpbn.co/transport-layer-security-tls/),
 [7](https://www.cse.scu.edu/~bdezfouli/publication/MSWIM2019_SCU_SIOTLAB.pdf)
 
 # SSL/TLS certificates ecosystem
