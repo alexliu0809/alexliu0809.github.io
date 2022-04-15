@@ -290,6 +290,9 @@ fine_dining:
     - year: 2022
       name: Sushi Tadokoro
       location: San Diego, CA, USA.
+    - year: 2022
+      name: Jeune et Jolie
+      location: Carlsbad, CA, USA.
 
 
 # social links
