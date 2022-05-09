@@ -250,6 +250,13 @@ restaurants:
           - name: Oscar's Mexican Seafood
             dishes:
               - dish: Seafood tacos
+          - name: Pho Point Loma & Grill
+            dishes:
+              - dish: Pho
+          - name: Supannee House of Thai 
+            dishes:
+              - dish: Boba tea
+              - dish: Duck
           - name: Pomegranate (Georgian)
           - name: Romeo & Julieta Wine Cafe (Polish)
     - location: Chicago
