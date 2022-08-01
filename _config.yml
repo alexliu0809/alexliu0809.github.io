@@ -27,6 +27,8 @@ urls:
 #      url: /styleguide/
 
 recent_news:
+  - date: 2022-08-01
+    content: Our paper that studies the functionality and insecurity of consumer android spyware apps is accepted to PETS '23!
   - date: 2021-08-19
     content: Two papers are accepted to IMC '21! Stay tuned for the camera ready paper.
   - date: 2021-01-06
@@ -111,6 +113,20 @@ author_projects_details:
               #   visibility: false
 
 author_pubs_details:
+              - title: "No Privacy Among Spies: Assessing the Functionality and Insecurity of Consumer Android Spyware Apps"
+                author_list:
+                  - name: Enze Liu
+                  - name: Sumanth Rao
+                  - name: Sam Havron
+                  - name: David Cash
+                  - name: Grant Ho
+                  - name: Stefan Savage
+                  - name: Geoffrey M. Voelker
+                  - name: Damon McCoy
+                venue: 23rd Privacy Enhancing Technologies Symposium (PETS 2023)
+                venue_short: PETS
+                year: 2023
+
               - title: "Who's Got Your Mail? Characterizing Mail Service Provider Usage"
                 author_list:
                   - name: Enze Liu
@@ -191,6 +207,7 @@ author_pubs_details:
                     url: https://youtu.be/kSfmTV0GTIM
 
 
+
 restaurants:
     - location: San Diego
       restaurants:
@@ -201,6 +218,9 @@ restaurants:
             dishes:
               - dish: Tacos
               - dish: Churros
+          - name: The Taco Stand (Mexican)
+            dishes:
+              - dish: Burrito and Salsa
           - name: Menya Ultra (Japenese)
             dishes:
               - dish: Ramen
@@ -244,21 +264,42 @@ restaurants:
             dishes:
               - dish: Phoenician Pie
               - dish: Ouzi Lamb Special
-          - name: Mitch's Seafood
+          - name: Mitch's Seafood (Seafood)
             dishes:
-              - dish: Fish tacos
-          - name: Oscar's Mexican Seafood
+              - dish: Fresh fish tacos
+          - name: Oscar's Mexican Seafood (Mexican)
             dishes:
               - dish: Seafood tacos
-          - name: Pho Point Loma & Grill
+          - name: Pho Point Loma & Grill (Vietnamese)
             dishes:
               - dish: Pho
-          - name: Supannee House of Thai 
+          - name: Supannee House of Thai (Thai)
             dishes:
               - dish: Boba tea
               - dish: Duck
           - name: Pomegranate (Georgian)
           - name: Romeo & Julieta Wine Cafe (Polish)
+          - name: The Red Door (Italian / Fine dining)
+            dishes:
+              - dish: Beef wellington
+          - name: Trust (New American Brunch)
+            dishes:
+              - dish: Ultimate sticky bun
+              - dish: Smoked pork shoulder hash
+          - name: Abay Ethiopian market and restaurant (Ethiopian)
+            dishes:
+              - dish: Beef stew
+              - dish: Meat combination
+          - name: Awash Ethiopian Restaurant (Ethiopian)
+          - name: Plumeria Vegetarian Restaurant (Vegetarian)
+            dishes:
+              - dish: Vegan ducl
+          - name: The Purple Mint (Vegetarian)
+            dishes:
+              - dish: Peking "Duck" Lettuce Wraps
+              - dish: Sizzling "Steak Filet Mignon"
+ 
+
     - location: Chicago
       restaurants:
           - name: Laschet's Inn (German)
