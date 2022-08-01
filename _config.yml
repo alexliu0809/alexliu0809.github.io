@@ -122,7 +122,7 @@ author_pubs_details:
                   - name: Stefan Savage
                   - name: Geoffrey M. Voelker
                   - name: Damon McCoy
-                venue: 23rd Privacy Enhancing Technologies Symposium (PETS)
+                venue: the 23rd Privacy Enhancing Technologies Symposium (PETS '23)
                 venue_short: PETS
                 year: 2023
 
@@ -134,7 +134,7 @@ author_pubs_details:
                   - name: Ariana Mirian
                   - name: Stefan Savage
                   - name: Geoffrey M. Voelker
-                venue: the ACM Internet Measurement Conference 2021 (IMC)
+                venue: the ACM Internet Measurement Conference 2021 (IMC '21)
                 venue_short: ACM IMC
                 year: 2021
                 links:
@@ -157,7 +157,7 @@ author_pubs_details:
                   - name: Geoffrey M. Voelker
                   - name: Stefan Savage
                   - name: Aaron Schulman
-                venue: the ACM Internet Measurement Conference 2021 (IMC)
+                venue: the ACM Internet Measurement Conference 2021 (IMC '21)
                 venue_short: ACM IMC
                 year: 2021
                 links:
@@ -175,7 +175,7 @@ author_pubs_details:
                   - name: Geoffrey M. Voelker
                   - name: Stefan Savage
                   - name: Aaron Schulman
-                venue: the ACM Internet Measurement Conference 2020 (IMC)
+                venue: the ACM Internet Measurement Conference 2020 (IMC '20)
                 venue_short: ACM IMC
                 year: 2020
                 links:
@@ -192,7 +192,7 @@ author_pubs_details:
                   - name: Maximilian Golla
                   - name: David Cash
                   - name: Blase Ur
-                venue: the 40th IEEE Symposium on Security and Privacy (S&P)
+                venue: the 40th IEEE Symposium on Security and Privacy (S&P '19)
                 venue_short: IEEE S&P
                 year: 2019
                 links:
