@@ -123,7 +123,7 @@ author_pubs_details:
                   - name: Stefan Savage
                   - name: Geoffrey M. Voelker
                   - name: Damon McCoy
-                venue: 23rd Privacy Enhancing Technologies Symposium (PETS 2023)
+                venue: 23rd Privacy Enhancing Technologies Symposium (PETS)
                 venue_short: PETS
                 year: 2023
 
@@ -256,7 +256,7 @@ restaurants:
               - dish: Empanada
               - dish: El Cubano
               - dish: Rabo Encendido
-          - name: Soup Du Jour (Soup)
+          - name: Soup Du Jour (Chinese)
             dishes:
               - dish: Various soups
               - dish: Chinese doughnut stick 
@@ -293,7 +293,7 @@ restaurants:
           - name: Awash Ethiopian Restaurant (Ethiopian)
           - name: Plumeria Vegetarian Restaurant (Vegetarian)
             dishes:
-              - dish: Vegan ducl
+              - dish: Vegan duck
           - name: The Purple Mint (Vegetarian)
             dishes:
               - dish: Peking "Duck" Lettuce Wraps
