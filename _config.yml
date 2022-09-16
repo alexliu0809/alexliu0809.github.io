@@ -125,6 +125,9 @@ author_pubs_details:
                 venue: the 23rd Privacy Enhancing Technologies Symposium (PETS '23)
                 venue_short: PETS
                 year: 2023
+                links:
+                  - type: Paper
+                    url: https://raw.githubusercontent.com/alexliu0809/alexliu0809.github.io/master/assets/files/Paper27.pdf
 
               - title: "Who's Got Your Mail? Characterizing Mail Service Provider Usage"
                 author_list:
