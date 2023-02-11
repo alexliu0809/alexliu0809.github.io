@@ -116,6 +116,20 @@ author_pubs_details:
               - title: "No Privacy Among Spies: Assessing the Functionality and Insecurity of Consumer Android Spyware Apps"
                 author_list:
                   - name: Enze Liu
+                  - name: Gautam Akiwate
+                  - name: Mattijs Jonker
+                  - name: Ariana Mirian
+                  - name: Grant Ho
+                  - name: Geoffrey M. Voelker
+                  - name: Stefan Savage
+                venue: the 8th IEEE European Symposium on Security and Privacy (EuroS&P '23)
+                venue_short: IEEE EuroS&P
+                year: 2023
+
+
+              - title: "No Privacy Among Spies: Assessing the Functionality and Insecurity of Consumer Android Spyware Apps"
+                author_list:
+                  - name: Enze Liu
                   - name: Sumanth Rao
                   - name: Sam Havron
                   - name: Grant Ho
