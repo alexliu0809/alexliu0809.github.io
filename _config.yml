@@ -113,7 +113,7 @@ author_projects_details:
               #   visibility: false
 
 author_pubs_details:
-              - title: "No Privacy Among Spies: Assessing the Functionality and Insecurity of Consumer Android Spyware Apps"
+              - title: "Forward Pass: On the Security Implications of Email Forwarding Mechanism and Policy"
                 author_list:
                   - name: Enze Liu
                   - name: Gautam Akiwate
