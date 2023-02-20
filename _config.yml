@@ -125,6 +125,9 @@ author_pubs_details:
                 venue: the 8th IEEE European Symposium on Security and Privacy (EuroS&P '23)
                 venue_short: IEEE EuroS&P
                 year: 2023
+                links:
+                  - type: Preprint
+                    url: https://arxiv.org/pdf/2302.07287
 
 
               - title: "No Privacy Among Spies: Assessing the Functionality and Insecurity of Consumer Android Spyware Apps"
