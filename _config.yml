@@ -113,6 +113,19 @@ author_projects_details:
               #   visibility: false
 
 author_pubs_details:
+              - title: "Understanding the viability of email origin indicators for identifying the sender"
+                author_list:
+                  - name: Enze Liu
+                  - name: Lu Sun
+                  - name: Alex Bellon
+                  - name: Grant Ho
+                  - name: Stefan Savage
+                  - name: Geoffrey M. Voelker
+                  - name: Imani N. S. Munyaka
+                venue:  the 19th Symposium on Usable Privacy and Security (SOUPS '23) 
+                venue_short: Usenix SOUPS
+                year: 2023
+
               - title: "Forward Pass: On the Security Implications of Email Forwarding Mechanism and Policy"
                 author_list:
                   - name: Enze Liu
