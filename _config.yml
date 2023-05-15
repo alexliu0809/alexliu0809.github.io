@@ -123,7 +123,7 @@ author_pubs_details:
                   - name: Geoffrey M. Voelker
                   - name: Imani N. S. Munyaka
                 venue:  the 19th Symposium on Usable Privacy and Security (SOUPS '23) 
-                venue_short: Usenix SOUPS
+                venue_short: SOUPS
                 year: 2023
 
               - title: "Forward Pass: On the Security Implications of Email Forwarding Mechanism and Policy"
