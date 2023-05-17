@@ -139,8 +139,8 @@ author_pubs_details:
                 venue_short: IEEE EuroS&P
                 year: 2023
                 links:
-                  - type: Preprint
-                    url: https://arxiv.org/pdf/2302.07287
+                  - type: Paper
+                    url: https://www.sysnet.ucsd.edu/~voelker/pubs/forwarding-eurosp23.pdf
 
 
               - title: "No Privacy Among Spies: Assessing the Functionality and Insecurity of Consumer Android Spyware Apps"
