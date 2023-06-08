@@ -158,6 +158,8 @@ author_pubs_details:
                 links:
                   - type: Paper
                     url: https://petsymposium.org/popets/2023/popets-2023-0013.pdf
+                news: news_pets23.html
+
 
               - title: "Who's Got Your Mail? Characterizing Mail Service Provider Usage"
                 author_list:
