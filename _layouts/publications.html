@@ -2,7 +2,7 @@
 layout: default
 ---
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <!-- Style shamelessly copied from Blase's group website --> 
 <style>
 div.pubbody{
@@ -52,6 +52,23 @@ div.pubbody{
   font-weight: bold;
   font-size: 1.2rem;
   padding-left: 10px;
+}
+.pubbody .news{
+  font-size: 1.0rem;
+}
+
+.pubbody .media_button{
+    color: black;
+    font-style: italic;
+    /*
+    background-color: rgb(7, 55, 99);
+    border-radius: 2rem;
+    padding: 0px 2px 0px 5px;
+    */
+}
+
+.pubbody .media_content{
+    margin-left: 5px;
 }
 
 .pubbody p {
@@ -111,11 +128,23 @@ div.pubbody{
                 {% endfor %}
                 {% else %}
                 <span class="paperlink_forthcoming">[Paper (forthcoming)]</span>
+
+
                 {% endif %}
 
 
                 {% if pub.award %}
                 <span class="award"><i class="fa fa-trophy" style="font-size:1.1rem;color:#149414"></i> {{pub.award}}</span>
+                {% endif %}
+
+                {% if pub.news %}
+                <br class="br_news" />
+                <span class="news">
+                  <span class="media_button"> <i class="fa fa-rss"></i> Press Coverage: </span>
+                  <span class="media_content">
+                    {%- include {{pub.news}} -%}
+                  </span>
+                </span>
                 {% endif %}
 
                 </td>
