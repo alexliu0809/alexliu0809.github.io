@@ -141,7 +141,7 @@ author_pubs_details:
                 links:
                   - type: Paper
                     url: https://www.sysnet.ucsd.edu/~voelker/pubs/forwarding-eurosp23.pdf
-
+                news: news_eurosp23.html
 
               - title: "No Privacy Among Spies: Assessing the Functionality and Insecurity of Consumer Android Spyware Apps"
                 author_list:
