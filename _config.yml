@@ -141,6 +141,8 @@ author_pubs_details:
                 links:
                   - type: Paper
                     url: https://www.sysnet.ucsd.edu/~voelker/pubs/forwarding-eurosp23.pdf
+                  - type: Slides (invited talk at Stanford University)
+                    url: https://github.com/alexliu0809/alexliu0809.github.io/blob/master/assets/files/Liu-Stanford.pdf?raw=true
                 news: news_eurosp23.html
                 award: Best Paper Award
 
