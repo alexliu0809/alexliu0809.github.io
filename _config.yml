@@ -125,6 +125,10 @@ author_pubs_details:
                 venue:  the 19th Symposium on Usable Privacy and Security (SOUPS '23) 
                 venue_short: SOUPS
                 year: 2023
+                links:
+                  - type: Paper
+                    url: https://www.usenix.org/system/files/soups2023-liu.pdf
+                  
 
               - title: "Forward Pass: On the Security Implications of Email Forwarding Mechanism and Policy"
                 author_list:
@@ -141,9 +145,8 @@ author_pubs_details:
                 links:
                   - type: Paper
                     url: https://www.sysnet.ucsd.edu/~voelker/pubs/forwarding-eurosp23.pdf
-                  - type: Slides (invited talk at Stanford University)
-                    url: https://github.com/alexliu0809/alexliu0809.github.io/blob/master/assets/files/Liu-Stanford.pdf?raw=true
                 news: news_eurosp23.html
+                invited_talks: talks_eurosp23.html
                 award: Best Paper Award
 
               - title: "No Privacy Among Spies: Assessing the Functionality and Insecurity of Consumer Android Spyware Apps"

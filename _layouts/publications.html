@@ -71,6 +71,25 @@ div.pubbody{
     margin-left: 5px;
 }
 
+
+.pubbody .talks{
+  font-size: 1.0rem;
+}
+
+.pubbody .talks_button{
+    color: black;
+    font-style: italic;
+    /*
+    background-color: rgb(7, 55, 99);
+    border-radius: 2rem;
+    padding: 0px 2px 0px 5px;
+    */
+}
+
+.pubbody .talks_content{
+    margin-left: 5px;
+}
+
 .pubbody p {
     display:list-item;
     list-style:disc inside;
@@ -143,6 +162,18 @@ div.pubbody{
                   <span class="media_button"> <i class="fa fa-rss"></i> Media Coverage: </span>
                   <span class="media_content">
                     {%- include {{pub.news}} -%}
+                  </span>
+                </span>
+                {% endif %}
+
+
+                {% if pub.invited_talks %}
+                <br class="br_talks" />
+                <span class="talks">
+                  <span class="talks_button"> <i class="fa fa-microphone"></i>
+                  Invited talks at: </span>
+                  <span class="talks_content">
+                    {%- include {{pub.invited_talks}} -%}
                   </span>
                 </span>
                 {% endif %}
