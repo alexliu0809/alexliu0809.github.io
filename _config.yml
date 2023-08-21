@@ -128,6 +128,8 @@ author_pubs_details:
                 links:
                   - type: Paper
                     url: https://www.usenix.org/system/files/soups2023-liu.pdf
+                  - type: Slides
+                    url: https://www.usenix.org/conference/soups2023/presentation/liu
                   
 
               - title: "Forward Pass: On the Security Implications of Email Forwarding Mechanism and Policy"
