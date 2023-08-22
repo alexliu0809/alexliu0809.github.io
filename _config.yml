@@ -166,6 +166,8 @@ author_pubs_details:
                 links:
                   - type: Paper
                     url: https://petsymposium.org/popets/2023/popets-2023-0013.pdf
+                  - type: Slides
+                    url: https://github.com/alexliu0809/alexliu0809.github.io/blob/master/assets/files/Liu-PETS23.pdf?raw=true
                 news: news_pets23.html
 
 
