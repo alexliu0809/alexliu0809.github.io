@@ -113,6 +113,20 @@ author_projects_details:
               #   visibility: false
 
 author_pubs_details:
+              - title: "Limited Access: The Truth Behind Far Memory"
+                author_list:
+                  - name: Anil Yelam
+                  - name: Stewart Grant
+                  - name: Enze Liu
+                  - name: Radhika Niranjan Mysore
+                  - name: Marcos K. Aguilera
+                  - name: Amy Ousterhout
+                  - name: Alex C. Snoeren
+                venue:  the Workshop on Resource Disaggregation and Serverless Computing (WORDS '23)
+                venue_short: WORDS
+                year: 2023
+
+
               - title: "Understanding the Viability of Gmail's Origin Indicator for Identifying the Sender"
                 author_list:
                   - name: Enze Liu
