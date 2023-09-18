@@ -113,6 +113,18 @@ author_projects_details:
               #   visibility: false
 
 author_pubs_details:
+              - title: "NewsGuesser: Using Curiosity to Reduce Selective Exposure "
+                author_list:
+                  - name: Lu Sun
+                  - name: Hengyuan Zhang
+                  - name: Enze Liu
+                  - name: Mingyang Liu
+                  - name: Kristen Vaccaro
+                venue: the 27th ACM Conference On Computer-Supported Cooperative Work And Social Computing (CSCW '24)
+                venue_short: ACM CSCW
+                year: 2024
+
+
               - title: "Limited Access: The Truth Behind Far Memory"
                 author_list:
                   - name: Anil Yelam
