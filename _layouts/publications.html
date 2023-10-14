@@ -152,8 +152,12 @@ div.pubbody{
                 {% endif %}
 
 
-                {% if pub.award %}
-                <span class="award"><i class="fa fa-trophy" style="font-size:1.1rem;color:#149414"></i> {{pub.award}}</span>
+                {% if pub.awards %}
+                  {% for comp in pub.awards %}
+                  {% if comp.award %}
+                    <span class="award"><i class="fa fa-trophy" style="font-size:1.1rem;color:#149414"></i> {{comp.award}}</span>
+                  {% endif %}
+                  {% endfor %}
                 {% endif %}
 
                 {% if pub.news %}
