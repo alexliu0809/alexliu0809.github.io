@@ -420,6 +420,12 @@ fine_dining:
     - year: 2022
       name: Jeune et Jolie
       location: Carlsbad, CA, USA.
+    - year: 2023
+      name: Providence
+      location: Los Angeles, CA, USA.
+    - year: 2023
+      name: Oxalis
+      location: Brooklyn, NY, USA.
 
 
 # social links
