@@ -401,7 +401,7 @@ fine_dining:
       location: Chicago, IL, USA.
     - year: 2019
       name: Alinea
-      location: Chicago, IL, USA. Huge thanks to Peter Chen!
+      location: Chicago, IL, USA. Huge thanks to <a href="https://economics.harvard.edu/people/anhua-chen">Peter Chen</a>!
     - year: 2019
       name: Cafe China
       location: New York City, NY, USA.
