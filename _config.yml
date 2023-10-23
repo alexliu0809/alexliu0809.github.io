@@ -503,6 +503,160 @@ compress_html:
 #     category: '/category/:name/'
 
 
+
+phdadvise:
+  - item:
+    author: Andrej Karpathy
+    title: A Survival Guide to a PhD
+    link: http://karpathy.github.io/2016/09/07/phd/
+    pdf: advice-karpathy.png
+  - item:
+    author: Dredze and Wallach
+    title: How to Be a Successful PhD Student
+    link: https://www.cs.jhu.edu/~mdredze/publications/HowtoBeaSuccessfulPhDStudent.pdf
+    pdf: advice-dredze.pdf
+  - item:
+    author: Lawrence Saul
+    title: How to get started on research in graduate school
+    link: https://docs.google.com/viewer?a=v&pid=sites&srcid=ZW5nLnVjc2QuZWR1fGNzZS1nc2F8Z3g6NWY4ZWIzNzFiMGMxZjFhOQ
+    pdf: advice-saul.pdf
+  - item:
+    author: Matt Might
+    title: 10 easy ways to fail a Ph.D.
+    link: https://matt.might.net/articles/ways-to-fail-a-phd/
+    pdf: advice-might.png
+  - item:
+    author: Nick Feamster
+    title: Managing Your Advisor
+    link: https://greatresearch.org/2013/08/14/managing-your-advisor/
+    pdf: advice-feamster.png
+  - item:
+    author: David A. Patterson
+    title: How to Have a Bad Career in Research/Academia
+    link: https://people.eecs.berkeley.edu/~pattrsn/talks/BadCareer.pdf
+    pdf: advice-patterson.pdf
+  - item:
+    author: Ronald T. Azuma
+    title: So long, and thanks for the Ph.D.!
+    link: https://www.cs.unc.edu/~azuma/hitch4.html
+    pdf: advice-azuma.png
+  - item:
+    author: Wanda Pratt
+    title: The Graduate Student Survival Guide
+    link: https://gradresources.org/the-graduate-student-survival-guide/
+    pdf: advice-pratt.pdf
+  - item:
+    author: Richard Hamming
+    title: You and Your Research
+    link: https://www.cs.virginia.edu/~robins/YouAndYourResearch.html
+    pdf: advice-hamming.png
+  - item:
+    author: Jason Hong 
+    title: Ph.D. Students Must Break Away From Undergraduate Mentality
+    link: https://cacm.acm.org/magazines/2013/7/165494-phd-students-must-break-away-from-undergraduate-mentality/fulltext
+    pdf: advice-hong.png
+  - item:
+    author: Philip Guo
+    title: Advice for early-stage Ph.D. students (you have to find this one yourself)
+  - item:
+    author: Remzi Arpaci-Dusseau
+    title: "Graduate School: Keys To Success"
+    link: https://www.youtube.com/watch?v=fqPSnjewkuA
+  - item:
+    author: Matt Might
+    title: Productivity tips, tricks and hacks for academics
+    link: http://karpathy.github.io/2016/09/07/phd/
+    pdf: advice-matt-productivity.png
+  - item:
+    author: Nick Feamster
+    title: "Storytelling 101: Writing Tips for Academics"
+    link: https://greatresearch.org/2013/10/11/storytelling-101-writing-tips-for-academics/
+    pdf: advice-karpathy.png
+  - item:
+    author: Jennifer Rexford
+    title: Advice for New Graduate Students
+    link: https://freedom-to-tinker.com/2010/09/27/advice-new-graduate-students/
+    pdf: advice-rexford.png
+  - item:
+    author: Yoshi Kohno
+    title: Research Projects are Like Fractals
+    link: https://yoshi-kohno.medium.com/research-projects-are-like-fractals-no-matter-how-close-we-look-we-can-always-look-closer-an-8c12d13d3bfb
+    pdf: advice-khono.png
+  - item:
+    author: Michael Schillo
+    title: Hints for research students
+    link: http://www.virtosphere.de/schillo/research/tips.html#start
+    pdf: advice-schillo.png
+  - item:
+    author: H.T. Kung
+    title: Useful Thoughts about Research
+    link: https://www.eecs.harvard.edu/htk/phdadvice/
+    pdf: advice-kung.png
+  - item:
+    author: Arvind Narayanan
+    title: The role of luck in academia
+    link: https://threadreaderapp.com/thread/1348664433216802817
+  - item:
+    author: Dianne Prost O’Leary
+    title: "GRADUATE STUDY IN THE COMPUTER AND MATHEMATICAL SCIENCES: A SURVIVAL MANUAL"
+    link: https://www.cs.umd.edu/users/oleary/gradstudy/gradstudy.pdf
+    pdf: advice-oleary.pdf
+  - item:
+    author: Christos Kozyrakis
+    title: How to Have a Bad Career as a Stanford Graduateas a Stanford Graduate Student
+    link: http://csl.stanford.edu/~christos/publications/BadCareer.pdf
+    pdf: advice-kozyrakis.pdf
+  - item:
+    author: Marie desJardins
+    title: "How to Succeed in Graduate School: A Guide for Students and Advisors"
+    link: https://www.eng.auburn.edu/~troppel/Advice_for_Grad_Students.pdf
+    pdf: advice-desjardins.pdf
+  - item:
+    author: UCSD's Computer Science and Engineering Department
+    title: How Is Your Advisor/Advisee Relationship?
+  - item:
+    author: Nick Feamster
+    title: Research Patterns
+    link: https://greatresearch.org/2013/09/20/research-patterns/
+    pdf: advice-feamster-research-patterns.png
+  - item:
+    author: Zhiyun Qian
+    title: How to Look for Ideas in Computer Science Research
+    link: https://medium.com/digital-diplomacy/how-to-look-for-ideas-in-computer-science-research-7a3fa6f4696f
+    pdf: advice-qian.pdf
+
+
+phdadvisecollections:
+  - item:
+    author: Jason Hong
+    link: http://www.cs.cmu.edu/~jasonh/advice.html
+  - item:
+    author: Michael Ernst
+    link: https://homes.cs.washington.edu/~mernst/advice/
+  - item:
+    author: Feamster and Gray
+    link: https://greatresearch.org/
+  - item:
+    author: Mark Leone
+    link: https://www.cs.cmu.edu/~mleone/how-to.html
+  - item:
+    author: Yuan Tian
+    link: https://www.ytian.info/students
+  - item:
+    author: Dan Horn
+    link: http://www-personal.umich.edu/~danhorn/graduate.html
+  - item:
+    author: Paul Liang
+    link: https://github.com/pliang279/awesome-phd-advice
+  - item:
+    author: Shuwen Jethro Sun
+    link: https://www.khoury.northeastern.edu/home/jethrosun/phd-readings.html
+  - item:
+    author: UW CSE
+    link: https://courses.cs.washington.edu/courses/cse590x/22wi/resources/
+
+
+
 collections:
  - products
 

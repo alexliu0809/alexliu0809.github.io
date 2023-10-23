@@ -114,8 +114,42 @@ Computer Science grad school
 
 
 	<h3> Advice For PhD Students </h3>
-	
-	<li>
+	<span style="margin:5px;">Note: Copyright belongs to the authors. Screenshots taken WITHOUT permission. If you would like to have your article removed, please contact me via email.</span>
+	{% for item in site.phdadvise %}
+		<li>
+			{% if item.link %}
+				{{- item.author -}}: 
+				<a href="{{ item.link }}">
+				{{- item.title -}}
+				</a>
+			{% else %}
+				{{- item.author -}}:&nbsp;
+				{{- item.title -}}
+			{% endif %}
+
+			{% if item.pdf %}
+			&nbsp;
+			&nbsp;
+			<a href="https://raw.githubusercontent.com/alexliu0809/alexliu0809.github.io/master/assets/files/{{ item.pdf }}">
+			[Screenshot]
+			</a>
+			{% endif %}
+		</li>
+	{% endfor %}	
+
+	<br />
+
+	<h3> Similar Collections </h3>
+	{% for item in site.phdadvisecollections %}
+		<li>
+			{% if item.link %}
+				<a href="{{ item.link }}">
+					{{- item.author -}}
+				</a>
+			{% endif %}
+		</li>
+	{% endfor %}	
+	<!-- <li>
 		<a href="http://karpathy.github.io/2016/09/07/phd/">
 			A Survival Guide to a PhD
 		</a>
@@ -264,6 +298,6 @@ Computer Science grad school
 		<a href="http://taoxie.cs.illinois.edu/advice/gradstudentsurvival.pdf">
 			Graduate Student Survival/Success Guide
 		</a>
-	</li>
+	</li> -->
     
 </div>
