@@ -624,6 +624,11 @@ phdadvise:
     title: How to Look for Ideas in Computer Science Research
     link: https://medium.com/digital-diplomacy/how-to-look-for-ideas-in-computer-science-research-7a3fa6f4696f
     pdf: advice-qian.pdf
+  - item:
+    author: James Larisch
+    title: Highly Opinionated Advice for (CS) PhD Happiness
+    link: https://jameslarisch.com/phd-happiness
+    pdf: advice-larisch.png
 
 
 phdadvisecollections:
