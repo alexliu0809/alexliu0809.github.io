@@ -565,13 +565,13 @@ phdadvise:
   - item:
     author: Matt Might
     title: Productivity tips, tricks and hacks for academics
-    link: http://karpathy.github.io/2016/09/07/phd/
+    link: https://matt.might.net/articles/productivity-tips-hints-hacks-tricks-for-grad-students-academics/
     pdf: advice-matt-productivity.png
   - item:
     author: Nick Feamster
     title: "Storytelling 101: Writing Tips for Academics"
     link: https://greatresearch.org/2013/10/11/storytelling-101-writing-tips-for-academics/
-    pdf: advice-karpathy.png
+    pdf: advice-feamster-writing.png
   - item:
     author: Jennifer Rexford
     title: Advice for New Graduate Students
