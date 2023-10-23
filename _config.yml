@@ -182,8 +182,8 @@ author_pubs_details:
                 news: news_eurosp23.html
                 invited_talks: talks_eurosp23.html
                 awards:
-                  - award: Best Paper Award
-                  - award: Finalist at CSAW 2023 Applied Research Competition
+                  - award: Best Paper Award (1/180)
+                  - award: Finalist at CSAW 2023 Applied Research Competition (10/161)
 
               - title: "No Privacy Among Spies: Assessing the Functionality and Insecurity of Consumer Android Spyware Apps"
                 author_list:
