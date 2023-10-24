@@ -625,6 +625,21 @@ phdadvise:
     link: https://medium.com/digital-diplomacy/how-to-look-for-ideas-in-computer-science-research-7a3fa6f4696f
     pdf: advice-qian.pdf
   - item:
+    author: Chris Cramer
+    title: My Advisor is a Monster (What Do I Do?) 
+    link: http://pollux.chem.umn.edu/ProblemAdvisors.html
+    pdf: advice-cramer.png
+  - item:
+    author: Noble, Dill, Pierce, Sipelstein, and Shewchuck
+    title: How To Survive as a Graduate Student
+    link: https://www.cs.cmu.edu/afs/cs/user/bnoble/Web/survival/slides.pdf
+    pdf: advice-nobel.pdf
+  - item:
+    author: David Redish
+    title: How To Survive as a Graduate Student (comment)
+    link: https://www.cs.cmu.edu/afs/cs/user/bnoble/Web/survival/adrsurv.pdf
+    pdf: advice-radish.pdf
+  - item:
     author: James Larisch
     title: Highly Opinionated Advice for (CS) PhD Happiness
     link: https://jameslarisch.com/phd-happiness
@@ -644,6 +659,9 @@ phdadvisecollections:
   - item:
     author: Mark Leone
     link: https://www.cs.cmu.edu/~mleone/how-to.html
+  - item:
+    author: Jason Eisner
+    link: https://www.cs.jhu.edu/~jason/advice/how-to-evaluate-an-advisor.html
   - item:
     author: Yuan Tian
     link: https://www.ytian.info/students
