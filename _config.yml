@@ -508,7 +508,7 @@ phdadvise:
   - item:
     author: My talk at UCSD on Surviving Grad School
     title: Surviving Grad School When Your Advisor is Savage
-    link: https://alexliu0809.github.io/useful_links/#/
+    link: https://raw.githubusercontent.com/alexliu0809/alexliu0809.github.io/master/assets/files/Liu_Grad101_23Fa.pdf
     pdf: Liu_Grad101_23Fa.pdf
   - item:
     author: Andrej Karpathy
