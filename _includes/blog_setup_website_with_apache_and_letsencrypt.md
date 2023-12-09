@@ -72,6 +72,8 @@ Get a cert for website `example.com`.
 # You might need to stop apache first, run the following to stop apache
 # sudo systemctl stop apache2
 sudo certbot certonly --standalone --preferred-challenges http -d example.com
+# Restart apache2 with the following command
+# sudo systemctl restart apache2
 ```
 
 When running the command, you will be prompted to enter an email address and agree to the terms of service. After doing so, you should see a message telling you the process was successful and where your certificates are stored:
@@ -110,5 +112,9 @@ SSLCertificateChainFile /etc/letsencrypt/live/example.com/fullchain.pem
 
 Renew cert for a website:
 ```bash
-certbot certonly --force-renew -d example.com
+sudo certbot certonly --force-renew --preferred-challenges http -d example.com
 ```
+
+When prompted `How would you like to authenticate with the ACME CA?`, choose `Spin up a temporary webserver (standalone)`
+
+Once again, you might have to stop apache2 temporarily.
