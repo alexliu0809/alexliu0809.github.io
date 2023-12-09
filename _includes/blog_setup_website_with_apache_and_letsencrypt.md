@@ -25,7 +25,7 @@ sudo chmod -R 755 /var/www/example-com
 
 Create the first HTML file for example.com
 ```bash
-sudo touch /var/www/example-com/index.html
+touch /var/www/example-com/index.html
 ```
 
 ## Create an Apache configuration file for your website
