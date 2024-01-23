@@ -113,6 +113,18 @@ author_projects_details:
               #   visibility: false
 
 author_pubs_details:
+              - title: "Unfiltered: Measuring Cloud-based Email Filtering Bypasses"
+                author_list:
+                  - name: Sumanth Rao
+                  - name: Enze Liu
+                  - name: Grant Ho
+                  - name: Geoffrey M. Voelker
+                  - name: Stefan Savage
+                venue: the ACM Web Conference 2024 (WWW '24)
+                venue_short: ACM WWW
+                year: 2024
+                
+
               - title: "NewsGuesser: Using Curiosity to Reduce Selective Exposure "
                 author_list:
                   - name: Lu Sun
