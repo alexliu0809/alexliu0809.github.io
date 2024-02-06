@@ -137,6 +137,12 @@ footer {
     overflow-x: auto;
 }
 
+.job-market {
+      border: 2px solid #7EC8E3;
+      padding: 5px; /* Optional: Add padding for content inside the div */
+      margin-bottom: 20px; /* Additional padding at the bottom */
+}
+
 pre {
     overflow: auto;
     white-space: pre-wrap;
