@@ -215,6 +215,7 @@ author_pubs_details:
                   - type: Slides
                     url: https://github.com/alexliu0809/alexliu0809.github.io/blob/master/assets/files/Liu-PETS23.pdf?raw=true
                 news: news_pets23.html
+                invited_talks: talks_pets23.html
 
 
               - title: "Who's Got Your Mail? Characterizing Mail Service Provider Usage"
