@@ -121,8 +121,8 @@ author_pubs_details:
                   - name: Geoffrey M. Voelker
                   - name: Stefan Savage
                 venue: the ACM Web Conference 2024 (WWW '24)
-                venue_short: ACM WWW
-                year: 2024
+                venue_short: ACM WWW 
+                year: 2024 (Oral)
                 
 
               - title: "NewsGuesser: Using Curiosity to Reduce Selective Exposure "
