@@ -120,9 +120,12 @@ author_pubs_details:
                   - name: Grant Ho
                   - name: Geoffrey M. Voelker
                   - name: Stefan Savage
-                venue: the ACM Web Conference 2024 (WWW '24)
+                venue: the ACM Web Conference 2024 (WWW '24 Oral)
                 venue_short: ACM WWW 
                 year: 2024 (Oral)
+                links:
+                  - type: Paper
+                    url: https://www.sysnet.ucsd.edu/~voelker/pubs/unfiltered-www24.pdf
                 
 
               - title: "NewsGuesser: Using Curiosity to Reduce Selective Exposure "
