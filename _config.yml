@@ -140,7 +140,7 @@ author_pubs_details:
                 year: 2024
                 links:
                   - type: Paper
-                    url: https://s3.amazonaws.com/kvaccaro.com/documents/NewsGuesser.pdf
+                    url: https://dl.acm.org/doi/10.1145/3637376
 
 
               - title: "Limited Access: The Truth Behind Far Memory"
