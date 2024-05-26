@@ -126,6 +126,8 @@ author_pubs_details:
                 links:
                   - type: Paper
                     url: https://www.sysnet.ucsd.edu/~voelker/pubs/unfiltered-www24.pdf
+                  - type: Open Review
+                    url: https://openreview.net/forum?id=G36oPXRQMr
                 
 
               - title: "NewsGuesser: Using Curiosity to Reduce Selective Exposure "
