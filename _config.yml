@@ -113,6 +113,22 @@ author_projects_details:
               #   visibility: false
 
 author_pubs_details:
+              - title: "Give and Take: An End-To-End Investigation of Giveaway Scam Conversion Rates"
+                author_list:
+                  - name: Enze Liu
+                  - name: George Kappos
+                  - name: Eric Mugnier
+                  - name: Luca Invernizzi
+                  - name: Stefan Savage
+                  - name: David Tao
+                  - name: Kurt Thomas
+                  - name: Geoffrey M. Voelker
+                  - name: Sarah Meiklejohn
+                venue: the ACM Internet Measurement Conference 2024 (IMC '24)
+                venue_short: ACM IMC
+                year: 2024
+
+
               - title: "Unfiltered: Measuring Cloud-based Email Filtering Bypasses"
                 author_list:
                   - name: Sumanth Rao
