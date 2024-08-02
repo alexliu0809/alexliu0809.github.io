@@ -124,7 +124,7 @@ author_pubs_details:
                   - name: Kurt Thomas
                   - name: Geoffrey M. Voelker
                   - name: Sarah Meiklejohn
-                venue: the ACM Internet Measurement Conference 2024 (IMC '24)
+                venue: the 2024 Internet Measurement Conference (IMC '24)
                 venue_short: ACM IMC
                 year: 2024
 
@@ -136,7 +136,7 @@ author_pubs_details:
                   - name: Grant Ho
                   - name: Geoffrey M. Voelker
                   - name: Stefan Savage
-                venue: the ACM Web Conference 2024 (WWW '24 Oral)
+                venue: the 2024 ACM Web Conference (WWW '24 Oral)
                 venue_short: ACM WWW 
                 year: 2024 (Oral)
                 links:
@@ -247,7 +247,7 @@ author_pubs_details:
                   - name: Ariana Mirian
                   - name: Stefan Savage
                   - name: Geoffrey M. Voelker
-                venue: the ACM Internet Measurement Conference 2021 (IMC '21)
+                venue: the 2021 ACM Internet Measurement Conference (IMC '21)
                 venue_short: ACM IMC
                 year: 2021
                 links:
@@ -270,7 +270,7 @@ author_pubs_details:
                   - name: Geoffrey M. Voelker
                   - name: Stefan Savage
                   - name: Aaron Schulman
-                venue: the ACM Internet Measurement Conference 2021 (IMC '21)
+                venue: the 2021 ACM Internet Measurement Conference (IMC '21)
                 venue_short: ACM IMC
                 year: 2021
                 links:
