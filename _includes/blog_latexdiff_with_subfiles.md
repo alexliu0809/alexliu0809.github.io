@@ -272,7 +272,7 @@ Row 3, Col 1      & Row 3, Col 2      & Row 3, Col 3      \\ \hline
 ```
 
 ## Generate diff.pdf and Debug
-Now, upload everything in the `version_new` directory to overleaf, which helps you generate the diff.pdf file. 
+Now, upload everything in the `version_new` directory to **Overleaf**, which helps you generate the diff.pdf file. 
 
 One thing I always delete is the duplicate DIF PREAMBLE EXTENSION ADDED BY LATEXDIFF (which for some reason exists twice), as demonstrated below.
 
