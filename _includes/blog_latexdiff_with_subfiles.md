@@ -181,6 +181,7 @@ To generate a diff.tex, you do the following:
 old_path="/abs/path/to/version_old" # e.g., /usr/bin/paper_v1/
 ## Full path to the directory that contain the new version of the paper
 new_path="/abs/path/to/version_new" # e.g., /usr/bin/paper_v2/
+## Main file (e.g., main.tex / paper.tex)
 doc_name="paper.tex"
 ############################
 
@@ -303,5 +304,5 @@ One thing I always delete is the duplicate DIF PREAMBLE EXTENSION ADDED BY LATEX
 \providecommand{\DIFdelendFL}{} %DIF PREAMBLE
 %DIF END PREAMBLE EXTENSION ADDED BY LATEXDIFF
 ```
-There's other issues you might encounter. I hope you find Overleaf's debug output helpful.
+There's other issues you might encounter. I hope you find Overleaf's debug output helpful. Things I've tried include keeping the text in `paper.tex` unchanged and/or removing all changes in a table. 
  
