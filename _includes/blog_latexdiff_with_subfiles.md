@@ -207,21 +207,6 @@ latexdiff "$old_path/flat.tex" "$new_path/flat.tex" > "$new_path/diff.tex"
 
 Your `diff.tex` file should look like this:
 ```text
-%DIF 1c1
-%DIF LATEXDIFF DIFFERENCE FILE
-%DIF DEL /Users/alex/Desktop/latex/version_old/flat.tex   Thu Oct 10 15:49:16 2024
-%DIF ADD /Users/alex/Desktop/latex/version_new/flat.tex   Thu Oct 10 15:49:16 2024
-%DIF < \documentclass[conference,compsoc]{IEEEtran}
-%DIF -------
-% paper.tex %DIF > 
-%DIF -------
-%DIF LATEXDIFF DIFFERENCE FILE
-%DIF 3-4c3-5
-%DIF < %DIF DEL paper.tex   Thu Oct 10 15:34:22 2024
-%DIF < %DIF ADD paper.tex   Thu Oct 10 15:34:22 2024
-%DIF -------
-%DIF DEL paper.tex   Thu Oct 10 15:49:05 2024 %DIF > 
-%DIF ADD paper.tex   Thu Oct 10 15:49:05 2024 %DIF > 
 \documentclass[conference,compsoc]{IEEEtran} %DIF > 
 %DIF -------
 \usepackage{booktabs}
