@@ -113,6 +113,17 @@ author_projects_details:
               #   visibility: false
 
 author_pubs_details:
+              - title: "An Empirical Analysis on the Use and Reporting of National Security Letters"
+                author_list:
+                  - name: (alphabetically) Alex Bellon
+                  - name: Miro Haller 
+                  - name: Andrey Labunets
+                  - name: Enze Liu
+                  - name: Stefan Savage
+                venue: the 4th ACM Symposium on Computer Science and Law (CSLAW '25)
+                venue_short: ACM CSLAW
+                year: 2025
+
               - title: "Give and Take: An End-To-End Investigation of Giveaway Scam Conversion Rates"
                 author_list:
                   - name: Enze Liu
