@@ -9,7 +9,7 @@ baseurl: "" # the subpath of your site, e.g. /blog
 urls:
     - text: About Me
       url: /#/
-    - text: Research
+    - text: Publications
       url: /publications/
     - text: Recent News
       url: /news/
