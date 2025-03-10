@@ -343,6 +343,10 @@ restaurants:
           - name: Creme De La Crepe (French)
             dishes:
               - dish: Country paté plate
+          - name: La Bonne Table (French)
+            dishes:
+              - dish: Confit de Canard
+              - dish: Cassoulet
           - name: Spitfire Tacos (Mexican)
             dishes:
               - dish: Tacos
@@ -408,6 +412,10 @@ restaurants:
               - dish: Duck
           - name: Pomegranate (Georgian)
           - name: Romeo & Julieta Wine Cafe (Polish)
+          - name: Cuscatlan Salvadorean Food (Salvadorean)
+            dishes:
+                - dish: Pupusas
+                - dish: Pickled cabbage!
           - name: The Red Door (Italian / Fine dining)
             dishes:
               - dish: Beef wellington
@@ -427,6 +435,25 @@ restaurants:
             dishes:
               - dish: Peking "Duck" Lettuce Wraps
               - dish: Sizzling "Steak Filet Mignon"
+          - name: Ngon Ngon To Go
+            dishes:
+              - dish: Fried chicken wings
+          - name: OB Noodle House
+            dishes:
+              - dish: Fried chicken wings
+          - name: Pete's Seafood and Sandwich
+            dishes:
+              - dish: Lobster roll
+          - name: Burma Place
+            dishes:
+              - dish: Tea Leaf Salad
+          - name: J&T Thai Street Food
+            dishes:
+                - dish: Steamed Chicken & Rice
+          - name: Charminar Indian Restaurant & Catering
+            dishes:
+                - dish: Curry (especially the goat ones)
+
  
 
     - location: Chicago
@@ -476,6 +503,9 @@ fine_dining:
     - year: 2023
       name: Oxalis
       location: Brooklyn, NY, USA.
+    - year: 2024
+      name: Hana Re
+      location: Irvine, CA, USA.
 
 
 # social links
