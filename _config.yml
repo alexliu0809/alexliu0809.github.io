@@ -113,6 +113,18 @@ author_projects_details:
               #   visibility: false
 
 author_pubs_details:
+              - title: "Somesite I Used To Crawl: Awareness, Agency and Efficacy in Protecting Content Creators From AI Crawlers"
+                author_list:
+                  - name: Enze Liu
+                  - name: Elisa Luo (co-first)
+                  - name: Shawn Shan
+                  - name: Geoffrey M. Voelker
+                  - name: Ben Y. Zhao
+                  - name: Stefan Savage
+                venue: the 2025 Internet Measurement Conference (IMC '25)
+                venue_short: ACM IMC
+                year: 2025
+
               - title: "An Empirical Analysis on the Use and Reporting of National Security Letters"
                 author_list:
                   - name: (alphabetical) Alex Bellon
