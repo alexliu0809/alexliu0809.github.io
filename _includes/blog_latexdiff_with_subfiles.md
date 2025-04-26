@@ -304,5 +304,5 @@ One thing I always delete is the duplicate DIF PREAMBLE EXTENSION ADDED BY LATEX
 \providecommand{\DIFdelendFL}{} %DIF PREAMBLE
 %DIF END PREAMBLE EXTENSION ADDED BY LATEXDIFF
 ```
-There's other issues you might encounter. I hope you find Overleaf's debug output helpful. Things I've tried include keeping the text in `paper.tex` unchanged and/or removing all changes in a table. 
+There's other issues you might encounter. I hope you find Overleaf's debug output helpful. Things I've tried include keeping the text in `paper.tex` unchanged (latexdiff often messes with package import and command definitions), ignoring changes in bib and appendix (i.e., remove all highlights in bib / appendix), and/or removing all changes in a table. 
  
