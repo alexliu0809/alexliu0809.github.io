@@ -136,7 +136,7 @@ author_pubs_details:
                 venue_short: ACM CSLAW
                 year: 2025
                 links:
-                  - tpye: Paper
+                  - type: Paper
                     url: https://dl.acm.org/doi/10.1145/3709025.3712209
 
               - title: "Give and Take: An End-To-End Investigation of Giveaway Scam Conversion Rates"
