@@ -124,6 +124,9 @@ author_pubs_details:
                 venue: the 2025 Internet Measurement Conference (IMC '25)
                 venue_short: ACM IMC
                 year: 2025
+                links:
+                  - type: Paper
+                    url: https://arxiv.org/abs/2411.15091
 
               - title: "An Empirical Analysis on the Use and Reporting of National Security Letters"
                 author_list:
@@ -521,6 +524,12 @@ fine_dining:
     - year: 2024
       name: Hana Re
       location: Irvine, CA, USA.
+    - year: 2025
+      name: Heritage
+      location: Long Beach, CA, USA.
+    - year: 2025
+      name: Lilo
+      location: Carlsbad, CA, USA.
 
 
 # social links
