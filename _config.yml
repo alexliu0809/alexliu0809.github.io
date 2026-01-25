@@ -127,6 +127,8 @@ author_pubs_details:
                 links:
                   - type: Paper
                     url: https://arxiv.org/abs/2411.15091
+                  - type: Code
+                    url: https://github.com/ucsdsysnet/ai-crawler-imc-25
 
               - title: "An Empirical Analysis on the Use and Reporting of National Security Letters"
                 author_list:
