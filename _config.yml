@@ -11,8 +11,8 @@ urls:
       url: /#/
     - text: Publications
       url: /publications/
-    - text: Recent News
-      url: /news/
+    # - text: Recent News
+    #   url: /news/
     #- text: Research
       #url: /research/
     - text: Useful links
@@ -26,29 +26,29 @@ urls:
 #    - text: Styleguide
 #      url: /styleguide/
 
-recent_news:
-  - date: 2022-08-01
-    content: Our paper that studies the functionality and insecurity of consumer android spyware apps is accepted to PETS '23!
-  - date: 2021-08-19
-    content: Two papers are accepted to IMC '21! Stay tuned for the camera ready paper.
-  - date: 2021-01-06
-    content: Trufflehunter is awarded IETF/IRTF Applied Networking Research Prize (ANRP)! Woohoo!
-  - date: 2020-10-26
-    content: We've released our code for Trufflehunter.
-  - date: 2020-08-11
-    content: Trufflehunter is accepted to IMC 2020! Big congrats to our lead author Audrey.
-  - date: 2019-09-23
-    content: Joining UCSD as a first-year PhD student! I am affiliated with Sysnet and CryptoSec research groups.
-  - date: 2019-09-08
-    content: Arrived in San Diego! Love the sunshine here.
-  - date: 2019-05-20
-    content: Presenting our paper "Reasoning Analytically About Password-Cracking Software" at IEEE S&P 2019 (Oakland).
-  - date: 2019-02-01
-    content: After two years of work, our work on reasoning analytically about password-cracking software is finally accepted by IEEE S&P 2019 ("Oakland").
-  - date: 2018-03-21
-    content: Received my master's degree from UChicago! Many thanks to my family and friends who have always been supportive.
-  - date: 2016-09-20
-    content: Starting my master's study at The University of Chicago.
+# recent_news:
+#   - date: 2022-08-01
+#     content: Our paper that studies the functionality and insecurity of consumer android spyware apps is accepted to PETS '23!
+#   - date: 2021-08-19
+#     content: Two papers are accepted to IMC '21! Stay tuned for the camera ready paper.
+#   - date: 2021-01-06
+#     content: Trufflehunter is awarded IETF/IRTF Applied Networking Research Prize (ANRP)! Woohoo!
+#   - date: 2020-10-26
+#     content: We've released our code for Trufflehunter.
+#   - date: 2020-08-11
+#     content: Trufflehunter is accepted to IMC 2020! Big congrats to our lead author Audrey.
+#   - date: 2019-09-23
+#     content: Joining UCSD as a first-year PhD student! I am affiliated with Sysnet and CryptoSec research groups.
+#   - date: 2019-09-08
+#     content: Arrived in San Diego! Love the sunshine here.
+#   - date: 2019-05-20
+#     content: Presenting our paper "Reasoning Analytically About Password-Cracking Software" at IEEE S&P 2019 (Oakland).
+#   - date: 2019-02-01
+#     content: After two years of work, our work on reasoning analytically about password-cracking software is finally accepted by IEEE S&P 2019 ("Oakland").
+#   - date: 2018-03-21
+#     content: Received my master's degree from UChicago! Many thanks to my family and friends who have always been supportive.
+#   - date: 2016-09-20
+#     content: Starting my master's study at The University of Chicago.
 
 # Edit these details 
 
@@ -78,7 +78,7 @@ author_education_details:
                 college_name: University of California San Diego
                 college_url: https://www.ucsd.edu
                 college_degree: PhD in Computer Science
-                description: 2019.06 - Present
+                description: 2019.09 - 2025.09
                 visibility: true
               - college_logo: uchicago.png
                 college_name: The University of Chicago
