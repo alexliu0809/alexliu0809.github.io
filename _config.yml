@@ -113,6 +113,28 @@ author_projects_details:
               #   visibility: false
 
 author_pubs_details:
+              - title: "Lost in Translation: Text Message Spoofing via Email"
+                author_list:
+                  - name: Sumanth Rao
+                  - name: Ye Shu
+                  - name: Stefan Savage
+                  - name: Aaron Schulman
+                  - name: Geoffrey M. Voelker
+                  - name: Enze Liu
+                venue: the 47th IEEE Symposium on Security and Privacy (S&P '26)
+                venue_short: IEEE S&P
+                year: 2026
+
+              - title: "From Be Careful to Here's Why: Investigating User Reasoning with Context-Specific SMS Scam Warnings"
+                author_list:
+                  - name: Elijah Bouma-Sims
+                  - name: Enze Liu
+                  - name: Alexandra Xinran Li
+                  - name: Lorrie Faith Cranor
+                venue: the 47th IEEE Symposium on Security and Privacy (S&P '26)
+                venue_short: IEEE S&P
+                year: 2026
+
               - title: "Somesite I Used To Crawl: Awareness, Agency and Efficacy in Protecting Content Creators From AI Crawlers"
                 author_list:
                   - name: Enze Liu
