@@ -124,10 +124,8 @@ author_pubs_details:
                 venue: the 47th IEEE Symposium on Security and Privacy (S&P '26)
                 venue_short: IEEE S&P
                 year: 2026
-                links:
-                  - type: Paper
-                    url: https://drive.google.com/file/d/1wRu7vzcrggF_VN4YbDBZWo6rcWB1_oFe/view?usp=sharing
-
+                
+                
               - title: "From Be Careful to Here's Why: Investigating User Reasoning with Context-Specific SMS Scam Warnings"
                 author_list:
                   - name: Elijah Bouma-Sims
