@@ -127,7 +127,9 @@ author_pubs_details:
                 links:
                   - type: Paper
                     url: https://drive.google.com/file/d/1wRu7vzcrggF_VN4YbDBZWo6rcWB1_oFe/view?usp=sharing
-                
+                awards:
+                - award: Distinguished Paper Award
+
                 
               - title: "From Be Careful to Here's Why: Investigating User Reasoning with Context-Specific SMS Scam Warnings"
                 author_list:
@@ -141,9 +143,7 @@ author_pubs_details:
                 links:
                   - type: Paper
                     url: https://www.computer.org/csdl/proceedings-article/sp/2026/606500d147/2geEWVyb6nK
-                awards:
-                  - award: Distinguished Paper Award
-
+                
               - title: "Somesite I Used To Crawl: Awareness, Agency and Efficacy in Protecting Content Creators From AI Crawlers"
                 author_list:
                   - name: Enze Liu
