@@ -141,6 +141,7 @@ author_pubs_details:
                 links:
                   - type: Paper
                     url: https://www.computer.org/csdl/proceedings-article/sp/2026/606500d147/2geEWVyb6nK
+                  - award: Distinguished Paper Award
 
               - title: "Somesite I Used To Crawl: Awareness, Agency and Efficacy in Protecting Content Creators From AI Crawlers"
                 author_list:
