@@ -563,6 +563,9 @@ fine_dining:
     - year: 2025
       name: Lilo
       location: Carlsbad, CA, USA.
+    - year: 2026
+      name: The Progress
+      location: San Francisco, CA, USA.
 
 
 # social links
