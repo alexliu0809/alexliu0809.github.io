@@ -127,6 +127,8 @@ author_pubs_details:
                 links:
                   - type: Paper
                     url: https://drive.google.com/file/d/1wRu7vzcrggF_VN4YbDBZWo6rcWB1_oFe/view?usp=sharing
+                  - type: Code
+                    url: https://github.com/ucsdsysnet/email2sms
                 awards:
                 - award: Distinguished Paper Award
 
