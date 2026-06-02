@@ -126,7 +126,7 @@ author_pubs_details:
                 year: 2026
                 links:
                   - type: Paper
-                    url: https://drive.google.com/file/d/1wRu7vzcrggF_VN4YbDBZWo6rcWB1_oFe/view?usp=sharing
+                    url: https://cseweb.ucsd.edu/~savage/papers/rao-oakland-2026.pdf
                   - type: Code
                     url: https://github.com/ucsdsysnet/email2sms
                 awards:
