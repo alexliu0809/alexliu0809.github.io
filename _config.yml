@@ -568,6 +568,9 @@ fine_dining:
     - year: 2026
       name: The Progress
       location: San Francisco, CA, USA.
+    - year: 2026
+      name: Kin Khao
+      location: San Francisco, CA, USA.
 
 
 # social links
