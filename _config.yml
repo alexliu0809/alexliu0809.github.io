@@ -141,7 +141,7 @@ author_pubs_details:
                   - name: Enze Liu
                   - name: Emily Wenger
                 venue: the ACM Conference on Computer and Communications Security 2026
-                venue_short: ACM CCS 2026
+                venue_short: ACM CCS
                 year: 2026
 
               - title: "Meme Coin Factories: Uncovering Large-Scale Manipulations on pump.fun"
@@ -153,7 +153,7 @@ author_pubs_details:
                   - name: Mathias Payer
                   - name: Nicolas Christin
                 venue: the ACM Conference on Computer and Communications Security 2026
-                venue_short: ACM CCS 2026
+                venue_short: ACM CCS
                 year: 2026
                 
                 
