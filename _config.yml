@@ -132,6 +132,30 @@ author_pubs_details:
                 awards:
                 - award: Distinguished Paper Award
 
+              - title: "Identifying AI Web Scrapers Using Canary Tokens"
+                author_list:
+                  - name: Steven Seiden
+                  - name: Triss Ren
+                  - name: Caroline Zhang
+                  - name: Taein Kim
+                  - name: Enze Liu
+                  - name: Emily Wenger
+                venue: the ACM Conference on Computer and Communications Security 2026
+                venue_short: ACM CCS 2026
+                year: 2026
+
+              - title: "Meme Coin Factories: Uncovering Large-Scale Manipulations on pump.fun"
+                author_list:
+                  - name: Nicolas Szwajcok
+                  - name: Taro Tsuchiya
+                  - name: Enze Liu
+                  - name: Kyle Soska
+                  - name: Mathias Payer
+                  - name: Nicolas Christin
+                venue: the ACM Conference on Computer and Communications Security 2026
+                venue_short: ACM CCS 2026
+                year: 2026
+                
                 
               - title: "From Be Careful to Here's Why: Investigating User Reasoning with Context-Specific SMS Scam Warnings"
                 author_list:
