@@ -169,6 +169,8 @@ author_pubs_details:
                 links:
                   - type: Paper
                     url: https://www.computer.org/csdl/proceedings-article/sp/2026/606500d147/2geEWVyb6nK
+                  - type: Paper (Local Copy)
+                    url: https://raw.githubusercontent.com/alexliu0809/alexliu0809.github.io/18187e08a85c150b38b13ac945f4b2729d46774b/assets/files/sp26b.pdf
                 
               - title: "Somesite I Used To Crawl: Awareness, Agency and Efficacy in Protecting Content Creators From AI Crawlers"
                 author_list:
