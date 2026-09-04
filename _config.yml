@@ -143,6 +143,9 @@ author_pubs_details:
                 venue: the ACM Conference on Computer and Communications Security 2026 (CCS '26)
                 venue_short: ACM CCS
                 year: 2026
+                links:
+                  - type: Paper
+                    url: https://arxiv.org/abs/2605.13706
 
               - title: "Meme Coin Factories: Uncovering Large-Scale Manipulations on pump.fun"
                 author_list:
