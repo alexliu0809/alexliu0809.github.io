@@ -158,6 +158,9 @@ author_pubs_details:
                 venue: the ACM Conference on Computer and Communications Security 2026 (CCS '26)
                 venue_short: ACM CCS
                 year: 2026
+                links:
+                  - type: Paper
+                    url: https://arxiv.org/pdf/2609.10246v1
                 
                 
               - title: "From Be Careful to Here's Why: Investigating User Reasoning with Context-Specific SMS Scam Warnings"
