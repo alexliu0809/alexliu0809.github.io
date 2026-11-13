@@ -113,6 +113,19 @@ author_projects_details:
               #   visibility: false
 
 author_pubs_details:
+              - title: "Count of Monte Crypto: Accounting-based Defenses for Cross-Chain Token Bridges"
+                author_list:
+                  - name: Enze Liu
+                  - name: Elisa Luo
+                  - name: Jian Chen Yan
+                  - name: Katherine Izhikevich
+                  - name: Stewart Grant
+                  - name: Deian Stefan
+                  - name: Stefan Savage
+                  - name: Geoffrey M. Voelker
+                venue: the 22nd ACM ASIA Conference on Computer and Communications Security (ASIACCS '27)
+                venue_short: ACM ASIACCS
+                year: 2027
               - title: "Lost in Translation: Text Message Spoofing via Email"
                 author_list:
                   - name: Sumanth Rao
