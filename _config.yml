@@ -123,7 +123,7 @@ author_pubs_details:
                   - name: Deian Stefan
                   - name: Stefan Savage
                   - name: Geoffrey M. Voelker
-                venue: the 22nd ACM ASIA Conference on Computer and Communications Security (ASIACCS '27)
+                venue: the 22nd ACM ASIA Conference on Computer and Communications Security (AsiaCCS '27)
                 venue_short: ACM AsiaCCS
                 year: 2027
               - title: "Lost in Translation: Text Message Spoofing via Email"
